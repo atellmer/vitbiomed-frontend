@@ -66,7 +66,7 @@ gulp.task('scripts', function () {
 //html
 gulp.task('html', function () {
 	return gulp.src([
-				path.root + 'index.html',
+				path.root + '*.html',
 				path.root + 'app/**/*.html'
 			])
 		.pipe(connect.reload());
@@ -108,7 +108,7 @@ gulp.task('watch', function () {
 			path.stylesheets() + '*.styl',
 			path.app() + '**/*.styl'], ['stylus']);
 	gulp.watch([
-			path.root + 'index.html',
+			path.root + '*.html',
 			path.app() + '**/*.html'], ['html']);
 });
 

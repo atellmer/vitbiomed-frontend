@@ -1,7 +1,15 @@
 @import 'nib'
+@import url(../resources/fonts/fonts.css)
 
 $bg-color = #FFF
-$primary-color = #00BCD4
+$primary-color = #689f38
+
+$phone = 320px
+$tablet = 768px
+$notebook = 1024px
+$desktop = 1600px
+$full-hd = 1920px
+
 
 //helpers
 .no-padding
@@ -27,8 +35,27 @@ $primary-color = #00BCD4
 	height 1px
 	width 100%
 	border-top 1px solid #E0E0E0
+	
+.cover
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	
+.flex
+	display flex
+	flex-direction row
+	flex-wrap nowrap
+	justify-content center
+	align-items center
+	
+.display-none
+	display none!important
+	
+.transition
+	transition color .2s ease-in-out
 
-body
+.likearts-content
+	font-family 'MyseoSansCyrl'
 	background $bg-color
 	font-smoothing antialiased
 	overflow-scrolling touch
@@ -43,4 +70,126 @@ a
 	&:focus
 		outline none
 		text-decoration none
+		
+.likearts-content .container-fluid
+	padding 0
+	margin 0
+		
+.likearts-content .container
+	width 100%
+	max-width 1280px
+	margin 0 auto
+	padding 0
+	
+.likearts-content .header
+	width 100%
+	height auto
+	padding 40px 0
+	@media screen and (max-width: 600px)
+		padding 20px 0
+	
+.likearts-content .logo
+	width 207px
+	height 27px
+	background-image url(../resources/img/logo.svg)
+	@extend .cover 
+	@media screen and (max-width: 992px)
+		margin 0 auto
+	@media screen and (max-width: 600px)
+		width 138px
+		height 18px
+		
+.likearts-content .menu-desktop
+	@media screen and (max-width: 992px)
+		margin 20px
+	@media screen and (max-width: $tablet)
+		display none
+	
+.likearts-content .menu-desktop-list
+	list-style-type none
+	@extend .flex
+	justify-content flex-start
+	flex-wrap wrap
+	@media screen and (max-width: 992px)
+		justify-content center
+		
+.likearts-content .menu-desktop-list__link
+	display inline-block
+	padding 5px 20px
+	text-transform uppercase
+	color #000
+	font-weight 500
+	font-size 1.5rem
+	letter-spacing 2px
+	@extends .transition
+	&:hover
+		color $primary-color
+	@media screen and (max-width: 1200px)
+		padding 5px 10px
+		font-size 1.3rem
+	
+.likearts-content .menu-desktop-list__link--active
+	color $primary-color
+	
+.likearts-content .cart
+	margin 5px 0
+	@media screen and (max-width: 992px)
+		margin 0
+	@media screen and (max-width: $tablet)
+		position absolute
+		top -30px
+		right 10%
+	@media screen and (max-width: 600px)
+		top -20px
+		right 20px
+	
+.likearts-content .cart__icon
+	width 16px
+	height 15px
+	background-image url(../resources/icons/cart.png)
+	@extend .cover
+	margin 0 5px
+	
+.likearts-content .cart_sum
+	color $primary-color
+	font-size 1.2rem
+	
+.likearts-content .cart__link
+	@extend .flex
+	justify-content flex-start
+	@media screen and (max-width: 992px)
+		justify-content center
+		
+.menu-tablet__btn
+	display none
+	width 30px
+	height 30px
+	position absolute
+	top -30px
+	left 30px
+	cursor pointer
+	user-select none
+	@media screen and (max-width: $tablet)
+		display inherit
+	@media screen and (max-width: 600px)
+		top -20px
+		left 20px
+		
+.menu-tablet__icon
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	font-size 4rem
+	color $primary-color
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
