@@ -16,8 +16,8 @@
 		
 		function controlInset(event) {	
 			var trigger = angular.element(event.target);
-			var id = parseInt(trigger.attr('id').split('description-trigger-')[1]);	
-			var target = angular.element(document.querySelector('#description-target-' + id));
+			var id = parseInt(trigger.attr('data-description-trigger'));	
+			var target = angular.element(document.querySelector('[data-description-target="' + id + '"]'));
 			
 			click[id]++;
 			
