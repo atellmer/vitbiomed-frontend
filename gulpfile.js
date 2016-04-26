@@ -18,6 +18,9 @@ var path = {
 	app: function () {
 		return this.root + 'app/'
 	},
+	bem: function () {
+		return this.root + 'bem_components/'
+	},
 	stylesheets: function () {
 		return this.root + 'stylesheets/'
 	},
@@ -77,6 +80,7 @@ gulp.task('stylus', function () {
 	if (config.debug) {
 		return gulp.src([
 				path.stylesheets() + '*.styl',
+				path.bem() + '**/*.styl',
 				path.app() + '**/*.styl'
 			])
 			.pipe(concat('bundle.styl'))
@@ -89,6 +93,7 @@ gulp.task('stylus', function () {
 	} else {
 		return gulp.src([
 				path.stylesheets() + '*.styl',
+				path.bem() + '**/*.styl',
 				path.app() + '**/*.styl'
 			])
 			.pipe(concat('bundle.styl'))
@@ -106,6 +111,7 @@ gulp.task('watch', function () {
 	gulp.watch(path.app() + '**/*.js', ['scripts']);
 	gulp.watch([
 			path.stylesheets() + '*.styl',
+			path.bem() + '**/*.styl',
 			path.app() + '**/*.styl'], ['stylus']);
 	gulp.watch([
 			path.root + '*.html',
