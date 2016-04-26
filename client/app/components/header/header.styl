@@ -10,19 +10,22 @@
 		background-color $primary-color
 		padding 20px 0
 
+.likearts-content .header-container .logo-link
+	display inline-block
+	position relative
+	@media screen and (max-width: 992px)
+		left 50%
+		transform translateX(-50%)
 	
 .likearts-content .header-container .logo
 	width 207px
 	height 27px
 	background-image url(../resources/img/logo.svg)
 	@extend .cover
-	@media screen and (max-width: 992px)
-		margin 0 auto
 	@media screen and (max-width: $phone)
 		background-image url(../resources/img/logo-w.svg)
 		position relative
-		top 1px
-		right 10px
+		top 5px
 		width 138px
 		height 18px
 
@@ -59,7 +62,7 @@
 	color $primary-color
 	
 .likearts-content .header-container .cart
-	margin 5px 0
+	margin 5px 0 
 	@media screen and (max-width: 992px)
 		margin 0
 	@media screen and (max-width: $tablet)
@@ -70,7 +73,7 @@
 		top -20px
 		right 20px
 	@media screen and (max-width: $phone)
-		top -39px
+		top -45px
 		right 0
 		background-color #7cb342
 	
@@ -84,7 +87,7 @@
 		background-image url(../resources/icons/cart-w.png)
 		width 31px
 		height 30px
-		margin 15px
+		margin 17px 17px 19px 17px
 	
 .likearts-content .header-container .cart__sum 
 	color $primary-color

@@ -9,13 +9,14 @@
 	left 30px
 	cursor pointer
 	user-select none
+	z-index 100
 	@media screen and (max-width: $tablet)
 		display inherit
 	@media screen and (max-width: $phone)
-		top -38px
+		top -44px
 		left 0px
-		width 60px
-		height 60px
+		width 66px
+		height 66px
 		
 .likearts-content .menu-mobile-container .menu-mobile__icon
 	position absolute
@@ -48,7 +49,7 @@
 	@media screen and (max-width: $phone)
 		top 22px
 		left 0px
-		width 80%
+		width calc(80% - 1px)
 
 .likearts-content .menu-mobile-container .menu-mobile-list
 	list-style-type none
