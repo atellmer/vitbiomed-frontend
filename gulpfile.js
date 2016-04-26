@@ -5,6 +5,7 @@ var rename = require('gulp-rename');
 var connect = require('gulp-connect');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var clean = require('gulp-clean');
 var config = require('./config');
 
 console.log('----------------------------');
@@ -18,8 +19,8 @@ var path = {
 	app: function () {
 		return this.root + 'app/'
 	},
-	bem: function () {
-		return this.root + 'bem_components/'
+	components: function () {
+		return this.app() + 'components/'
 	},
 	stylesheets: function () {
 		return this.root + 'stylesheets/'
@@ -49,6 +50,7 @@ gulp.task('scripts', function () {
 			path.app() + '**/*.controller.js'
 			])
 			.pipe(concat('bundle.js'))
+			.pipe(clean())
 			.pipe(gulp.dest(path.dist()))
 			.pipe(connect.reload());
 	} else {
@@ -60,6 +62,7 @@ gulp.task('scripts', function () {
 			path.app() + '**/*.controller.js'
 			])
 			.pipe(concat('bundle.js'))
+			.pipe(clean())
 			.pipe(uglify())
 			.pipe(gulp.dest(path.dist()))
 			.pipe(connect.reload());
@@ -79,28 +82,28 @@ gulp.task('html', function () {
 gulp.task('stylus', function () {
 	if (config.debug) {
 		return gulp.src([
-				path.stylesheets() + '*.styl',
-				path.bem() + '**/*.styl',
-				path.app() + '**/*.styl'
+				path.stylesheets() + '**/*.styl',
+				path.components() + '**/*.styl'
 			])
 			.pipe(concat('bundle.styl'))
 			.pipe(stylus({
 				use: [nib()],
 				compress: false
 			}))
+			.pipe(clean())
 			.pipe(gulp.dest(path.dist()))
 			.pipe(connect.reload());
 	} else {
 		return gulp.src([
-				path.stylesheets() + '*.styl',
-				path.bem() + '**/*.styl',
-				path.app() + '**/*.styl'
+				path.stylesheets() + '**/*.styl',
+				path.components() + '**/*.styl'
 			])
 			.pipe(concat('bundle.styl'))
 			.pipe(stylus({
 				use: [nib()],
 				compress: true
 			}))
+			.pipe(clean())
 			.pipe(gulp.dest(path.dist()))
 			.pipe(connect.reload());
 	}
@@ -110,9 +113,8 @@ gulp.task('stylus', function () {
 gulp.task('watch', function () {
 	gulp.watch(path.app() + '**/*.js', ['scripts']);
 	gulp.watch([
-			path.stylesheets() + '*.styl',
-			path.bem() + '**/*.styl',
-			path.app() + '**/*.styl'], ['stylus']);
+			path.stylesheets() + '**/*.styl',
+			path.components() + '**/*.styl'], ['stylus']);
 	gulp.watch([
 			path.root + '*.html',
 			path.app() + '**/*.html'], ['html']);

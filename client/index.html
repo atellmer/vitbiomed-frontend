@@ -13,7 +13,7 @@
 <body ng-app="app" class="likearts-content">
 	<div class="container-fluid">
 		<div class="container">
-			<header class="header">
+			<header ng-controller="HeaderController as vm" class="header">
 					<div class="row no-padding">
 						<div class="col-md-3">
 							<a href="#">
@@ -37,9 +37,12 @@
 									</li>
 								</ul>
 							</div>
-							<div class="menu-mobile">
-								<div class="menu-mobile__btn">
+							<div ng-controller="MenuMobileController as vm"  class="menu-mobile">
+								<div ng-click="vm.controlMenu()" class="menu-mobile__btn">
 									<i class="material-icons menu-mobile__icon">view_headline</i>
+								</div>
+								<div class="menu-mobile__body">
+									
 								</div>
 							</div>
 						</div>

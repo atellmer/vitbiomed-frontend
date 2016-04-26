@@ -1,0 +1,29 @@
+@import 'nib'
+
+.likearts-content .menu-mobile__btn
+	display none
+	width 30px
+	height 30px
+	position absolute
+	top -30px
+	left 30px
+	cursor pointer
+	user-select none
+	@media screen and (max-width: $tablet)
+		display inherit
+	@media screen and (max-width: 600px)
+		top -20px
+		left 20px
+	@media screen and (max-width: $phone)
+		top -23px
+		left 15px
+		
+.likearts-content .menu-mobile__icon
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	font-size 4rem
+	color $primary-color
+	@media screen and (max-width: $phone)
+		color #FFF
