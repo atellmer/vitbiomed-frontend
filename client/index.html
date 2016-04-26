@@ -39,7 +39,47 @@
 								</ul>
 							</div>
 							<div class="menu-mobile-container">
-								<vit-menu-mobile></vit-menu-mobile>
+								<div data-ng-controller="MenuMobileController as vm" class="menu-mobile">
+									<div id="menu-mobile-btn" ng-click="vm.controlMenu($event)" class="menu-mobile__btn">
+										<i class="material-icons menu-mobile__icon">view_headline</i>
+									</div>
+									<div id="menu-mobile-body" class="menu-mobile__body display-hide">
+										<ul class="menu-mobile-list">
+											<li class="menu-mobile-list__item">
+												<a href="#" class="menu-mobile-list__link">Компания</a>
+											</li>
+											<li class="menu-mobile-list__item">
+												<a href="#" class="menu-mobile-list__link menu-mobile-list__link--active">Информация</a>
+												<div class="menu-mobile-submenu">
+													<a href="#" class="menu-mobile-submenu__link">Цены</a>
+													<a href="#" class="menu-mobile-submenu__link">Доставка и оплата</a>
+													<a href="#" class="menu-mobile-submenu__link menu-mobile-submenu__link--active">Подписка</a>
+													<a href="#" class="menu-mobile-submenu__link">Публичная оферта</a>
+													<a href="#" class="menu-mobile-submenu__link">Вопросы</a>
+												</div>
+											</li>
+											<li class="menu-mobile-list__item">
+												<a href="#" class="menu-mobile-list__link">Пробиотики</a>
+											</li>
+											<li class="menu-mobile-list__item">
+												<a href="#" class="menu-mobile-list__link">Контакты</a>
+											</li>
+										</ul>
+										<div class="social-block">
+											<div class="social-item social-item--chat"></div>
+											<div class="social-item social-item--facebook"></div>
+											<div class="social-item social-item--instagram"></div>
+											<div class="social-item social-item--youtube"></div>
+											<div class="social-item social-item--google"></div>
+											<div class="social-item social-item--vk"></div>
+										</div>
+										<div class="phone-block">
+											<div class="phone-btn">
+												<i class="material-icons phone-btn__icon">call</i>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -61,10 +101,10 @@
 						<div class="product-content">
 							<div data-ng-controller="ProductPageController as vm" class="product-card">
 								<div class="product-card__title">
-									<span class="product-card__accent">Биобаланс А</span> жидкий культуральный 
+									<span class="product-card__accent">Биобаланс А</span> жидкий культуральный
 								</div>
 								<div class="product-card__sub-title">
-									Lactobacillus acidophilus штамм 100АШ), КОЕ от 10^7 в 1 мл 
+									Lactobacillus acidophilus штамм 100АШ), КОЕ от 10^7 в 1 мл
 								</div>
 								<div class="product-card__picture">
 									<img class="img-responsive" src="./resources/img/content/product-1.png" alt="some image">
@@ -73,16 +113,11 @@
 									<div class="product-description__title">Описание</div>
 									<div class="product-description__content">
 										– Подавляет активность патогенной микрофлоры и выводит их токсины
-										<br>
-										– Восстанавливает перистальтику кишечника
-										<br>
-										– Cнижает уровень холестерина и оксалатов
-										<br>
-										– Расщепляет лактозу, стимулирует синтез иммуноглобулинов
-										<br>
-										– Создает защитную пленку на всех слизистых
-										<br>
-										– Оказывает протективное действие на поврежденные клетки и улучшает метаболические процессы 
+										<br> – Восстанавливает перистальтику кишечника
+										<br> – Cнижает уровень холестерина и оксалатов
+										<br> – Расщепляет лактозу, стимулирует синтез иммуноглобулинов
+										<br> – Создает защитную пленку на всех слизистых
+										<br> – Оказывает протективное действие на поврежденные клетки и улучшает метаболические процессы
 										<br>
 									</div>
 									<div class="product-description__title">
