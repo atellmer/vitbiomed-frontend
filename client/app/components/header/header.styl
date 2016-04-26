@@ -6,10 +6,10 @@
 	height auto
 	padding 40px 0
 	z-index 99
-	@media screen and (max-width: 600px)
-		padding 20px 0
 	@media screen and (max-width: $phone)
 		background-color $primary-color
+		padding 20px 0
+
 	
 .likearts-content .header-container .logo
 	width 207px
@@ -18,14 +18,13 @@
 	@extend .cover
 	@media screen and (max-width: 992px)
 		margin 0 auto
-	@media screen and (max-width: 600px)
-		width 138px
-		height 18px
 	@media screen and (max-width: $phone)
 		background-image url(../resources/img/logo-w.svg)
 		position relative
 		top 1px
 		right 10px
+		width 138px
+		height 18px
 
 .likearts-content .header-container .menu-desktop
 	@media screen and (max-width: 992px)
