@@ -4,11 +4,11 @@
 
 	angular
 		.module('app')
-		.controller('productPageController', productPageController);
+		.controller('ProductPageController', ProductPageController);
 
-	productPageController.$inject = [];
+	ProductPageController.$inject = [];
 
-	function productPageController() {
+	function ProductPageController() {
 		var vm = this;
 		var click = new Array(3).fill(0);
 		vm.controlInset = controlInset;
