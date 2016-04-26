@@ -1,15 +1,17 @@
 @import 'nib'
 
-.likearts-content .header
+.likearts-content .header-container .header
+	position relative
 	width 100%
 	height auto
 	padding 40px 0
+	z-index 99
 	@media screen and (max-width: 600px)
 		padding 20px 0
 	@media screen and (max-width: $phone)
 		background-color $primary-color
 	
-.likearts-content .logo
+.likearts-content .header-container .logo
 	width 207px
 	height 27px
 	background-image url(../resources/img/logo.svg)
@@ -25,13 +27,13 @@
 		top 1px
 		right 10px
 
-.likearts-content .menu-desktop
+.likearts-content .header-container .menu-desktop
 	@media screen and (max-width: 992px)
 		margin 20px
 	@media screen and (max-width: $tablet)
 		display none
 	
-.likearts-content .menu-desktop-list
+.likearts-content .header-container .menu-desktop-list
 	list-style-type none
 	@extend .flex
 	justify-content flex-start
@@ -39,7 +41,7 @@
 	@media screen and (max-width: 992px)
 		justify-content center
 		
-.likearts-content .menu-desktop-list__link
+.likearts-content .header-container .menu-desktop-list__link
 	display inline-block
 	padding 5px 20px
 	text-transform uppercase
@@ -54,10 +56,10 @@
 		padding 5px 10px
 		font-size 1.3rem
 	
-.likearts-content .menu-desktop-list__link--active
+.likearts-content .header-container .menu-desktop-list__link--active
 	color $primary-color
 	
-.likearts-content .cart
+.likearts-content .header-container .cart
 	margin 5px 0
 	@media screen and (max-width: 992px)
 		margin 0
@@ -73,7 +75,7 @@
 		right 0
 		background-color #7cb342
 	
-.likearts-content .cart__icon
+.likearts-content .header-container .cart__icon
 	width 16px
 	height 15px
 	background-image url(../resources/icons/cart.png)
@@ -85,13 +87,13 @@
 		height 30px
 		margin 15px
 	
-.likearts-content .cart__sum 
+.likearts-content .header-container .cart__sum 
 	color $primary-color
 	font-size 1.2rem
 	@media screen and (max-width: $phone)
 		display none
 	
-.likearts-content .cart__link
+.likearts-content .header-container .cart__link
 	@extend .flex
 	justify-content flex-start
 	@media screen and (max-width: 992px)

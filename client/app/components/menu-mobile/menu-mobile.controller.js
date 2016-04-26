@@ -11,16 +11,28 @@
 	function MenuMobileController() {
 		var vm = this;
 		var click = 0;
+		var menu = angular.element(document.querySelector('#menu-mobile-body'));
+		var btn = angular.element(document.querySelector('#menu-mobile-btn'));
 		vm.controlMenu = controlMenu;
 		
 		
-		function controlMenu() {
-			click++;
+		function controlMenu(event) {
+			click++;	
 			
 			if(click % 2) {
-				console.log('show menu!');
+				if(menu.hasClass('display-hide')) {
+					menu.removeClass('display-hide')
+				}
+				if(!btn.hasClass('menu-mobile__clicked')) {
+					btn.addClass('menu-mobile__clicked')
+				}
 			} else {
-				console.log('hide menu!');
+				if(!menu.hasClass('display-hide')) {
+					menu.addClass('display-hide')
+				}
+				if(btn.hasClass('menu-mobile__clicked')) {
+					btn.removeClass('menu-mobile__clicked')
+				}
 			}
 		}
 	}

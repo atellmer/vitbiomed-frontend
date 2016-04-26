@@ -1,6 +1,6 @@
 @import 'nib'
 
-.likearts-content .menu-mobile__btn
+.likearts-content .menu-mobile-container .menu-mobile__btn
 	display none
 	width 30px
 	height 30px
@@ -15,10 +15,12 @@
 		top -20px
 		left 20px
 	@media screen and (max-width: $phone)
-		top -23px
-		left 15px
+		top -38px
+		left 0px
+		width 60px
+		height 60px
 		
-.likearts-content .menu-mobile__icon
+.likearts-content .menu-mobile-container .menu-mobile__icon
 	position absolute
 	top 50%
 	left 50%
@@ -27,3 +29,145 @@
 	color $primary-color
 	@media screen and (max-width: $phone)
 		color #FFF
+		
+.likearts-content .menu-mobile-container .menu-mobile__clicked
+	background-color #FFF
+	.menu-mobile__icon
+		color $primary-color
+		
+.likearts-content .menu-mobile-container .menu-mobile__body
+	position absolute
+	top 30px
+	left 30px
+	width 100%
+	max-width 270px
+	height auto
+	background-color #FFF
+	z-index 99
+	font-weight 500
+	@extend .paper-shadow-z1
+	@media screen and (min-width: $tablet)
+		display none!important
+	@media screen and (max-width: 600px)
+		top 20px
+		left 20px
+	@media screen and (max-width: $phone)
+		top 22px
+		left 0px
+		width 80%
+		
+.likearts-content .menu-mobile-container .menu-mobile-list
+	list-style-type none
+	margin 0!important
+	padding 40px 20px
+	@media screen and (max-width: $phone)
+		padding 40px 20px 20px 20px
+	
+	
+.likearts-content .menu-mobile-container .menu-mobile-list__link
+	display block
+	text-transform uppercase
+	color #383838
+	font-weight 500
+	font-size 1.8rem
+	letter-spacing 2px
+	@extends .transition	
+	
+.likearts-content .menu-mobile-container .menu-mobile-list__item
+	padding  10px
+	
+.likearts-content .menu-mobile-container .menu-mobile-list__link--active
+	color #c1c1c1
+	
+.likearts-content .menu-mobile-container .menu-mobile-submenu
+	padding 20px 0 20px 25px
+	
+	
+.likearts-content .menu-mobile-container .menu-mobile-submenu__link
+	display block
+	color #383838
+	font-size 1.5rem
+	&:not(:last-child)
+		margin 0 0 15px 0
+		
+.likearts-content .menu-mobile-container .menu-mobile-submenu__link--active
+	color $primary-color
+	
+.likearts-content .menu-mobile-container .social-block
+	width 100%
+	height auto
+	min-height 80px
+	background-color #FFF
+	border-top 1px solid #e0e0e0
+	border-bottom 1px solid #e0e0e0
+	padding 20px
+	@extend .flex
+	flex-wrap wrap
+	@media screen and (min-width: $phone)
+		display none
+		
+.likearts-content .menu-mobile-container .social-item
+	width 24px
+	height 23px
+	margin 4px
+	@extend .cover
+	cursor pointer
+	background-image url(../resources/icons/social.png)
+	@media screen and (max-width: 310px)
+		margin 10px
+	
+.likearts-content .menu-mobile-container .social-item--chat
+	background-position 0px 0px
+	
+
+.likearts-content .menu-mobile-container .social-item--facebook
+	background-position -37px 0px
+	
+.likearts-content .menu-mobile-container .social-item--instagram
+	background-position -73px 0px
+	
+.likearts-content .menu-mobile-container .social-item--youtube
+	background-position -110px 0px
+	
+.likearts-content .menu-mobile-container .social-item--google
+	background-position -147px 0px
+	
+.likearts-content .menu-mobile-container .social-item--vk
+	background-position -184px 0px
+
+
+.likearts-content .menu-mobile-container .phone-block
+	width 100%
+	height auto
+	min-height 100px
+	background-color #eeeeee
+	@extend .flex
+	@media screen and (min-width: $phone)
+		display none
+	
+	
+.likearts-content .menu-mobile-container .phone-btn
+	position relative
+	width 50px
+	height 50px
+	border-radius 50%
+	background-color $primary-color
+	@extend .paper-shadow-z1
+	cursor pointer
+	
+.likearts-content .menu-mobile-container .phone-btn__icon
+	color #FFF
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
