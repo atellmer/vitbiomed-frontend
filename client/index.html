@@ -238,16 +238,55 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
-
-						</div>
-					</div>
+						</div>		
+					</div>		
 				</div>
 			</div>
 		</div>
-	</div>
+		
+		<div data-ng-controller="SliderController as vm" class="slider-container">
+			<div class="slider">
+				<div class="container">
+					<div class="row no-padding">
+						<div class="col-md-12">
+							
+							<div class="vit-slider">
+								<div id="vit-slider-content" class="vit-slider__content">
+										<div class="vit-slider__item">
+											<h1>Title 1</h1>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore odit, non sapiente commodi nostrum numquam nisi laudantium ratione quis ut aliquid quidem porro praesentium dignissimos sint minus eaque libero quaerat reprehenderit magni laborum, totam recusandae doloremque assumenda incidunt. Quidem sapiente eum veniam sit ratione earum distinctio odit voluptate magni culpa.</p>
+										</div>
 
+										<div class="vit-slider__item">
+											<h1>Title 2</h1>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore odit, non sapiente commodi nostrum numquam nisi laudantium ratione quis ut aliquid quidem porro praesentium dignissimos sint minus eaque libero quaerat reprehenderit magni laborum, totam recusandae doloremque assumenda incidunt. Quidem sapiente eum veniam sit ratione earum distinctio odit voluptate magni culpa.</p>
+										</div>
+
+										<div class="vit-slider__item">
+											<h1>Title 3</h1>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore odit, non sapiente commodi nostrum numquam nisi laudantium ratione quis ut aliquid quidem porro praesentium dignissimos sint minus eaque libero quaerat reprehenderit magni laborum, totam recusandae doloremque assumenda incidunt. Quidem sapiente eum veniam sit ratione earum distinctio odit voluptate magni culpa.</p>
+										</div>
+								</div>
+								<div class="vit-slider__controls">
+									<div data-hm-tap="vm.changeContent(-1)" class="vit-slider__btn vit-slider__btn--prev">
+										<i class="material-icons vit-slider__icon">arrow_back</i>
+									</div>
+									<div data-hm-tap="vm.changeContent(1)" class="vit-slider__btn vit-slider__btn--next">
+										<i class="material-icons vit-slider__icon">arrow_forward</i>
+									</div>
+								</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	
+	
 
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -255,8 +294,8 @@
 	<script src="bower_components/hammerjs/hammer.min.js"></script>
 	<script src="bower_components/AngularHammer/angular.hammer.min.js"></script>
 	<script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="dist/bundle.js"></script>
+
 </body>
 
 </html>
