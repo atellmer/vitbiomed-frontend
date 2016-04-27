@@ -11,16 +11,13 @@
 	function ProductPageController(ngDialog) {
 		var vm = this;
 		var click = [];
-		var volumeProduct = 0;
 		
-		vm.debug = 'Some text for debug';
-		
+		vm.volumeProduct = 60;
+		vm.amountProduct = 1;	
 		vm.controlInset = controlInset;
 		vm.clickToOpen = clickToOpen;
-		vm.amountProduct = 0;	
 		vm.changeAmount = changeAmount;
 		vm.selectVolume = selectVolume;
-		vm.addActiveClass = addActiveClass;
 		
 		activate();
 		
@@ -51,7 +48,7 @@
 		}
 		
 			function changeAmount(count) {
-			if(count < 0 && vm.amountProduct > 0) {
+			if(count < 0 && vm.amountProduct > 1) {
 				vm.amountProduct += count;
 			}
 			if(count > 0) {
@@ -60,28 +57,31 @@
 			console.log('Количество: ', vm.amountProduct);
 		}
 		
-		function selectVolume(volume) {
-			volumeProduct = volume;
-			console.log('Объем: ', volume);
+		function selectVolume(event) {
+			var target = angular.element(event.target);
+			vm.volumeProduct = parseInt(target.attr('data-volume-product'));
+			console.log('Объем: ', vm.volumeProduct);
+			
+			 addActiveClass();
 		}
 		
-		function addActiveClass(event) {
-			var target = angular.element(event.target);
-			
-			var selects = document.querySelectorAll('.select-items__item');
-			
-			for(var i = 0; i < selects.length; i++) {
-				if(angular.element(selects[i]).hasClass('select-items__item--active')) {
-					angular.element(selects[i]).removeClass('select-items__item--active');
+		function addActiveClass() {	
+			var selectsAll = document.querySelectorAll('.select-items__item');
+			var selects = document.querySelectorAll('.select-items__item[data-volume-product="' + vm.volumeProduct + '"]');
+				
+			for(var i = 0; i < selectsAll.length; i++) {
+				if(angular.element(selectsAll[i]).hasClass('select-items__item--active')) {
+					angular.element(selectsAll[i]).removeClass('select-items__item--active');
 				}
 			}
 			
-			if(!target.hasClass('select-items__item--active')) {
-				target.addClass('select-items__item--active');
+			for(var i = 0; i < selects.length; i++) {
+				if(!angular.element(selects[i]).hasClass('select-items__item--active')) {
+					angular.element(selects[i]).addClass('select-items__item--active');
+				}
 			}
 		}
 		
-
 		function makeArrayOf(value, length) {
 			var array = [];
 			

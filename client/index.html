@@ -98,48 +98,80 @@
 		</div>
 		<div class="container">
 			<div class="main-container">
-				<div data-ng-controller="ProductPageController as vm" class="product-content">
+				<div data-ng-controller="ProductPageController as vm" class="product-page-container">
 					<div class="row no-padding">
 						<div class="col-xs-6 col-md-6 col-md-6 col-xxs-override">
 							<div class="product-card">
-								{{vm.debug}}
-								<div class="product-card__title">
-									<span class="product-card__accent">Биобаланс А</span> жидкий культуральный
+								<div class="phone-padding">
+									<div class="product-card__title">
+										<span class="product-card__accent">Биобаланс А</span> жидкий культуральный
+									</div>
+									<div class="product-card__sub-title">
+										Lactobacillus acidophilus штамм 100АШ), КОЕ от 10^7 в 1 мл
+									</div>
+									<div class="product-card__picture">
+										<img class="img-responsive" src="./resources/img/content/product-1.png" alt="some image">
+									</div>
 								</div>
-								<div class="product-card__sub-title">
-									Lactobacillus acidophilus штамм 100АШ), КОЕ от 10^7 в 1 мл
+								<div class="phone-content">
+									<div class="select-block">
+										<div class="select-block__title">Выберите объем</div>
+										<div class="select-items">
+											<div data-hm-tap="vm.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
+
+											<div data-hm-tap="vm.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
+
+											<div data-hm-tap="vm.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
+										</div>
+										<div class="select-block__title">Количество</div>
+										<div class="amount-control">
+											<div data-hm-tap="vm.changeAmount(-1)" class="amount-control__btn amount-control__btn--minus">
+												<i class="material-icons amount-control__icon">remove</i>
+											</div>
+											<div data-amount-product="{{vm.amountProduct}}" class="amount-control__counter">{{vm.amountProduct}}</div>
+											<div data-hm-tap="vm.changeAmount(1)" class="amount-control__btn amount-control__btn--plus">
+												<i class="material-icons amount-control__icon">add</i>
+											</div>
+										</div>
+									</div>
+									<div class="price-label">
+										<div class="price-label__sum">590 руб.</div>
+										<a href="#" class="price-label__link">– 10% при покупке курсом ›</a>
+									</div>
 								</div>
-								<div class="product-card__picture">
-									<img class="img-responsive" src="./resources/img/content/product-1.png" alt="some image">
-								</div>
-								<div class="product-description">
-									<div class="product-description__title">Описание</div>
-									<div class="product-description__content">
-										– Подавляет активность патогенной микрофлоры и выводит их токсины
-										<br> – Восстанавливает перистальтику кишечника
-										<br> – Cнижает уровень холестерина и оксалатов
-										<br> – Расщепляет лактозу, стимулирует синтез иммуноглобулинов
-										<br> – Создает защитную пленку на всех слизистых
-										<br> – Оказывает протективное действие на поврежденные клетки и улучшает метаболические процессы
-										<br>
+								<div class="phone-padding">
+									<div class="product-description">
+										<div class="product-description__title">Описание</div>
+										<div class="product-description__content">
+											– Подавляет активность патогенной микрофлоры и выводит их токсины
+											<br> – Восстанавливает перистальтику кишечника
+											<br> – Cнижает уровень холестерина и оксалатов
+											<br> – Расщепляет лактозу, стимулирует синтез иммуноглобулинов
+											<br> – Создает защитную пленку на всех слизистых
+											<br> – Оказывает протективное действие на поврежденные клетки и улучшает метаболические процессы
+											<br>
+										</div>
+										<div class="product-description__title">
+											<span data-hm-tap="vm.controlInset($event)" data-description-trigger="0" class="product-description__text-dashed cursor-pointer">Показания к применению</span>
+										</div>
+										<div data-description-target="0" class="product-description__content product-description__content--hide">
+											1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
+										</div>
+										<div class="product-description__title">
+											<span data-hm-tap="vm.controlInset($event)" data-description-trigger="1" class="product-description__text-dashed cursor-pointer">Применение</span>
+										</div>
+										<div data-description-target="1" class="product-description__content product-description__content--hide">
+											2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
+										</div>
+										<div class="product-description__title">
+											<span data-hm-tap="vm.controlInset($event)" data-description-trigger="2" class="product-description__text-dashed cursor-pointer">Рекомендации</span>
+										</div>
+										<div data-description-target="2" class="product-description__content product-description__content--hide">
+											3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
+										</div>
 									</div>
-									<div class="product-description__title">
-										<span data-hm-tap="vm.controlInset($event)" data-description-trigger="0" class="product-description__text-dashed cursor-pointer">Показания к применению</span>
-									</div>
-									<div data-description-target="0" class="product-description__content product-description__content--hide">
-										1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
-									</div>
-									<div class="product-description__title">
-										<span data-hm-tap="vm.controlInset($event)" data-description-trigger="1" class="product-description__text-dashed cursor-pointer">Применение</span>
-									</div>
-									<div data-description-target="1" class="product-description__content product-description__content--hide">
-										2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
-									</div>
-									<div class="product-description__title">
-										<span data-hm-tap="vm.controlInset($event)" data-description-trigger="2" class="product-description__text-dashed cursor-pointer">Рекомендации</span>
-									</div>
-									<div data-description-target="2" class="product-description__content product-description__content--hide">
-										3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
+									<div class="phone-content">
+										<div class="buy-btn buy-btn--phone">Купить</div>
 									</div>
 								</div>
 							</div>
@@ -162,9 +194,9 @@
 										<div class="select-block">
 											<div class="select-block__title">Выберите объем</div>
 											<div class="select-items">
-												<div data-hm-tap="vm.selectVolume(60);vm.addActiveClass($event)" class="select-items__item">60</div>
-												<div data-hm-tap="vm.selectVolume(150);vm.addActiveClass($event)" class="select-items__item">150</div>
-												<div data-hm-tap="vm.selectVolume(300);vm.addActiveClass($event)" class="select-items__item">300</div>
+												<div data-hm-tap="vm.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
+												<div data-hm-tap="vm.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
+												<div data-hm-tap="vm.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
 											</div>
 											<div class="select-block__title">Количество</div>
 											<div class="amount-control">
@@ -179,10 +211,9 @@
 										</div>
 									</div>
 									<div class="control-card__footer">
-										<div class="control-card__buy-btn">Купить</div>
+										<div class="buy-btn">Купить</div>
 									</div>
 								</div>
-
 								<div class="certificate-block">
 									<div class="certificate-block__title">Сертификаты</div>
 									<div class="certificate-block__description">Препарат запатентован с участием ведущих микробиологов РФ имеет свидетельство о регистрации.</div>
@@ -216,7 +247,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

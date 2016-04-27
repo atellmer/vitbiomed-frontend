@@ -1,13 +1,19 @@
 @import 'nib'
 
-.likearts-content .main-container .product-content
+.likearts-content .main-container .product-page-container
 	padding 50px 0
 	
-.likearts-content .main-container .product-card
+.likearts-content .product-page-container .product-card
 	width 100%
 	max-width 470px
+	@media screen and (max-width: $phone)
+		max-width none
+		
+.likearts-content .product-page-container .phone-padding
+	@media screen and (max-width: $phone)
+		padding 0 15px
 	
-.likearts-content .main-container .product-card__title
+.likearts-content .product-page-container .product-card__title
 	font-size 4rem
 	line-height 1.2
 	padding 10px 0
@@ -16,10 +22,10 @@
 	@media screen and (max-width: $phone)
 		font-size 2.3rem
 	
-.likearts-content .main-container .product-card__accent
+.likearts-content .product-page-container .product-card__accent
 	color #f44336
 	
-.likearts-content .main-container .product-card__sub-title
+.likearts-content .product-page-container .product-card__sub-title
 	font-weight 300
 	font-size 2rem
 	padding 10px 0
@@ -30,42 +36,46 @@
 	@media screen and (max-width: $phone)
 		font-size 1.4rem
 	
-.likearts-content .main-container .product-card__picture
+.likearts-content .product-page-container .product-card__picture
 	margin 40px 0
 	
-.likearts-content .main-container .product-description__title
+.likearts-content .product-page-container .product-description__title
 	font-size 2.4rem
 	font-weight 300
 	margin 20px 0
 	@media screen and (max-width: $tablet)
 		font-size 1.8rem
 	
-.likearts-content .main-container .product-description__content
+.likearts-content .product-page-container .product-description__content
 	font-size 1.5rem
 	font-weight 300
 	padding  0 0 20px 0
 	@media screen and (max-width: $phone)
 		font-size 1.3rem
 			
-.likearts-content .main-container .product-description__text-dashed
+.likearts-content .product-page-container .product-description__text-dashed
 	border-bottom 1px dashed $primary-color-text
 	
-.likearts-content .main-container .product-description__content--hide
+.likearts-content .product-page-container .product-description__content--hide
 	display none
 	
-.likearts-content .main-container .info-block__phone
+.likearts-content .product-page-container .info-block
+	@media screen and (max-width: $phone)
+		display none
+	
+.likearts-content .product-page-container .info-block__phone
 	text-align right
 	color #898989
 	font-weight 500
 	padding 10px 0
 	
-.likearts-content .main-container .info-block__discount
+.likearts-content .product-page-container .info-block__discount
 	font-size 1.8rem
 	font-weight 500
 	color $primary-color-text
 	margin-top 35px
 	
-.likearts-content .main-container .info-block__discount-link
+.likearts-content .product-page-container .info-block__discount-link
 	display block
 	margin 40px 0
 	color $primary-color-text
@@ -77,24 +87,25 @@
 	&:hover
 		color $primary-color
 	
-.likearts-content .main-container .info-block__discount-icon
+.likearts-content .product-page-container .info-block__discount-icon
 	position relative
 	top 1px
 	right 3px
 	font-size 1.3rem
 	
-.likearts-content .main-container .col-xxs-override
+.likearts-content .product-page-container .col-xxs-override
 	@media screen and (max-width: $phone)
 		width 100%
 		margin 0
+		padding 0
 		
-.likearts-content .main-container .control-card
+.likearts-content .product-page-container .control-card
 	position relative
 	width 100%
 	height auto
 	@extend .paper-shadow-z1
 	
-.likearts-content .main-container .control-card__header
+.likearts-content .product-page-container .control-card__header
 	@extend .flex
 	background-color #383838
 	color #FFF
@@ -103,10 +114,12 @@
 	min-height 140px
 	font-size 3.2rem
 	
-.likearts-content .main-container .control-card__body
+.likearts-content .product-page-container .control-card__body
 	padding 40px
+	@media screen and (max-width: $tablet)
+		padding 20px
 	
-.likearts-content .main-container .control-card__buy-btn
+.likearts-content .product-page-container .buy-btn
 	width 100%
 	height auto
 	padding 20px
@@ -117,43 +130,49 @@
 	font-size 1.4rem
 	cursor pointer
 	
-.likearts-content .main-container .select-block__title
+.likearts-content .product-page-container .buy-btn--phone
+	font-size 1.6rem
+	margin 30px 0
+	
+.likearts-content .product-page-container .select-block__title
 	text-align center
 	color $secondary-color-text
 	text-transform uppercase
 	font-size 1rem
 	letter-spacing 2px
 	
-.likearts-content .main-container .select-items__item
+.likearts-content .product-page-container .select-items__item
 	font-size 1.5rem
 	font-weight 700
 	margin 10px 20px
 	cursor pointer
+	@media screen and (max-width: $tablet)
+		margin 10px
 	
-.likearts-content .main-container .select-items__item--active
+.likearts-content .product-page-container .select-items__item--active
 	color $primary-color
 	
-.likearts-content .main-container .select-items
+.likearts-content .product-page-container .select-items
 	@extend .flex
 	margin-bottom 20px
 	
-.likearts-content .main-container .amount-control
+.likearts-content .product-page-container .amount-control
 	@extend .flex
 	padding 20px 0
 	
-.likearts-content .main-container .amount-control__btn
+.likearts-content .product-page-container .amount-control__btn
 	position relative
 	width 30px
 	height 30px
 	cursor pointer
 	
-.likearts-content .main-container .amount-control__btn--minus
+.likearts-content .product-page-container .amount-control__btn--minus
 	background-color #c6c6c6
 	
-.likearts-content .main-container .amount-control__btn--plus
+.likearts-content .product-page-container .amount-control__btn--plus
 	background-color $primary-color
 	
-.likearts-content .main-container .amount-control__counter
+.likearts-content .product-page-container .amount-control__counter
 	width auto
 	min-width 30px
 	height 30px
@@ -161,33 +180,31 @@
 	@extend .flex
 	padding 0 3px
 	
-.likearts-content .main-container .amount-control__icon
+.likearts-content .product-page-container .amount-control__icon
 	color #FFF
 	position absolute
 	top 50%
 	left 50%
 	transform translate(-50%, -50%)
 	
-.likearts-content .main-container .certificate-block
+.likearts-content .product-page-container .certificate-block
 	width 100%
 	height auto
 	border-top 1px solid #bdbdbd
 	margin 60px 0 0 0
 	padding 50px 0 0 0
-	@media screen and (max-width: $phone)
-		display none
 	
-.likearts-content .main-container .certificate-block__title
+.likearts-content .product-page-container .certificate-block__title
 	font-size 2.4rem
 	
-.likearts-content .main-container .certificate-block__description
+.likearts-content .product-page-container .certificate-block__description
 	font-size 1.5rem
 	margin 30px 0
 	
-.likearts-content .main-container .certificate-items
+.likearts-content .product-page-container .certificate-items
 	height auto
 	
-.likearts-content .main-container .certificate-items__item
+.likearts-content .product-page-container .certificate-items__item
 	display inline-block
 	width 100px
 	height auto
@@ -196,6 +213,31 @@
 	cursor pointer
 	@media screen and (max-width: 992px)
 		width 80px
+		
+		
+.likearts-content .product-page-container .phone-content
+	position relative
+	@media screen and (min-width: $phone)
+		display none
+		
+.likearts-content .product-page-container .price-label
+	width 100%
+	height auto
+	min-height 30px
+	background-color #383838
+	margin 20px 0
+	@extend .flex
+	justify-content space-around
+	color #FFF
+	padding 10px 15px
+	
+.likearts-content .product-page-container .price-label__sum
+	font-size 1.6rem
+	
+.likearts-content .product-page-container .price-label__link
+	display block
+	color $secondary-color-text
+	font-size 1.4rem
 
 	
 	
