@@ -10,16 +10,23 @@
 
 	function ProductPageController(ngDialog) {
 		var vm = this;
-		var click = new Array(3).fill(0);
+		var click = [];
 		var volumeProduct = 0;
 		
-		vm.amountProduct = 0;
+		vm.debug = 'Some text for debug';
 		
 		vm.controlInset = controlInset;
+		vm.clickToOpen = clickToOpen;
+		vm.amountProduct = 0;	
 		vm.changeAmount = changeAmount;
 		vm.selectVolume = selectVolume;
 		vm.addActiveClass = addActiveClass;
-		vm.clickToOpen = clickToOpen;
+		
+		activate();
+		
+		function activate() {
+			click = makeArrayOf(0, 3);
+		}
 		
 		
 		function controlInset(event) {				
@@ -35,8 +42,15 @@
 				target.hide(200);
 			}
 		}
+
+		function clickToOpen(templateId) {
+			ngDialog.open({ 
+				template: templateId, 
+				className: 'ngdialog-theme-default' 
+			});
+		}
 		
-		function changeAmount(count) {
+			function changeAmount(count) {
 			if(count < 0 && vm.amountProduct > 0) {
 				vm.amountProduct += count;
 			}
@@ -67,11 +81,14 @@
 			}
 		}
 		
-		function clickToOpen(templateId) {
-			ngDialog.open({ 
-				template: templateId, 
-				className: 'ngdialog-theme-default' 
-			});
+
+		function makeArrayOf(value, length) {
+			var array = [];
+			
+			while (length--) {
+				array[length] = value;
+			}
+		  return array;
 		}
 	}
 })();
