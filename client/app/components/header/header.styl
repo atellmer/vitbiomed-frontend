@@ -8,6 +8,7 @@
 	z-index 99
 	@media screen and (max-width: $phone)
 		background-color $primary-color
+		padding 0
 		padding 20px 0
 
 .likearts-content .header-container .logo-link
@@ -38,7 +39,7 @@
 .likearts-content .header-container .menu-desktop-list
 	list-style-type none
 	@extend .flex
-	justify-content flex-start
+	justify-content flex-end
 	flex-wrap wrap
 	@media screen and (max-width: 992px)
 		justify-content center
@@ -62,13 +63,17 @@
 	color $primary-color
 	
 .likearts-content .header-container .cart
-	margin 5px 0 
+	position relative
+	margin 5px 0
+	@extend .flex
+	justify-content flex-end
 	@media screen and (max-width: 992px)
 		margin 0
+		justify-content center 
 	@media screen and (max-width: $tablet)
 		position absolute
 		top -30px
-		right 10%
+		right calc(5% - 20px)
 	@media screen and (max-width: 600px)
 		top -20px
 		right 20px
@@ -76,30 +81,34 @@
 		top -45px
 		right 0
 		background-color #7cb342
-	
+
+			
 .likearts-content .header-container .cart__icon
-	width 16px
+	display inline-block
+	width 15px
 	height 15px
 	background-image url(../resources/icons/cart.png)
 	@extend .cover
+	position relative
+	top 2px
 	margin 0 5px
 	@media screen and (max-width: $phone)
 		background-image url(../resources/icons/cart-w.png)
-		width 31px
+		width 30px
 		height 30px
-		margin 17px 17px 19px 17px
+		margin 0 3px
 	
 .likearts-content .header-container .cart__sum 
+	display inline-block
 	color $primary-color
 	font-size 1.2rem
 	@media screen and (max-width: $phone)
 		display none
 	
 .likearts-content .header-container .cart__link
-	@extend .flex
-	justify-content flex-start
-	@media screen and (max-width: 992px)
-		justify-content center 
+	display inline-block
+	@media screen and (max-width: $phone)
+		padding 15px	
 		
 
 
