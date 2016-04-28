@@ -13,7 +13,7 @@
 		var click = [];
 		
 		vm.volumeProduct = 60;
-		vm.amountProduct = 1;	
+		vm.amountProduct = 1;
 		vm.controlInset = controlInset;
 		vm.clickToOpen = clickToOpen;
 		vm.changeAmount = changeAmount;
@@ -28,13 +28,13 @@
 		
 		function controlInset(event) {				
 			var trigger = angular.element(event.target);
-			var id = parseInt(trigger.attr('data-description-trigger'));	
+			var id = parseInt(trigger.attr('data-description-trigger'));
 			var target = angular.element(document.querySelector('[data-description-target="' + id + '"]'));
 			
 			click[id]++;
 			
 			if (click[id] % 2) {
-				target.show(200);	
+				target.show(200);
 			} else {
 				target.hide(200);
 			}
@@ -65,17 +65,17 @@
 			addActiveClass();
 		}
 		
-		function addActiveClass() {	
+		function addActiveClass() {
 			var selectsAll = document.querySelectorAll('.select-items__item');
 			var selects = document.querySelectorAll('.select-items__item[data-volume-product="' + vm.volumeProduct + '"]');
 				
-			for(var i = 0; i < selectsAll.length; i++) {
+			for (var i = 0; i < selectsAll.length; i++) {
 				if (angular.element(selectsAll[i]).hasClass('select-items__item--active')) {
 					angular.element(selectsAll[i]).removeClass('select-items__item--active');
 				}
 			}
 			
-			for(var i = 0; i < selects.length; i++) {
+			for (var i = 0; i < selects.length; i++) {
 				if (!angular.element(selects[i]).hasClass('select-items__item--active')) {
 					angular.element(selects[i]).addClass('select-items__item--active');
 				}
