@@ -33,7 +33,7 @@
 			
 			click[id]++;
 			
-			if(click[id] % 2) {
+			if (click[id] % 2) {
 				target.show(200);	
 			} else {
 				target.hide(200);
@@ -48,21 +48,21 @@
 		}
 		
 			function changeAmount(count) {
-			if(count < 0 && vm.amountProduct > 1) {
+			if (count < 0 && vm.amountProduct > 1) {
 				vm.amountProduct += count;
 			}
-			if(count > 0) {
+			if (count > 0) {
 				vm.amountProduct += count;
 			}
-			console.log('Количество: ', vm.amountProduct);
+			console.log('Amount: ', vm.amountProduct);
 		}
 		
 		function selectVolume(event) {
 			var target = angular.element(event.target);
 			vm.volumeProduct = parseInt(target.attr('data-volume-product'));
-			console.log('Объем: ', vm.volumeProduct);
+			console.log('Value: ', vm.volumeProduct);
 			
-			 addActiveClass();
+			addActiveClass();
 		}
 		
 		function addActiveClass() {	
@@ -70,13 +70,13 @@
 			var selects = document.querySelectorAll('.select-items__item[data-volume-product="' + vm.volumeProduct + '"]');
 				
 			for(var i = 0; i < selectsAll.length; i++) {
-				if(angular.element(selectsAll[i]).hasClass('select-items__item--active')) {
+				if (angular.element(selectsAll[i]).hasClass('select-items__item--active')) {
 					angular.element(selectsAll[i]).removeClass('select-items__item--active');
 				}
 			}
 			
 			for(var i = 0; i < selects.length; i++) {
-				if(!angular.element(selects[i]).hasClass('select-items__item--active')) {
+				if (!angular.element(selects[i]).hasClass('select-items__item--active')) {
 					angular.element(selects[i]).addClass('select-items__item--active');
 				}
 			}
