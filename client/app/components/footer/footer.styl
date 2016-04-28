@@ -5,9 +5,13 @@
 	height auto
 	min-height 500px
 	background-color #e0e0e0
+	@media screen and (max-width: $phone)
+		background-color #383838
 	
-.likearts-content .footer-container .footer
+.likearts-content .footer-container .footer__content--desktop
 	padding 60px 0
+	@media screen and (max-width: $phone)
+		display none
 	
 .likearts-content .footer-container .white-label
 	width 100%
@@ -18,6 +22,9 @@
 	padding 20px
 	text-align center
 	margin-bottom 60px
+	
+.likearts-content .footer-container .white-label--phone
+	margin-bottom 40px
 	
 .likearts-content .footer-container .white-label__link
 	font-size 3rem
@@ -32,8 +39,6 @@
 	@extend .flex
 	justify-content space-between
 	align-items baseline
-	@media screen and (max-width: $phone)
-		display none
 		
 .likearts-content .footer-container .footer-menu__title
 	font-size 1.8rem
@@ -63,6 +68,8 @@
 	text-transform uppercase
 	font-size 1.4rem
 	margin-bottom 30px
+	line-height 1.4
+	@extend .paper-shadow-z1
 	
 .likearts-content .footer-container .btn-link
 	&:hover
@@ -77,10 +84,17 @@
 .likearts-content .footer-container .col-sm-12-override
 	@media screen and (max-width: $notebook)
 		width 100%
+		margin 0
+		
+.likearts-content .footer-container .contacts
+	@media screen and (max-width: $notebook)
+		margin 20px 0 50px 0
 	
 .likearts-content .footer-container .contacts__item
 	text-align right
 	margin 10px 0
+	@media screen and (max-width: $notebook)
+		text-align center
 	
 .likearts-content .footer-container .mail-link
 	color $primary-color-text
@@ -94,15 +108,123 @@
 	text-align right
 	font-size 1.3rem
 	color #aeaeae
+	@media screen and (max-width: $notebook)
+		text-align center
+		
+.likearts-content .footer-container .footer-social-link::before
+	display inline-block
+	content ''
+	position relative
+	top 5px
+	right 0px
+	margin 0 3px 0 0
+	width 21px
+	height 20px
+	@extend .cover
+	background-image url(../resources/icons/social.png)
+	
+.likearts-content .footer-container .footer-social-link--blog::before
+	background-position 0px 0px
+	
+.likearts-content .footer-container .footer-social-link--facebook::before
+	background-position -32px 0px
+	
+.likearts-content .footer-container .footer-social-link--vk::before
+	background-position -160px 0px
+	
+.likearts-content .footer-container .footer-social-link--instagram::before
+	background-position -64px 0px
+	
+.likearts-content .footer-container .footer-social-link--google::before
+	background-position -128px 0px
+	
+.likearts-content .footer-container .footer-social-link--youtube::before
+	background-position -96px 0px
+	
+.likearts-content .footer-container .footer-social
+	@extend .flex
+	justify-content space-around
+	margin 20px 0
+	
+.likearts-content .footer-container .footer-social__item
+	display block
+	width 51px
+	height 50px
+	@extend .cover
+	background-image url(../resources/icons/social.png)
+	
+.likearts-content .footer-container .footer-social__item--blog
+	background-position 0px 0px
+	
+.likearts-content .footer-container .footer-social__item--facebook
+	background-position -80px 0px
+	
+.likearts-content .footer-container .footer-social__item--vk
+	background-position -400px 0px
+	
+.likearts-content .footer-container .footer-social__item--instagram
+	background-position -160px 0px
+	
+.likearts-content .footer-container .footer-social__item--google
+	background-position -320px 0px
+	
+.likearts-content .footer-container .footer-social__item--youtube
+	background-position -240px 0px
+	
+.likearts-content .footer-container .footer__content--phone
+	display none
+	padding 25px 0
+	color #FFF
+	@media screen and (max-width: $phone)
+		display inherit
+		
+.likearts-content .footer-container .footer-menu--phone
+	padding 15px
+		
+.likearts-content .footer-container .footer-menu--phone__title
+	text-transform uppercase
+	font-size 2.1rem
+	margin 5px 0
+	
+.likearts-content .footer-container .footer-menu--phone__links
+	display none
+	padding 15px
+	
+.likearts-content .footer-container .footer-menu--phone__link-item
+	display block
+	color #FFF
+	margin 5px 0
+	
+.likearts-content .footer-container .footer-menu--phone__item--active
+	.footer-menu--phone__title
+		color #bdbdbd
+	.footer-menu--phone__links
+		display inherit
+		
+.likearts-content .footer-container .footer-menu--phone__link-item--active
+	color #bdbdbd
 	
 	
+.likearts-content .footer-container .footer-social--phone
+	flex-wrap wrap
+	justify-content center
 	
-	
-	
-	
-	
-	
-	
-	
-	
+.likearts-content .footer-container .footer-social--phone
+	.footer-social__item
+		background-image url(../resources/icons/social-w.png)
+		margin 5px
+		width 31px
+		height 30px
+	.footer-social__item--blog
+		background-position 0px 0px
+	.footer-social__item--facebook
+		background-position -48px 0px
+	.footer-social__item--vk
+		background-position -239px 0px
+	.footer-social__item--instagram
+		background-position -96px 0px
+	.footer-social__item--google
+		background-position -191px 0px
+	.footer-social__item--youtube
+		background-position -144px 0px
 	

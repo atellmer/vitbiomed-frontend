@@ -61,7 +61,19 @@ $full-hd = 1920px
 	
 .cursor-pointer
 	cursor pointer
-
+	
+.tablet-visible
+	position relative
+	display none
+	@media screen and (max-width: $tablet)
+		display inherit
+		
+.phone-visible
+	position relative
+	display none
+	@media screen and (max-width: $phone)
+		display inherit
+		
 .likearts-content
 	font-family 'MyseoSansCyrl'
 	background $bg-color
@@ -70,6 +82,8 @@ $full-hd = 1920px
 	color $primary-color-text
 	font-weight 500
 	overflow-x hidden
+	image-rendering optimizeQuality
+	text-rendering geometricPrecision
 
 a
 	&:hover
