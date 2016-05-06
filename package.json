@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "set NODE_ENV=development&& gulp",
-    "prod": "set NODE_ENV=production&& gulp"
+    "build": "set NODE_ENV=production&& gulp"
   },
   "author": "AlexPlex",
   "license": "ISC",
