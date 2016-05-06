@@ -14,6 +14,10 @@
 		
 		vm.volumeProduct = 60;
 		vm.amountProduct = 1;
+		vm.product = {
+			volume: 60,
+			amount: 1
+		};
 		vm.controlInset = controlInset;
 		vm.clickToOpen = clickToOpen;
 		vm.changeAmount = changeAmount;
@@ -48,26 +52,31 @@
 		}
 		
 			function changeAmount(count) {
-			if (count < 0 && vm.amountProduct > 1) {
-				vm.amountProduct += count;
+			if (count < 0 && vm.product.amount > 1) {
+				//vm.amountProduct += count;
+				vm.product.amount += count;
 			}
 			if (count > 0) {
-				vm.amountProduct += count;
+				//vm.amountProduct += count;
+				vm.product.amount += count;
 			}
-			console.log('Amount: ', vm.amountProduct);
+			//console.log('Amount: ', vm.amountProduct);
+			console.log('product: ', vm.product);
 		}
 		
 		function selectVolume(event) {
 			var target = angular.element(event.target);
-			vm.volumeProduct = parseInt(target.attr('data-volume-product'));
-			console.log('Value: ', vm.volumeProduct);
+			//vm.volumeProduct = parseInt(target.attr('data-volume-product'));
+			vm.product.volume = parseInt(target.attr('data-volume-product'));
+			//console.log('Value: ', vm.volumeProduct);
+			console.log('product: ', vm.product);
 			
 			addActiveClass();
 		}
 		
 		function addActiveClass() {
 			var selectsAll = document.querySelectorAll('.select-items__item');
-			var selects = document.querySelectorAll('.select-items__item[data-volume-product="' + vm.volumeProduct + '"]');
+			var selects = document.querySelectorAll('.select-items__item[data-volume-product="' + vm.product.volume + '"]');
 				
 			for (var i = 0; i < selectsAll.length; i++) {
 				if (angular.element(selectsAll[i]).hasClass('select-items__item--active')) {

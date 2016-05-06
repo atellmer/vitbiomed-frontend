@@ -12,7 +12,7 @@
 		var vm = this;
 		var slider = angular.element(document.querySelector('#vit-slider-content'));
 		var delay = parseInt(angular.element(document.querySelector('#vit-slider')).attr('data-slider-delay')) || 8000;
-		var timer;
+		var timer = startInterval(delay);
 		
 		vm.changeContent = changeContent;
 		
@@ -21,7 +21,6 @@
 		
 		
 		function activate() {
-			timer = startInterval(delay);
 			hideAllUnlessFirst();
 		}
 		

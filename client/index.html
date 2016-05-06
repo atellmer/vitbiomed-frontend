@@ -14,6 +14,7 @@
 
 <body data-ng-app="app" class="likearts-content">
 	<div class="container-fluid">
+		
 		<div class="header-container">
 			<div class="container">
 				<header class="header">
@@ -96,9 +97,10 @@
 				</header>
 			</div>
 		</div>
+		
 		<div class="main-container">
 			<div class="container">
-				<div data-ng-controller="ProductPageController as vm" class="product-page-container">
+				<div data-ng-controller="ProductPageController as productPage" class="product-page-container">
 					<div class="row no-padding">
 						<div class="col-xs-6 col-md-6 col-md-6 col-xxs-override">
 							<div class="product-card">
@@ -117,19 +119,19 @@
 									<div class="select-block">
 										<div class="select-block__title">Выберите объем</div>
 										<div class="select-items">
-											<div data-hm-tap="vm.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
+											<div data-hm-tap="productPage.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
 
-											<div data-hm-tap="vm.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
+											<div data-hm-tap="productPage.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
 
-											<div data-hm-tap="vm.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
+											<div data-hm-tap="productPage.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
 										</div>
 										<div class="select-block__title">Количество</div>
 										<div class="amount-control">
-											<div data-hm-tap="vm.changeAmount(-1)" class="amount-control__btn amount-control__btn--minus">
+											<div data-hm-tap="productPage.changeAmount(-1)" class="amount-control__btn amount-control__btn--minus">
 												<i class="material-icons amount-control__icon">remove</i>
 											</div>
-											<div data-amount-product="{{vm.amountProduct}}" class="amount-control__counter">{{vm.amountProduct}}</div>
-											<div data-hm-tap="vm.changeAmount(1)" class="amount-control__btn amount-control__btn--plus">
+											<div data-amount-product="{{productPage.product.amount}}" class="amount-control__counter">{{productPage.product.amount}}</div>
+											<div data-hm-tap="productPage.changeAmount(1)" class="amount-control__btn amount-control__btn--plus">
 												<i class="material-icons amount-control__icon">add</i>
 											</div>
 										</div>
@@ -152,19 +154,19 @@
 											<br>
 										</div>
 										<div class="product-description__title">
-											<span data-hm-tap="vm.controlInset($event)" data-description-trigger="0" class="product-description__text-dashed cursor-pointer">Показания к применению</span>
+											<span data-hm-tap="productPage.controlInset($event)" data-description-trigger="0" class="product-description__text-dashed cursor-pointer">Показания к применению</span>
 										</div>
 										<div data-description-target="0" class="product-description__content product-description__content--hide">
 											1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
 										</div>
 										<div class="product-description__title">
-											<span data-hm-tap="vm.controlInset($event)" data-description-trigger="1" class="product-description__text-dashed cursor-pointer">Применение</span>
+											<span data-hm-tap="productPage.controlInset($event)" data-description-trigger="1" class="product-description__text-dashed cursor-pointer">Применение</span>
 										</div>
 										<div data-description-target="1" class="product-description__content product-description__content--hide">
 											2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
 										</div>
 										<div class="product-description__title">
-											<span data-hm-tap="vm.controlInset($event)" data-description-trigger="2" class="product-description__text-dashed cursor-pointer">Рекомендации</span>
+											<span data-hm-tap="productPage.controlInset($event)" data-description-trigger="2" class="product-description__text-dashed cursor-pointer">Рекомендации</span>
 										</div>
 										<div data-description-target="2" class="product-description__content product-description__content--hide">
 											3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
@@ -194,17 +196,17 @@
 										<div class="select-block">
 											<div class="select-block__title">Выберите объем</div>
 											<div class="select-items">
-												<div data-hm-tap="vm.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
-												<div data-hm-tap="vm.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
-												<div data-hm-tap="vm.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
+												<div data-hm-tap="productPage.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
+												<div data-hm-tap="productPage.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
+												<div data-hm-tap="productPage.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
 											</div>
 											<div class="select-block__title">Количество</div>
 											<div class="amount-control">
-												<div data-hm-tap="vm.changeAmount(-1)" class="amount-control__btn amount-control__btn--minus">
+												<div data-hm-tap="productPage.changeAmount(-1)" class="amount-control__btn amount-control__btn--minus">
 													<i class="material-icons amount-control__icon">remove</i>
 												</div>
-												<div data-amount-product="{{vm.amountProduct}}" class="amount-control__counter">{{vm.amountProduct}}</div>
-												<div data-hm-tap="vm.changeAmount(1)" class="amount-control__btn amount-control__btn--plus">
+												<div data-amount-product="{{productPage.product.amount}}" class="amount-control__counter">{{productPage.product.amount}}</div>
+												<div data-hm-tap="productPage.changeAmount(1)" class="amount-control__btn amount-control__btn--plus">
 													<i class="material-icons amount-control__icon">add</i>
 												</div>
 											</div>
@@ -218,19 +220,19 @@
 									<div class="certificate-block__title">Сертификаты</div>
 									<div class="certificate-block__description">Препарат запатентован с участием ведущих микробиологов РФ, имеет свидетельство о регистрации.</div>
 									<div class="certificate-items">
-										<div data-hm-tap="vm.clickToOpen('certificate-1')" class="certificate-items__item">
+										<div data-hm-tap="productPage.clickToOpen('certificate-1')" class="certificate-items__item">
 											<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
 											<script type="text/ng-template" id="certificate-1">
 												<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
 											</script>
 										</div>
-										<div data-hm-tap="vm.clickToOpen('certificate-2')" class="certificate-items__item">
+										<div data-hm-tap="productPage.clickToOpen('certificate-2')" class="certificate-items__item">
 											<img class="img-responsive" src="./resources/img/content/cert-2.jpg" alt="certificate">
 											<script type="text/ng-template" id="certificate-2">
 												<img class="img-responsive" src="./resources/img/content/cert-2.jpg" alt="certificate">
 											</script>
 										</div>
-										<div data-hm-tap="vm.clickToOpen('certificate-3')" class="certificate-items__item">
+										<div data-hm-tap="productPage.clickToOpen('certificate-3')" class="certificate-items__item">
 											<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
 											<script type="text/ng-template" id="certificate-3">
 												<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
@@ -244,7 +246,8 @@
 				</div>
 			</div>
 		</div>
-		<div data-ng-controller="SliderController as vm" class="slider-container">
+		
+		<div data-ng-controller="SliderController as slider" class="slider-container">
 			<div class="slider">
 				<div class="container">
 					<div class="row no-padding">
@@ -265,10 +268,10 @@
 									</div>
 								</div>
 								<div class="vit-slider__controls">
-									<div data-hm-tap="vm.changeContent(-1)" class="vit-slider__btn vit-slider__btn--prev">
+									<div data-hm-tap="slider.changeContent(-1)" class="vit-slider__btn vit-slider__btn--prev">
 										<i class="material-icons vit-slider__icon">arrow_back</i>
 									</div>
-									<div data-hm-tap="vm.changeContent(1)" class="vit-slider__btn vit-slider__btn--next">
+									<div data-hm-tap="slider.changeContent(1)" class="vit-slider__btn vit-slider__btn--next">
 										<i class="material-icons vit-slider__icon">arrow_forward</i>
 									</div>
 								</div>
@@ -278,7 +281,7 @@
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="footer-container">
 			<div class="container">
 				<footer class="footer">
@@ -427,6 +430,7 @@
 				</footer>
 			</div>
 		</div>
+		
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
