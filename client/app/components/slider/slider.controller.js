@@ -12,6 +12,7 @@
 		var vm = this;
 		var slider = angular.element(document.querySelector('#vit-slider-content'));
 		var delay = parseInt(angular.element(document.querySelector('#vit-slider')).attr('data-slider-delay')) || 8000;
+		var timer;
 		
 		vm.changeContent = changeContent;
 		
@@ -20,15 +21,15 @@
 		
 		
 		function activate() {
-			$interval(function() {
-				changeContent(1);
-			}, delay);
-			
+			timer = startInterval(delay);
 			hideAllUnlessFirst();
 		}
 		
 		function changeContent(count) {
 			var children = slider.children();
+			
+			$interval.cancel(timer);
+			timer = startInterval(delay);
 			
 			for (var i = 0; i < children.length; i++) {
 				if (!angular.element(children[i]).hasClass('display-hide')) {
@@ -99,6 +100,12 @@
 					angular.element(children[i]).addClass('display-hide');
 				}
 			}
+		}
+		
+		function startInterval(delay) {
+			return $interval(function() {
+						changeContent(1);
+					}, delay);
 		}
 	}
 }());
