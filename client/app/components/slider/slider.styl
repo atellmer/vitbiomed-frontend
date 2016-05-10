@@ -1,25 +1,25 @@
 @import 'nib'
 
-.likearts-content .slider
+.likearts-content .slider-container
 	width 100%
 	height auto
 	background-color #eeeeee
 	@media screen and (max-width: $phone)
 		display none
 	
-.likearts-content .slider .vit-slider
+.likearts-content .slider-container .vit-slider
 	position relative
 	
-.likearts-content .slider .vit-slider__content
+.likearts-content .slider-container .vit-slider__content
 	position relative
 	@extend .flex
 	padding 30px 100px
 	min-height 520px
 	
-.likearts-content .slider .vit-slider__item
+.likearts-content .slider-container .vit-slider__item
 	position relative
 	
-.likearts-content .slider .slide-left
+.likearts-content .slider-container .slide-left
 	animation slide-left .9s 1 ease-in-out
 	
 @keyframes slide-left {
@@ -40,7 +40,7 @@
 }
 
 
-.likearts-content .slider .slide-right
+.likearts-content .slider-container .slide-right
 	animation slide-right .9s 1 ease-in-out
 	
 @keyframes slide-right {
@@ -60,7 +60,7 @@
   }
 }
 
-.likearts-content .slider .vit-slider__btn
+.likearts-content .slider-container .vit-slider__btn
 	position absolute
 	width 60px
 	height 60px
@@ -70,24 +70,24 @@
 	top 50%
 	transform translateY(-50%)
 	
-.likearts-content .slider .vit-slider__btn--prev
+.likearts-content .slider-container .vit-slider__btn--prev
 	left 10px
 	
-.likearts-content .slider .vit-slider__btn--next
+.likearts-content .slider-container .vit-slider__btn--next
 	right 10px
 	
-.likearts-content .slider .vit-slider__icon
+.likearts-content .slider-container .vit-slider__icon
 	position absolute
 	top 50%
 	left 50%
 	transform translate(-50%, -50%)
 	
 	
-.likearts-content .slider .slider-title
+.likearts-content .slider-container .slider-title
 	text-align center
 	font-size 3.5rem
 	
-.likearts-content .slider .slider-text
+.likearts-content .slider-container .slider-text
 	font-weight 300
 	font-size 1.8rem
 	text-align center
