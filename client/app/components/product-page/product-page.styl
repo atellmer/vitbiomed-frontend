@@ -231,14 +231,6 @@
 	color #FFF
 	padding 10px 15px
 	
-.likearts-content .product-page-container .price-label__sum
-	font-size 1.6rem
-	
-.likearts-content .product-page-container .price-label__link
-	display block
-	color $secondary-color-text
-	font-size 1.4rem
-	
 .likearts-content .product-page-container .col-md-offset-3-override
 	@media screen and (min-width: 992px)
 		margin-left 23%
@@ -246,3 +238,52 @@
 .likearts-content .product-page-container .col-md-3-override
 	@media screen and (min-width: 992px)
 		width 27%
+		
+.likearts-content .product-page-container .flex-container
+	padding 0 15px
+	height auto
+	@extend .flex
+	justify-content center
+	
+.likearts-content .product-page-container .flex-item
+	height 100%
+	
+.likearts-content .product-page-container .vetical-divider
+	width 1px
+	height 140px
+	margin 0 15px 15px 15px
+	background-color $primary-color
+	
+.likearts-content .product-page-container .sum-block
+	padding 0 15px
+	@media screen and (max-width: 360px)
+		padding 0
+	
+.likearts-content .product-page-container .sum-block__price
+	font-size 2.1rem
+	font-weight 700
+	text-align center
+	position relative
+	top -15px
+	@media screen and (max-width: 360px)
+		font-size 1.5rem
+	
+.likearts-content .product-page-container .sum-block__price-description
+	font-size 1.1rem
+	font-weight 500
+	
+.likearts-content .product-page-container .sum-block__discount
+	text-align center
+	font-weight 300
+	color $primary-color
+	font-size 1.4rem
+	margin 30px 0 0 0
+	max-width 100px
+	@media screen and (max-width: 360px)
+		font-size 1rem
+	
+.likearts-content .product-page-container .select-block--phone
+	padding 0 15px
+	@media screen and (max-width: 360px)
+		padding 0
+	
