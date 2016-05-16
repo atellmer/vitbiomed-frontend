@@ -6,7 +6,7 @@
 .likearts-content .main-container .product-page-container
 	padding 50px 0
 	@media screen and (max-width: $phone)
-		padding 5px 0
+		padding 40px 0 20px 0
 	
 .likearts-content .product-page-container .product-card
 	width 100%
@@ -25,8 +25,9 @@
 	@media screen and (max-width: $tablet)
 		font-size 3.2rem
 	@media screen and (max-width: $phone)
-		font-size 2.3rem
-		padding 5px 0
+		font-size 2.1rem
+		padding 0 0 15px 0
+		text-align center
 	
 .likearts-content .product-page-container .product-card__accent
 	color #f44336
@@ -41,19 +42,29 @@
 		font-size 1.8rem
 	@media screen and (max-width: $phone)
 		font-size 1.4rem
-		padding 5px 0
+		padding 0
+		text-align center
 	
-.likearts-content .product-page-container .product-card__picture
+.likearts-content .product-page-container .product-card__picture-container
 	margin 40px 0
 	@media screen and (max-width: $phone)
-		margin 20px 0
+		margin 30px 0
+		
+.likearts-content .product-page-container .product-card__picture
+	@media screen and (max-width: $phone)
+		width 50%
+		margin 0 auto
+		
+.likearts-content .product-page-container .product-description
+	@media screen and (max-width: $phone)
+		margin 40px 0
 	
 .likearts-content .product-page-container .product-description__title
 	font-size 2.4rem
 	font-weight 300
 	margin 20px 0
 	@media screen and (max-width: $tablet)
-		font-size 1.8rem
+		font-size 2.2rem
 	@media screen and (max-width: $phone)
 		margin 10px 0
 	
@@ -64,7 +75,8 @@
 	@media screen and (max-width: $phone)
 		font-size 1.3rem
 	@media screen and (max-width: $phone)
-		padding  0
+		padding 0
+		margin  0 0 40px 0
 			
 .likearts-content .product-page-container .product-description__text-dashed
 	border-bottom 1px dashed $primary-color-text
@@ -256,6 +268,7 @@
 	height auto
 	@extend .flex
 	justify-content center
+	margin 0 0 25px 0
 	
 .likearts-content .product-page-container .flex-item
 	height 100%
