@@ -6,14 +6,12 @@
 		.module('app')
 		.controller('ProductPageController', ProductPageController);
 
-	ProductPageController.$inject = ['ngDialog'];
+	ProductPageController.$inject = ['ngDialog', 'lkFunctions'];
 
-	function ProductPageController(ngDialog) {
+	function ProductPageController(ngDialog, lkFunctions) {
 		var vm = this;
 		var click = [];
 		
-		vm.volumeProduct = 60;
-		vm.amountProduct = 1;
 		vm.product = {
 			volume: 60,
 			amount: 1
@@ -26,9 +24,8 @@
 		activate();
 		
 		function activate() {
-			click = makeArrayOf(0, 3);
+			click = lkFunctions.makeArrayOf(0, document.querySelectorAll('[data-description-trigger]').length);
 		}
-		
 		
 		function controlInset(event) {				
 			var trigger = angular.element(event.target);
@@ -53,22 +50,17 @@
 		
 			function changeAmount(count) {
 			if (count < 0 && vm.product.amount > 1) {
-				//vm.amountProduct += count;
 				vm.product.amount += count;
 			}
 			if (count > 0) {
-				//vm.amountProduct += count;
 				vm.product.amount += count;
 			}
-			//console.log('Amount: ', vm.amountProduct);
 			console.log('product: ', vm.product);
 		}
 		
 		function selectVolume(event) {
 			var target = angular.element(event.target);
-			//vm.volumeProduct = parseInt(target.attr('data-volume-product'));
 			vm.product.volume = parseInt(target.attr('data-volume-product'));
-			//console.log('Value: ', vm.volumeProduct);
 			console.log('product: ', vm.product);
 			
 			addActiveClass();
@@ -89,15 +81,6 @@
 					angular.element(selects[i]).addClass('select-items__item--active');
 				}
 			}
-		}
-		
-		function makeArrayOf(value, length) {
-			var array = [];
-			
-			while (length--) {
-				array[length] = value;
-			}
-		  return array;
 		}
 	}
 })();

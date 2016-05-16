@@ -16,7 +16,6 @@
 .likearts-content .footer-container .white-label
 	width 100%
 	height auto
-	min-height 100px
 	@extend .flex, .paper-shadow-z1
 	background-color #FFF
 	padding 20px
@@ -25,6 +24,9 @@
 	
 .likearts-content .footer-container .white-label--phone
 	margin-bottom 40px
+	@media screen and (max-width: $phone)
+		margin-bottom 0
+		padding 10px
 	
 .likearts-content .footer-container .white-label__link
 	font-size 3rem
@@ -111,41 +113,72 @@
 	@media screen and (max-width: $notebook)
 		text-align center
 		
-.likearts-content .footer-container .footer-social-link::before
-	display inline-block
-	content ''
-	position relative
-	top 5px
-	right 0px
-	margin 0 3px 0 0
-	width 21px
-	height 20px
-	@extend .cover
-	background-image url(../resources/icons/social.png)
+.likearts-content .footer-container .footer-social-link
+	&::before
+		display inline-block
+		content ''
+		position relative
+		top 5px
+		right 0px
+		margin 0 3px 0 0
+		width 21px
+		height 20px
+		@extend .cover
+		background-image url(../resources/icons/social.png)
 	
-.likearts-content .footer-container .footer-social-link--blog::before
-	background-position 0px 0px
+.likearts-content .footer-container .footer-social-link--blog
+	&::before
+		background-position 0px 0px
 	
-.likearts-content .footer-container .footer-social-link--facebook::before
-	background-position -32px 0px
+.likearts-content .footer-container .footer-social-link--facebook
+	&::before
+		background-position -32px 0px
 	
-.likearts-content .footer-container .footer-social-link--vk::before
-	background-position -160px 0px
+.likearts-content .footer-container .footer-social-link--vk
+	&::before
+		background-position -160px 0px
 	
-.likearts-content .footer-container .footer-social-link--instagram::before
-	background-position -64px 0px
+.likearts-content .footer-container .footer-social-link--instagram
+	&::before
+		background-position -64px 0px
 	
-.likearts-content .footer-container .footer-social-link--google::before
-	background-position -128px 0px
+.likearts-content .footer-container .footer-social-link--google
+	&::before
+		background-position -128px 0px
 	
-.likearts-content .footer-container .footer-social-link--youtube::before
-	background-position -96px 0px
+.likearts-content .footer-container .footer-social-link--youtube
+	&::before
+		background-position -96px 0px
 	
 .likearts-content .footer-container .footer-social
 	@extend .flex
 	justify-content space-around
 	margin 20px 0
 	
+.likearts-content .footer-container .footer-social--phone
+	flex-wrap wrap
+	justify-content center
+	margin 0
+	
+.likearts-content .footer-container .footer-social--phone
+	.footer-social__item
+		background-image url(../resources/icons/social-w.png)
+		margin 5px
+		width 31px
+		height 30px
+	.footer-social__item--blog
+		background-position 0px 0px
+	.footer-social__item--facebook
+		background-position -48px 0px
+	.footer-social__item--vk
+		background-position -239px 0px
+	.footer-social__item--instagram
+		background-position -96px 0px
+	.footer-social__item--google
+		background-position -191px 0px
+	.footer-social__item--youtube
+		background-position -144px 0px
+		
 .likearts-content .footer-container .footer-social__item
 	display block
 	width 51px
@@ -205,26 +238,5 @@
 	color #bdbdbd
 	
 	
-.likearts-content .footer-container .footer-social--phone
-	flex-wrap wrap
-	justify-content center
-	
-.likearts-content .footer-container .footer-social--phone
-	.footer-social__item
-		background-image url(../resources/icons/social-w.png)
-		margin 5px
-		width 31px
-		height 30px
-	.footer-social__item--blog
-		background-position 0px 0px
-	.footer-social__item--facebook
-		background-position -48px 0px
-	.footer-social__item--vk
-		background-position -239px 0px
-	.footer-social__item--instagram
-		background-position -96px 0px
-	.footer-social__item--google
-		background-position -191px 0px
-	.footer-social__item--youtube
-		background-position -144px 0px
+
 	
