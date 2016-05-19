@@ -84,9 +84,13 @@
 	display none
 	
 .likearts-content .product-page-container .info-block
-	margin 75px 0 0 0
+	position relative
 	@media screen and (max-width: $phone)
 		display none
+		
+.likearts-content .product-page-container .info-block__container
+	margin 75px 0 0 0
+	width 100%
 	
 .likearts-content .product-page-container .info-block__phone
 	text-align right
@@ -255,13 +259,17 @@
 	color #FFF
 	padding 10px 15px
 	
-.likearts-content .product-page-container .col-md-offset-3-override
+.likearts-content .product-page-container .col-md-offset-2-override
 	@media screen and (min-width: 992px)
-		margin-left 23%
+		margin-left 12%
 		
 .likearts-content .product-page-container .col-md-3-override
 	@media screen and (min-width: 992px)
 		width 27%
+		
+.likearts-content .product-page-container .col-md-7-override
+	@media screen and (min-width: 992px)
+		width 61%
 		
 .likearts-content .product-page-container .flex-container
 	padding 0 15px
