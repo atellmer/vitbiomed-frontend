@@ -82,7 +82,10 @@ gulp.task('component-scripts', function () {
 
 //component-styles
 gulp.task('component-styles', function () {
-	task.componentStyles = gulp.src(path.components() + '**/*.styl')
+	task.componentStyles = gulp.src([
+		path.components() + '**/common.component.styl',
+		path.components() + '**/*.styl'
+		])
 		.pipe(concat('bundle.styl'))
 		.pipe(stylus({
 			use: [nib()],

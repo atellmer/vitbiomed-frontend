@@ -14,7 +14,8 @@
 	@media screen and (max-width: $phone)
 		background-color $primary-color
 		padding 0
-		padding 20px 0
+		min-height 62px
+		//padding 20px 0
 
 .likearts-content .header-container .logo-link
 	display inline-block
@@ -22,18 +23,19 @@
 	@media screen and (max-width: 992px)
 		left 50%
 		transform translateX(-50%)
+	@media screen and (max-width: $phone)
+		top 20px
+		
 	
 .likearts-content .header-container .logo
 	width 207px
-	height 27px
-	background-image url(../resources/img/logo.svg)
+	height 36px
+	background-image url(../resources/img/logo--g.svg)
 	@extend .cover
 	@media screen and (max-width: $phone)
-		background-image url(../resources/img/logo-w.svg)
-		position relative
-		top 5px
+		background-image url(../resources/img/logo--w.svg)
 		width 138px
-		height 18px
+		height 24px
 
 .likearts-content .header-container .menu-desktop
 	@media screen and (max-width: 992px)
@@ -100,7 +102,7 @@
 		top -20px
 		right 20px
 	@media screen and (max-width: $phone)
-		top -45px
+		top -35px
 		right 0
 		background-color #7cb342
 
