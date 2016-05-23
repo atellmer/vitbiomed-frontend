@@ -180,6 +180,12 @@
 .likearts-content .products-page-container .tab-panel__btn--active
 	background-color $primary-color
 	color #fff
+	border-left 1px solid $primary-color
+	border-right 1px solid $primary-color
+	&:first-child
+		border none
+	&:last-child
+		border none
 	@media screen and (max-width: $phone)
 		background-color inherit
 		color $primary-color
