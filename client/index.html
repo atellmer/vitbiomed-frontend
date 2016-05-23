@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=a818987575b90cef5ca016b85f6636f6">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=6e3e691a8f718424a5f8f1a44cb897e1">
 	<!--?rev=@@hash-->
 </head>
 
@@ -102,7 +102,7 @@
 			</div>
 		</div>
 
-		<div class="products-page-container">
+		<div class="products-page-container" data-ng-controller="productsPageController as productsPage">
 			<div class="slider-container slider-container--white" data-ng-controller="SliderMainController as sliderMain">
 				<div class="container">
 					<div class="slider">
@@ -181,13 +181,26 @@
 				</div>
 				<div class="row no-padding">
 					<div class="col-md-12">
-						<div class="tab-panel">
+						
+						<div data-tab-panel="0" class="tab-panel">
 							<div class="tab-panel__controls">
-								<div class="tab-panel__btn tab-panel__btn--active">Жидкие культуральные</div>
-								<div class="tab-panel__btn">Жидкие кисломолочные</div>
-								<div class="tab-panel__btn">Таблетки и капсулы</div>
+								<div data-tab-trigger-id="0" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn tab-panel__btn--active">Жидкие культуральные</div>
+								<div data-tab-trigger-id="1" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn">Жидкие кисломолочные</div>
+								<div data-tab-trigger-id="2" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn">Таблетки и капсулы</div>
+							</div>
+							<div class="tab-panel__content">
+								<div data-tab-target-id="0" class="tab-panel__item tab-panel__item--active">
+									<h2>Tab content #1</h2>
+								</div>
+								<div data-tab-target-id="1" class="tab-panel__item">
+									<h2>Tab content #2</h2>
+								</div>
+								<div data-tab-target-id="2" class="tab-panel__item">
+									<h2>Tab content #3</h2>
+								</div>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -385,7 +398,7 @@
 	<script src="./bower_components/hammerjs/hammer.min.js"></script>
 	<script src="./bower_components/AngularHammer/angular.hammer.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=0a32bc922277d7c04e3fda4f25bedb64"></script>
+	<script src="./dist/bundle.js?rev=f8dea93baea0e10a1135b81b20f5917c"></script>
 
 </body>
 

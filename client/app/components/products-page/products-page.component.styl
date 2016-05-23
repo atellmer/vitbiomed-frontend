@@ -118,6 +118,7 @@
 .likearts-content .products-page-container .tab-panel
 	margin 20px 0 60px 0
 	@extend .flex
+	flex-flow column wrap
 	@media screen and (max-width: $phone)
 		margin 10px 0 40px 0
 		
@@ -175,3 +176,13 @@
 	@media screen and (max-width: $phone)
 		background-color inherit
 		color $primary-color
+		
+.likearts-content .products-page-container .tab-panel__content
+	width 100%
+	padding 60px 0
+	
+.likearts-content .products-page-container .tab-panel__item
+	display none
+
+.likearts-content .products-page-container .tab-panel__item--active
+	display block
