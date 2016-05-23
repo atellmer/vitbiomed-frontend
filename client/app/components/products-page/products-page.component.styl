@@ -1,0 +1,72 @@
+@import 'nib'
+
+
+.likearts-content .products-page-container
+	padding 50px 0
+	@media screen and (max-width: $phone)
+		padding 0
+		
+.likearts-content .products-page-container .banner
+	width 100%
+	height auto
+	min-height 400px
+	background-color red
+	@extend .cover
+	@media screen and (max-width: 1200px)
+		min-height 0
+	
+.likearts-content .products-page-container .banner__content
+	width 50%
+	line-height 1.2
+	padding 0 40px
+	@media screen and (max-width: 1200px)
+		width 60%
+	@media screen and (max-width: $notebook)
+		width 100%
+		text-align center
+		padding 0
+		background-color #fff
+	
+.likearts-content .products-page-container .banner__title
+	font-size 7rem
+	color #bababa
+	font-weight 900
+	@media screen and (max-width: 1300px)
+		font-size 6rem
+	@media screen and (max-width: 1200px)
+		font-size 5rem
+	@media screen and (max-width: $tablet)
+		font-size 4rem
+	
+	
+.likearts-content .products-page-container .banner__subtitle
+	font-size 2.2rem
+	color #bababa
+	margin 20px 0 0 0
+	@media screen and (max-width: 1200px)
+		font-size 2rem
+	@media screen and (max-width: $tablet)
+		font-size 1.8rem
+	
+.likearts-content .products-page-container .banner__description
+	font-size 2.8rem
+	color $secondary-color-text
+	font-weight 300
+	margin 30px 0
+	@media screen and (max-width: 1200px)
+		font-size 2.5rem
+	@media screen and (max-width: $tablet)
+		font-size 2rem
+	
+.likearts-content .products-page-container .banner__link
+	font-size 1.8rem
+	text-transform uppercase
+	color $secondary-color-text
+	font-weight 700
+	@extend .transition
+	&:hover
+		color $primary-color
+	&::after
+		content '›'
+		margin 0 0 0 5px
+		

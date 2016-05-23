@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=67418450a5bd560bfe6e91e2b000dea6">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=60c2e66c8b80848c4c14e37d86c87e26">
 	<!--?rev=@@hash-->
 </head>
 
@@ -101,33 +101,57 @@
 				</header>
 			</div>
 		</div>
-		
-		<div data-ng-controller="SliderMainController as slider" class="slider-container">
-			<div class="container">
-				<div class="slider">
-					<div class="row no-padding">
-						<div class="col-md-12">
-							<div class="vit-slider">
-								<div id="vit-slider-content--main" data-slider-delay="8000" class="vit-slider__content">
-									<div class="vit-slider__item">
-										<h2 class="slider-title">Main Максимальный эффект #1</h2>
-										<p class="slider-text">Для достижения наилучших результатов мы рекомендуем принимать пробиотики комплексным курсом.</p>
+
+		<div class="products-page-container">
+			<div class="slider-container slider-container--white" data-ng-controller="SliderMainController as slider">
+				<div class="container">
+					<div class="slider">
+						<div class="row no-padding">
+							<div class="col-md-12">
+								<div class="vit-slider">
+									<div id="vit-slider-content--main" data-slider-delay="8000" class="vit-slider__content vit-slider__content--small">
+										
+										<div class="vit-slider__item">
+											<div class="banner" style="background-image:url(./resources/img/products-page/slider/products-banner.png)">
+												<div class="banner__content">
+													<div class="banner__title">Биобаланс А</div>
+													<div class="banner__subtitle">/Lactobacillus acidophilus/</div>
+													<div class="banner__description">Способствует ускорению липидного обмена и восполнению энергии.</div>
+													<a href="#" class="banner__link">Подробнее</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="vit-slider__item">
+											<div class="banner" style="background-image:url(./resources/img/products-page/slider/products-banner.png)">
+												<div class="banner__content">
+													<div class="banner__title">Биобаланс Б</div>
+													<div class="banner__subtitle">/Lactobacillus acidophilus/</div>
+													<div class="banner__description">Способствует ускорению липидного обмена и восполнению энергии.</div>
+													<a href="#" class="banner__link">Подробнее</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="vit-slider__item">
+											<div class="banner" style="background-image:url(./resources/img/products-page/slider/products-banner.png)">
+												<div class="banner__content">
+													<div class="banner__title">Биобаланс В</div>
+													<div class="banner__subtitle">/Lactobacillus acidophilus/</div>
+													<div class="banner__description">Способствует ускорению липидного обмена и восполнению энергии.</div>
+													<a href="#" class="banner__link">Подробнее</a>
+												</div>
+											</div>
+										</div>
+										
 									</div>
-									<div class="vit-slider__item">
-										<h2 class="slider-title">Main Максимальный эффект #2</h2>
-										<p class="slider-text">Для достижения наилучших результатов мы рекомендуем принимать пробиотики комплексным курсом.</p>
-									</div>
-									<div class="vit-slider__item">
-										<h2 class="slider-title">Main Максимальный эффект #3</h2>
-										<p class="slider-text">Для достижения наилучших результатов мы рекомендуем принимать пробиотики комплексным курсом.</p>
-									</div>
-								</div>
-								<div class="vit-slider__controls">
-									<div data-hm-tap="slider.changeContent(-1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--prev">
-										<i class="material-icons vit-slider__icon">arrow_back</i>
-									</div>
-									<div data-hm-tap="slider.changeContent(1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--next">
-										<i class="material-icons vit-slider__icon">arrow_forward</i>
+									<div class="vit-slider__controls">
+										<div data-hm-tap="slider.changeContent(-1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--prev">
+											<i class="material-icons vit-slider__icon">arrow_back</i>
+										</div>
+										<div data-hm-tap="slider.changeContent(1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--next">
+											<i class="material-icons vit-slider__icon">arrow_forward</i>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -136,16 +160,8 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="main-container">
-			<div class="container">
-				<div class="products-page-container">
-		
-				</div>
-			</div>
-		</div>
 
-		<div data-ng-controller="SliderFooterController as slider" class="slider-container">
+		<div class="slider-container" data-ng-controller="SliderFooterController as slider">
 			<div class="container">
 				<div class="slider">
 					<div class="row no-padding">
