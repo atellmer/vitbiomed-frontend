@@ -19,10 +19,10 @@
 		function switchTab(event) { 
 			var parentId = angular.element(event.target.parentNode.parentNode).attr('data-tab-panel');
 			var element = angular.element(event.target);
-			var triggerId = element.attr('data-tab-trigger-id');
-			var target = angular.element(document.querySelector('[data-tab-panel="' + parentId + '"] [data-tab-target-id="' + triggerId + '"]'));
-			var tabs = document.querySelectorAll('[data-tab-panel="' + parentId + '"] [data-tab-target-id]');
-			var buttons = document.querySelectorAll('[data-tab-panel="' + parentId + '"] [data-tab-trigger-id]');
+			var triggerId = element.attr('data-tab-trigger');
+			var target = angular.element(document.querySelector('[data-tab-panel="' + parentId + '"] [data-tab-target="' + triggerId + '"]'));
+			var tabs = document.querySelectorAll('[data-tab-panel="' + parentId + '"] [data-tab-target]');
+			var buttons = document.querySelectorAll('[data-tab-panel="' + parentId + '"] [data-tab-trigger]');
 			
 			for (var i = 0; i < buttons.length; i++) {
 				if (angular.element(buttons[i]).hasClass('tab-panel__btn--active')) {
