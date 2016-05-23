@@ -4,11 +4,11 @@
 
 	angular
 		.module('app')
-		.controller('MenuMobileController', MenuMobileController);
+		.controller('MobileMenuController', MobileMenuController);
 
-	MenuMobileController.$inject = [];
+	MobileMenuController.$inject = [];
 
-	function MenuMobileController() {
+	function MobileMenuController() {
 		var vm = this;
 		var click = 0;
 		var menu = angular.element(document.querySelector('#menu-mobile-body'));

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=60c2e66c8b80848c4c14e37d86c87e26">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=1610a4b595cbeecc1e2a1342c28c60f4">
 	<!--?rev=@@hash-->
 </head>
 
@@ -46,8 +46,8 @@
 								</ul>
 							</div>
 							<div class="menu-mobile-container">
-								<div data-ng-controller="MenuMobileController as vm" class="menu-mobile">
-									<div id="menu-mobile-btn" data-hm-tap="vm.controlMenu($event)" class="menu-mobile__btn">
+								<div data-ng-controller="MobileMenuController as mobileMenu" class="menu-mobile">
+									<div id="menu-mobile-btn" data-hm-tap="mobileMenu.controlMenu($event)" class="menu-mobile__btn">
 										<i class="material-icons menu-mobile__icon">view_headline</i>
 									</div>
 									<div id="menu-mobile-body" class="menu-mobile__body display-hide">
@@ -103,7 +103,7 @@
 		</div>
 
 		<div class="products-page-container">
-			<div class="slider-container slider-container--white" data-ng-controller="SliderMainController as slider">
+			<div class="slider-container slider-container--white" data-ng-controller="SliderMainController as sliderMain">
 				<div class="container">
 					<div class="slider">
 						<div class="row no-padding">
@@ -146,10 +146,10 @@
 										
 									</div>
 									<div class="vit-slider__controls">
-										<div data-hm-tap="slider.changeContent(-1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--prev">
+										<div data-hm-tap="sliderMain.changeContent(-1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--prev">
 											<i class="material-icons vit-slider__icon">arrow_back</i>
 										</div>
-										<div data-hm-tap="slider.changeContent(1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--next">
+										<div data-hm-tap="sliderMain.changeContent(1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--next">
 											<i class="material-icons vit-slider__icon">arrow_forward</i>
 										</div>
 									</div>
@@ -161,7 +161,7 @@
 			</div>
 		</div>
 
-		<div class="slider-container" data-ng-controller="SliderFooterController as slider">
+		<div class="slider-container" data-ng-controller="SliderFooterController as sliderFooter">
 			<div class="container">
 				<div class="slider">
 					<div class="row no-padding">
@@ -182,10 +182,10 @@
 									</div>
 								</div>
 								<div class="vit-slider__controls">
-									<div data-hm-tap="slider.changeContent(-1, '#vit-slider-content--footer')" class="vit-slider__btn vit-slider__btn--prev">
+									<div data-hm-tap="sliderFooter.changeContent(-1, '#vit-slider-content--footer')" class="vit-slider__btn vit-slider__btn--prev">
 										<i class="material-icons vit-slider__icon">arrow_back</i>
 									</div>
-									<div data-hm-tap="slider.changeContent(1, '#vit-slider-content--footer')" class="vit-slider__btn vit-slider__btn--next">
+									<div data-hm-tap="sliderFooter.changeContent(1, '#vit-slider-content--footer')" class="vit-slider__btn vit-slider__btn--next">
 										<i class="material-icons vit-slider__icon">arrow_forward</i>
 									</div>
 								</div>
