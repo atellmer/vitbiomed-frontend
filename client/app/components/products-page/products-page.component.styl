@@ -71,6 +71,7 @@
 		margin 0 0 0 5px
 		
 .likearts-content .products-page-container .control-panel
+	margin 20px 0
 	@extend .flex 
 	justify-content space-between
 	@media screen and (max-width: $phone)
@@ -86,8 +87,8 @@
 	width 50px
 	height 50px
 	background-color #fff
-	@extend .cover
-	background-image url('../../../resources/icons/calc.svg')
+	@extend .cover, .paper-shadow-z1
+	background-image url('../resources/icons/calc.svg')
 	cursor pointer
 	
 .likearts-content .products-page-container .calc__sign
@@ -110,6 +111,67 @@
 	@media screen and (max-width: $tablet)
 		padding 15px 40px
 	@media screen and (max-width: $phone)
-		margin 30px 0
+		margin 30px 0 10px 0
 	@media screen and (max-width: 400px)
 		padding 15px 30px
+		
+.likearts-content .products-page-container .tab-panel
+	margin 20px 0 60px 0
+	@extend .flex
+	@media screen and (max-width: $phone)
+		margin 10px 0 40px 0
+		
+.likearts-content .products-page-container .tab-panel__controls
+	@extend .flex
+	@extend .paper-shadow-z1
+	@media screen and (max-width: $phone)
+		flex-flow column nowrap
+		box-shadow none!important
+	
+.likearts-content .products-page-container .tab-panel__btn
+	padding 20px 60px
+	background-color #fff
+	text-transform uppercase
+	font-size 1.4rem
+	font-weight 700
+	user-select none
+	cursor pointer
+	letter-spacing 1px
+	border-left 1px solid #eeeeee
+	border-right 1px solid #eeeeee
+	&:first-child
+		border none
+	&:last-child
+		border none
+	@extend .transition 
+	&:hover
+		background-color $primary-color
+		color #fff
+		border-left 1px solid $primary-color
+		border-right 1px solid $primary-color
+		&:first-child
+			border none
+		&:last-child
+			border none
+	@media screen and (max-width: 1200px)
+		padding 20px 40px
+	@media screen and (max-width: 992px)
+		font-size 1.2rem
+		padding 20px
+	@media screen and (max-width: $phone)
+		background-color inherit
+		border none
+		padding 10px 0
+		width 100%
+		text-align center
+		&:hover
+			background-color inherit
+			border none
+			color $primary-color
+		
+.likearts-content .products-page-container .tab-panel__btn--active
+	background-color $primary-color
+	color #fff
+	@media screen and (max-width: $phone)
+		background-color inherit
+		color $primary-color
