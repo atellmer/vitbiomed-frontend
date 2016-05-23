@@ -4,11 +4,11 @@
 
 	angular
 		.module('app')
-		.controller('ProductPageController', ProductPageController);
+		.controller('ProductItemPageController', ProductItemPageController);
 
-	ProductPageController.$inject = ['ngDialog', 'lkFunctions'];
+	ProductItemPageController.$inject = ['ngDialog', 'lkFunctions'];
 
-	function ProductPageController(ngDialog, lkFunctions) {
+	function ProductItemPageController(ngDialog, lkFunctions) {
 		var vm = this;
 		var click = [];
 		

@@ -1,34 +1,35 @@
-;
-(function () {
-	'use strict';
+(function() {
+'use strict';
 
 	angular
 		.module('app')
-		.controller('SliderController', SliderController);
+		.factory('lkSlider', lkSlider);
 
-	SliderController.$inject = ['$interval'];
+	lkSlider.$inject = ['$interval'];
+	function lkSlider($interval) {
+		var service = {
+			init: init,
+			changeContent: changeContent
+		};
+		
+		var timer = {
+			name: [],
+			nodeName: []
+		};
+		
+		return service;
 
-	function SliderController($interval) {
-		var vm = this;
-		var slider = angular.element(document.querySelector('#vit-slider-content'));
-		var delay = parseInt(angular.element(document.querySelector('#vit-slider')).attr('data-slider-delay')) || 8000;
-		var timer = startInterval(delay);
-		
-		vm.changeContent = changeContent;
-		
-		
-		activate();
-		
-		
-		function activate() {
-			hideAllUnlessFirst();
-		}
-		
-		function changeContent(count) {
-			var children = slider.children();
+		////////////////
+		function changeContent(count, nodeName) {
+			var children =  angular.element(document.querySelector(nodeName)).children();
+			var delay = delayInit(nodeName);
 			
-			$interval.cancel(timer);
-			timer = startInterval(delay);
+			for(var i = 0; i < timer.name.length; i++) {
+				if(timer.nodeName[i] === nodeName) {
+					$interval.cancel(timer.name[i]);
+					timer.name[i] = startInterval(nodeName);
+				}		
+			}
 			
 			for (var i = 0; i < children.length; i++) {
 				if (!angular.element(children[i]).hasClass('display-hide')) {
@@ -91,8 +92,8 @@
 			}
 		}
 		
-		function hideAllUnlessFirst() {
-			var children = slider.children();
+		function hideAllUnlessFirst(nodeName) {
+			var children = angular.element(document.querySelector(nodeName)).children();
 			
 			for (var i = 1; i < children.length; i++) {
 				if (!angular.element(children[i]).hasClass('display-hide')) {
@@ -101,10 +102,27 @@
 			}
 		}
 		
-		function startInterval(delay) {
+		function delayInit(nodeName) {
+			return parseInt(angular.element(document.querySelector(nodeName)).attr('data-slider-delay')) || 8000;
+		}
+		
+		function startInterval(nodeName) {
+			var delay = delayInit(nodeName);
+			
 			return $interval(function() {
-						changeContent(1);
+						changeContent(1, nodeName);
 					}, delay);
+		}
+		
+		function overflowXHidden() {
+			angular.element('body').css('overflow-x', 'hidden');
+		}
+		
+		function init(nodeName) {
+			hideAllUnlessFirst(nodeName);
+			overflowXHidden();
+			timer.name.push(startInterval(nodeName));
+			timer.nodeName.push(nodeName);	
 		}
 	}
 })();
