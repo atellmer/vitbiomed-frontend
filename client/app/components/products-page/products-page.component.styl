@@ -5,7 +5,11 @@
 	padding 50px 0
 	@media screen and (max-width: $phone)
 		padding 0
-		background-color #eeeeee
+		background-color #eee
+		
+.likearts-content .products-page-container .col-md-12-override
+	@media screen and (max-width: $phone)
+		padding 0!important
 		
 .likearts-content .products-page-container .banner
 	width 100%
@@ -116,18 +120,21 @@
 		padding 15px 30px
 		
 .likearts-content .products-page-container .tab-panel
-	margin 20px 0 60px 0
+	margin 100px 0 0 0
 	@extend .flex
 	flex-flow column wrap
 	@media screen and (max-width: $phone)
-		margin 10px 0 40px 0
+		margin 10px 0 0 0
 		
 .likearts-content .products-page-container .tab-panel__controls
+	position relative
+	z-index 1
 	@extend .flex
 	@extend .paper-shadow-z1
 	@media screen and (max-width: $phone)
 		flex-flow column nowrap
 		box-shadow none!important
+		padding 0 0 30px 0
 	
 .likearts-content .products-page-container .tab-panel__btn
 	padding 20px 60px
@@ -179,10 +186,55 @@
 		
 .likearts-content .products-page-container .tab-panel__content
 	width 100%
-	padding 60px 0
+	padding 60px 0 0 0
+	background-color #fff
+	@media screen and (max-width: $phone)
+		padding 40px 0
 	
 .likearts-content .products-page-container .tab-panel__item
 	display none
 
 .likearts-content .products-page-container .tab-panel__item--active
 	display block
+	
+.likearts-content .products-page-container .product-container
+	@extend .flex 
+	flex-flow row wrap
+	justify-content flex-start
+	@media screen and (max-width: $phone)
+		justify-content center
+	
+.likearts-content .products-page-container .product-container__item
+	width calc(33.33% - 40px)
+	height auto
+	min-height 650px
+	border-radius 2px
+	margin 20px
+	background-color #fff
+	@extend .paper-shadow-z1, .transition
+	@media screen and (max-width: $full-hd)
+		width calc(25% - 30px)
+		&:nth-child(n)
+			margin 20px
+		&:nth-child(4n)
+			margin 20px 0 20px 20px
+		&:nth-child(4n - 3)
+			margin 20px 20px 20px 0
+	@media screen and (max-width: $desktop)
+		width calc(33.33% - 27px)
+		&:nth-child(3n - 2)
+			margin 20px 20px 20px 0
+		&:nth-child(3n - 1)
+			margin 20px 20px
+		&:nth-child(3n)
+			margin 20px 0 20px 20px
+	@media screen and (max-width: $notebook)
+		width calc(50% - 20px)
+		&:nth-child(2n - 1)
+			margin 20px 20px 20px 0
+		&:nth-child(2n)
+			margin 20px 0 20px 20px
+	@media screen and (max-width: $phone)
+		width calc(100% - 30px)
+		&:nth-child(n)
+			margin 5px 10px
