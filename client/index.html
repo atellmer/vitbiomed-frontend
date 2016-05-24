@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=d1a476561efb66159b85f8683d958975">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=a454f65161b4c5e466820486d961f7b8">
 	<!--?rev=@@hash-->
 </head>
 
@@ -203,12 +203,13 @@
 												</header>
 												<div
 													 data-card-content-type="main" 
+													 md-ink-ripple="#fff"
 													 class="product-card__content js-product-card__content--active">
 													<div class="product-card__wrapper">
 														<div 
 															data-card-button-type="info-open" 
 															data-hm-tap="productCard.showDetail($event)" 
-															class="product-card__checker product-card__checker--info">
+															class="product-card__checker product-card__checker--open">
 														</div>
 														
 														<div class="product-card__title">Биобаланс А</div>
@@ -223,8 +224,9 @@
 													<div class="product-card__wrapper">
 														<div 
 															data-card-button-type="info-close" 
+															md-ink-ripple="#fff"
 															data-hm-tap="productCard.showDetail($event)" 
-															class="product-card__checker product-card__checker--minus">
+															class="product-card__checker product-card__checker--close">
 														</div>
 													</div>
 											
