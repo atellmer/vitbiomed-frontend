@@ -88,6 +88,7 @@
 	
 		
 .likearts-content .products-page-container .calc__btn
+	position relative
 	width 50px
 	height 50px
 	background-color #fff
@@ -100,6 +101,7 @@
 	font-size 2rem
 	
 .likearts-content .products-page-container .order__btn
+	position relative
 	padding 15px 60px
 	background-color #179aea
 	font-size 1.4rem
@@ -111,7 +113,7 @@
 	letter-spacing 1px
 	@extend .paper-shadow-z1, .transition  
 	&:hover
-		background-color #3F51B5
+		background-color #1E88E5
 	@media screen and (max-width: $tablet)
 		padding 15px 40px
 	@media screen and (max-width: $phone)
@@ -119,107 +121,17 @@
 	@media screen and (max-width: 400px)
 		padding 15px 30px
 		
-.likearts-content .products-page-container .tab-panel
-	margin 100px 0 0 0
-	@extend .flex
-	flex-flow column wrap
-	@media screen and (max-width: $phone)
-		margin 10px 0 0 0
-		
-.likearts-content .products-page-container .tab-panel__controls
-	position relative
-	z-index 1
-	@extend .flex
-	@extend .paper-shadow-z1
-	@media screen and (max-width: $phone)
-		flex-flow column nowrap
-		box-shadow none!important
-		padding 0 0 30px 0
-	
-.likearts-content .products-page-container .tab-panel__btn
-	padding 20px 60px
-	background-color #fff
-	text-transform uppercase
-	font-size 1.4rem
-	font-weight 700
-	user-select none
-	cursor pointer
-	letter-spacing 1px
-	border-left 1px solid #eeeeee
-	border-right 1px solid #eeeeee
-	&:first-child
-		border none
-	&:last-child
-		border none
-	@extend .transition 
-	&:hover
-		background-color $primary-color
-		color #fff
-		border-left 1px solid $primary-color
-		border-right 1px solid $primary-color
-		&:first-child
-			border none
-		&:last-child
-			border none
-	@media screen and (max-width: 1200px)
-		padding 20px 40px
-	@media screen and (max-width: 992px)
-		font-size 1.2rem
-		padding 20px
-	@media screen and (max-width: $phone)
-		background-color inherit
-		border none
-		padding 10px 0
-		width 100%
-		text-align center
-		&:hover
-			background-color inherit
-			border none
-			color $primary-color
-		
-.likearts-content .products-page-container .tab-panel__btn--active
-	background-color $primary-color
-	color #fff
-	border-left 1px solid $primary-color
-	border-right 1px solid $primary-color
-	&:first-child
-		border none
-	&:last-child
-		border none
-	@media screen and (max-width: $phone)
-		background-color inherit
-		color $primary-color
-		
-.likearts-content .products-page-container .tab-panel__content
-	width 100%
-	padding 60px 0 0 0
-	background-color #fff
-	@media screen and (max-width: $phone)
-		padding 40px 0
-	
-.likearts-content .products-page-container .tab-panel__item
-	display none
-
-.likearts-content .products-page-container .tab-panel__item--active
-	display block
-	
 .likearts-content .products-page-container .product-container
 	@extend .flex 
 	flex-flow row wrap
 	justify-content flex-start
 	@media screen and (max-width: $phone)
 		justify-content center
-	
+		
 .likearts-content .products-page-container .product-container__item
 	width calc(33.33% - 40px)
-	height auto
-	min-height 650px
-	border-radius 2px
 	margin 20px
-	background-color #fff
-	@extend .paper-shadow-z1, .transition
-	&:hover
-		@extend .paper-shadow-z2
+	min-height 650px
 	@media screen and (max-width: $full-hd)
 		width calc(25% - 30px)
 		&:nth-child(n)
@@ -228,7 +140,7 @@
 			margin 20px 0 20px 20px
 		&:nth-child(4n - 3)
 			margin 20px 20px 20px 0
-	@media screen and (max-width: $desktop)
+	@media screen and (max-width: 1650px)
 		width calc(33.33% - 27px)
 		&:nth-child(3n - 2)
 			margin 20px 20px 20px 0

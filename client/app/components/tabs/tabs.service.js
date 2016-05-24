@@ -25,19 +25,19 @@
 			var buttons = document.querySelectorAll('[data-tab-panel="' + parentId + '"] [data-tab-trigger]');
 			
 			for (var i = 0; i < buttons.length; i++) {
-				if (angular.element(buttons[i]).hasClass('tab-panel__btn--active')) {
-					angular.element(buttons[i]).removeClass('tab-panel__btn--active');
+				if (angular.element(buttons[i]).hasClass('js-tab-panel__btn--active')) {
+					angular.element(buttons[i]).removeClass('js-tab-panel__btn--active');
 				}
 			}
 			
 			for (var i = 0; i < tabs.length; i++) {
-				if (angular.element(tabs[i]).hasClass('tab-panel__item--active')) {
-					angular.element(tabs[i]).removeClass('tab-panel__item--active');
+				if (angular.element(tabs[i]).hasClass('js-tab-panel__item--active')) {
+					angular.element(tabs[i]).removeClass('js-tab-panel__item--active');
 				}
 			}
 			
-			element.addClass('tab-panel__btn--active');
-			target.addClass('tab-panel__item--active');		
+			element.addClass('js-tab-panel__btn--active');
+			target.addClass('js-tab-panel__item--active');		
 		}
 	}
 })();

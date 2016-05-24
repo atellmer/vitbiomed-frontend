@@ -1,0 +1,73 @@
+@import 'nib'
+
+.likearts-content .product-card
+	width auto
+	height auto
+	border-radius 2px
+	background-color #fff
+	@extend .flex
+	flex-flow column wrap
+	justify-content space-between
+	@extend .paper-shadow-z1, .transition
+	&:hover
+		@extend .paper-shadow-z2
+		
+		
+.likearts-content .product-card__header
+	width 100%
+	@extend .flex
+	justify-content flex-start
+	
+.likearts-content .product-card__price
+	width auto
+	min-width 100px
+	height auto
+	min-height 50px
+	padding 10px
+	background-color #383838
+	color #fff
+	@extend .flex
+	font-size 1.8rem
+	text-align center
+	@media screen and (max-width: $tablet)
+		font-size 1.5rem
+		min-width 80px
+	
+.likearts-content .product-card__discount
+	width 100%
+	@extend .flex
+	padding 10px
+	text-align center
+	
+.likearts-content .product-card__discount-link
+	color $primary-color-text
+	font-size 1.5rem
+	color $secondary-color-text
+	@extend .transition
+	&::after
+		content '›'
+		margin 0 0 0 5px
+	&:hover
+		color $primary-color
+	@media screen and (max-width: $tablet)
+		font-size 1.2rem
+		&::after
+			content '›'
+			
+			
+.likearts-content .product-card__footer
+	width 100%
+
+.likearts-content .product-card__action-btn
+	width 100%
+	padding 20px
+	background-color $primary-color
+	cursor pointer
+	color #fff
+	text-transform uppercase
+	text-align center
+	font-size 1.4rem
+	letter-spacing 1px
+	overflow hidden
+	user-select none
+	position relative

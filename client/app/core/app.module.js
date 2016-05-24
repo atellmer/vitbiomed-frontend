@@ -2,6 +2,10 @@
 (function () {
 	'use strict';
 
-	angular.module('app', ['hmTouchEvents', 'ngDialog']);
+	angular.module('app', [
+		'hmTouchEvents',
+		'ngMaterial',
+		'ngDialog'
+	]);
 
 })();
