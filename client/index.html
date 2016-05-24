@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=a454f65161b4c5e466820486d961f7b8">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=76d701e1e57047221187d6b720375f2c">
 	<!--?rev=@@hash-->
 </head>
 
@@ -47,7 +47,7 @@
 								</ul>
 							</div>
 							<div class="menu-mobile-container">
-								<div data-ng-controller="MobileMenuController as mobileMenu" class="menu-mobile">
+								<div class="menu-mobile" data-ng-controller="MobileMenuController as mobileMenu">
 									<div id="menu-mobile-btn" data-hm-tap="mobileMenu.controlMenu($event)" class="menu-mobile__btn">
 										<i class="material-icons menu-mobile__icon">view_headline</i>
 									</div>
@@ -167,14 +167,17 @@
 						<div class="control-panel">
 							<div class="control-panel__item">
 								<div class="calc">
-									<div md-ink-ripple="#fff" class="calc__btn"></div>
+									<div md-ink-ripple="#fff" class="calc__btn">
+									</div>
 									<div class="calc__sign">Рассчитайте курс</div>
 								</div>
 							</div>
 
 							<div class="control-panel__item">
 								<div class="order">
-									<div md-ink-ripple="#fff" class="order__btn">Записаться на прием</div>
+									<div md-ink-ripple="#fff" class="order__btn">
+										Записаться на прием
+									</div>
 								</div>
 							</div>
 						</div>
@@ -182,17 +185,23 @@
 				</div>
 				<div class="row no-padding">
 					<div class="col-md-12 col-md-12-override">
-						
+
 						<div data-tab-panel="0" class="tab-panel">
 							<div class="tab-panel__controls">
-								<div data-tab-trigger="0" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" md-ink-ripple="#fff">Жидкие культуральные</div>
-								<div data-tab-trigger="1" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">Жидкие кисломолочные</div>
-								<div data-tab-trigger="2" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">Таблетки и капсулы</div>
+								<div data-tab-trigger="0" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" md-ink-ripple="#fff">
+									Жидкие культуральные
+								</div>
+								<div data-tab-trigger="1" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">
+									Жидкие кисломолочные
+								</div>
+								<div data-tab-trigger="2" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">
+									Таблетки и капсулы
+								</div>
 							</div>
 							<div class="tab-panel__content" data-ng-controller="productCardController as productCard">
 								<div data-tab-target="0" class="tab-panel__item js-tab-panel__item--active">
 									<div class="product-container">
-										
+
 										<div class="product-container__item">
 											<div data-card-id="0" class="product-card">
 												<header class="product-card__header">
@@ -201,43 +210,31 @@
 														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
 													</div>
 												</header>
-												<div
-													 data-card-content-type="main" 
-													 md-ink-ripple="#fff"
-													 class="product-card__content js-product-card__content--active">
+												<div data-card-content-type="main" md-ink-ripple="#fff" class="product-card__content js-product-card__content--active">
 													<div class="product-card__wrapper">
-														<div 
-															data-card-button-type="info-open" 
-															data-hm-tap="productCard.showDetail($event)" 
-															class="product-card__checker product-card__checker--open">
+														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" class="product-card__checker product-card__checker--open">
 														</div>
-														
+
 														<div class="product-card__title">Биобаланс А</div>
 														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
 														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic">
 													</div>
 												</div>
-												<div 
-													data-card-content-type="other" 
-													class="product-card__content">
-													
+												<div data-card-content-type="other" class="product-card__content">
+
 													<div class="product-card__wrapper">
-														<div 
-															data-card-button-type="info-close" 
-															md-ink-ripple="#fff"
-															data-hm-tap="productCard.showDetail($event)" 
-															class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" class="product-card__checker product-card__checker--close">
 														</div>
 													</div>
-											
+
 												</div>
 												<footer class="product-card__footer">
 													<div md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
 												</footer>
 											</div>
 										</div>
-										
-									</div>	
+
+									</div>
 								</div>
 								<div data-tab-target="1" class="tab-panel__item">
 									<h2>Tab content #2</h2>
@@ -247,7 +244,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>

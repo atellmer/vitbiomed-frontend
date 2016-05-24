@@ -1,6 +1,6 @@
 @import 'nib'
 
-.likearts-content .product-card
+.likearts-content .product-container .product-card
 	position relative
 	width auto
 	height auto
@@ -15,12 +15,12 @@
 		@extend .paper-shadow-z2
 		
 		
-.likearts-content .product-card__header
+.likearts-content .product-container .product-card__header
 	width 100%
 	@extend .flex
 	justify-content flex-start
 	
-.likearts-content .product-card__price
+.likearts-content .product-container .product-card__price
 	width auto
 	min-width 100px
 	height auto
@@ -35,13 +35,13 @@
 		font-size 1.5rem
 		min-width 80px
 	
-.likearts-content .product-card__discount
+.likearts-content .product-container .product-card__discount
 	width 100%
 	@extend .flex
 	padding 10px
 	text-align center
 	
-.likearts-content .product-card__discount-link
+.likearts-content .product-container .product-card__discount-link
 	color $primary-color-text
 	font-size 1.5rem
 	color $secondary-color-text
@@ -56,10 +56,10 @@
 		&::after
 			content '›'
 			
-.likearts-content .product-card__footer
+.likearts-content .product-container .product-card__footer
 	width 100%
 
-.likearts-content .product-card__action-btn
+.likearts-content .product-container .product-card__action-btn
 	width 100%
 	padding 20px
 	background-color $primary-color
@@ -73,16 +73,16 @@
 	user-select none
 	position relative
 	
-.likearts-content  .product-card__content
+.likearts-content  .product-container .product-card__content
 	display none
 	width 100%
 	height auto
 	flex 1
 	
-.likearts-content .js-product-card__content--active
+.likearts-content .product-container .js-product-card__content--active
 	display inherit
 	
-.likearts-content .product-card__checker
+.likearts-content .product-container .product-card__checker
 	position relative
 	width 32px
 	height 32px
@@ -90,26 +90,26 @@
 	margin-left auto
 	cursor pointer
 	
-.likearts-content .product-card__checker--open
+.likearts-content .product-container .product-card__checker--open
 	background-image url(../resources/icons/info.svg)
 	
-.likearts-content .product-card__checker--close
+.likearts-content .product-container .product-card__checker--close
 	background-image url(../resources/icons/minus.svg)
 	
-.likearts-content  .product-card__wrapper
+.likearts-content  .product-container .product-card__wrapper
 	width 100%
 	
-.likearts-content .product-card__title
+.likearts-content .product-container .product-card__title
 	font-size 2.8rem
 	text-align center
 	color $primary-color-text
 	margin 17px 0 0 0
 	
-.likearts-content .product-card__subtitle
+.likearts-content .product-container .product-card__subtitle
 	font-size 1.3rem
 	text-align center
 	color $secondary-color-text
 	margin 10px 0 0 0
 	
-.likearts-content .product-card__pic
+.likearts-content .product-container .product-card__pic
 	margin 30px auto

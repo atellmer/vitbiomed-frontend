@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=a454f65161b4c5e466820486d961f7b8">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=76d701e1e57047221187d6b720375f2c">
 	<!--?rev=@@hash-->
 </head>
 
@@ -47,7 +47,7 @@
 								</ul>
 							</div>
 							<div class="menu-mobile-container">
-								<div data-ng-controller="MobileMenuController as mobileMenu" class="menu-mobile">
+								<div class="menu-mobile" data-ng-controller="MobileMenuController as mobileMenu">
 									<div id="menu-mobile-btn" data-hm-tap="mobileMenu.controlMenu($event)" class="menu-mobile__btn">
 										<i class="material-icons menu-mobile__icon">view_headline</i>
 									</div>
@@ -161,7 +161,7 @@
 									</div>
 								</div>
 								<div class="btn-container">
-									<div class="buy-btn buy-btn--phone">Купить</div>
+									<div md-ink-ripple="#fff" class="buy-btn buy-btn--phone">Купить</div>
 								</div>
 							</div>
 							<div class="phone-padding">
@@ -243,7 +243,7 @@
 										</div>
 									</div>
 									<div class="control-card__footer">
-										<div class="buy-btn">Купить</div>
+										<div md-ink-ripple="#fff" class="buy-btn">Купить</div>
 									</div>
 								</div>
 								<div class="certificate-block">
