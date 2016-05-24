@@ -1,8 +1,10 @@
 @import 'nib'
 
 .likearts-content .product-card
+	position relative
 	width auto
 	height auto
+	min-height 650px
 	border-radius 2px
 	background-color #fff
 	@extend .flex
@@ -54,7 +56,6 @@
 		&::after
 			content '›'
 			
-			
 .likearts-content .product-card__footer
 	width 100%
 
@@ -71,3 +72,43 @@
 	overflow hidden
 	user-select none
 	position relative
+	
+.likearts-content  .product-card__content
+	display none
+	width 100%
+	height auto
+	flex 1
+	
+.likearts-content .js-product-card__content--active
+	display inherit
+	
+.likearts-content .product-card__checker
+	width 32px
+	height 32px
+	@extend .cover
+	margin-left auto
+	cursor pointer
+	
+.likearts-content .product-card__checker--info
+	background-image url(../resources/icons/info.svg)
+	
+.likearts-content .product-card__checker--minus
+	background-image url(../resources/icons/minus.svg)
+	
+.likearts-content  .product-card__wrapper
+	width 100%
+	
+.likearts-content .product-card__title
+	font-size 2.8rem
+	text-align center
+	color $primary-color-text
+	margin 17px 0 0 0
+	
+.likearts-content .product-card__subtitle
+	font-size 1.3rem
+	text-align center
+	color $secondary-color-text
+	margin 10px 0 0 0
+	
+.likearts-content .product-card__pic
+	margin 30px auto

@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=8ce218646a1d4a4b1cc3af9ad98fe1b2">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=d1a476561efb66159b85f8683d958975">
 	<!--?rev=@@hash-->
 </head>
 
@@ -189,23 +189,50 @@
 								<div data-tab-trigger="1" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">Жидкие кисломолочные</div>
 								<div data-tab-trigger="2" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">Таблетки и капсулы</div>
 							</div>
-							<div class="tab-panel__content">
+							<div class="tab-panel__content" data-ng-controller="productCardController as productCard">
 								<div data-tab-target="0" class="tab-panel__item js-tab-panel__item--active">
 									<div class="product-container">
 										
-										<div class="product-container__item product-card">
-											<header class="product-card__header">
-												<div class="product-card__price">590 руб.</div>
-												<div class="product-card__discount">
-													<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
+										<div class="product-container__item">
+											<div data-card-id="0" class="product-card">
+												<header class="product-card__header">
+													<div class="product-card__price">590 руб.</div>
+													<div class="product-card__discount">
+														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
+													</div>
+												</header>
+												<div
+													 data-card-content-type="main" 
+													 class="product-card__content js-product-card__content--active">
+													<div class="product-card__wrapper">
+														<div 
+															data-card-button-type="info-open" 
+															data-hm-tap="productCard.showDetail($event)" 
+															class="product-card__checker product-card__checker--info">
+														</div>
+														
+														<div class="product-card__title">Биобаланс А</div>
+														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
+														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic">
+													</div>
 												</div>
-											</header>
-											<div class="product-card__content">
-												
+												<div 
+													data-card-content-type="other" 
+													class="product-card__content">
+													
+													<div class="product-card__wrapper">
+														<div 
+															data-card-button-type="info-close" 
+															data-hm-tap="productCard.showDetail($event)" 
+															class="product-card__checker product-card__checker--minus">
+														</div>
+													</div>
+											
+												</div>
+												<footer class="product-card__footer">
+													<div md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
+												</footer>
 											</div>
-											<footer class="product-card__footer">
-												<div md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
-											</footer>
 										</div>
 										
 									</div>	
@@ -419,7 +446,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=238980d149a239c3449b0d1d31f75935"></script>
+	<script src="./dist/bundle.js?rev=e07fda2c08affc94810b92a679be0d97"></script>
 
 </body>
 
