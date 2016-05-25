@@ -1,3 +1,4 @@
+;
 (function() {
 'use strict';
 
@@ -6,6 +7,7 @@
 		.factory('lkSlider', lkSlider);
 
 	lkSlider.$inject = ['$interval'];
+	
 	function lkSlider($interval) {
 		var service = {
 			init: init,
