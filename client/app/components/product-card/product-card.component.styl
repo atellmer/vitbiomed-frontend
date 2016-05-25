@@ -30,6 +30,7 @@
 	@extend .flex
 	font-size 1.8rem
 	text-align center
+	border-radius 2px 0 0 0
 	@media screen and (max-width: $tablet)
 		font-size 1.5rem
 		min-width 80px
@@ -71,6 +72,7 @@
 	overflow hidden
 	user-select none
 	position relative
+	border-radius 0 0 2px 2px
 	
 .likearts-content  .product-container .product-card__content
 	display none
@@ -101,7 +103,6 @@
 .likearts-content .product-container .product-card__title
 	font-size 2.8rem
 	text-align center
-	color $primary-color-text
 	margin 17px 0 0 0
 	
 .likearts-content .product-container .product-card__subtitle
@@ -115,3 +116,85 @@
 	
 .likearts-content .product-container .select-block-container
 	margin 10px 0
+	
+.likearts-content .product-container .product-card__letter
+	text-align center
+	font-size 8rem
+	font-weight 900
+	line-height 1
+	margin 20px 0
+	
+.likearts-content .product-container .composition
+	text-align center
+	padding 0 60px
+	@media screen and (max-width: $tablet)
+		padding 0 20px
+	@media screen and (max-width: $phone)
+		padding 0 30px
+	
+.likearts-content .product-container .composition__sign
+	color $secondary-color-text
+	font-size 1.5rem
+	margin 10px 0
+	
+.likearts-content .product-container .composition__detail
+	font-size 1.3rem
+	margin 20px 0
+	overflow hidden
+	max-height 7rem
+	
+	
+.likearts-content .product-container .composition__sign--small
+	font-size 1.3rem
+	color $secondary-color-text
+	
+.likearts-content .product-container .composition__sign--margin
+	margin 30px 0
+	
+.likearts-content .product-container .composition__labels
+	@extend .flex
+	flex-flow row wrap
+	
+.likearts-content .product-container .composition__label
+	width 40px
+	height 40px
+	margin 10px
+	@extend .cover
+	@media screen and (max-width: $tablet)
+		width 35px
+		height 35px
+	
+.likearts-content .product-container .composition__label--lactose
+	background-image url(../resources/icons/lactose.svg)
+	
+.likearts-content .product-container .composition__label--gluten
+	background-image url(../resources/icons/gluten.svg)
+	
+.likearts-content .product-container .composition__label--sugar
+	background-image url(../resources/icons/sugar.svg)
+	
+.likearts-content .product-container .composition__label--gmo
+	background-image url(../resources/icons/gmo.svg)
+	
+.likearts-content .product-container .route-btn__container
+	@extend .flex
+	
+.likearts-content .product-container .route-btn__link
+	display inline-block
+	padding 20px 40px
+	margin 20px auto
+	text-transform uppercase
+	color $primary-color-text
+	border-bottom 1px solid #c6c6c6
+	text-align center
+	font-size 1.5rem
+	font-weight 700
+	@extend .transition
+	&:hover
+		color $primary-color
+		border-bottom 1px solid $primary-color
+	&::after
+		content '›'
+		margin 0 0 0 5px
+	@media screen and (max-width: $tablet)
+		font-size 1.2rem
