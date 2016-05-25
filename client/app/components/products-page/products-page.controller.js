@@ -12,7 +12,7 @@
 		var vm = this;
 		
 		vm.switchTab = lkTabs.switchTab;
-
+		
 		activate();
 
 		////////////////

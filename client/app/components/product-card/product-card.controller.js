@@ -6,19 +6,24 @@
 		.module('app')
 		.controller('productCardController', productCardController);
 
-	productCardController.$inject = [];
+	productCardController.$inject = ['lkSelectProduct'];
 	
-	function productCardController() {
+	function productCardController(lkSelectProduct) {
 		var vm = this;
 		
 		vm.showDetail = showDetail;
+		
+		vm.product = lkSelectProduct.product;
+		vm.setAmount = lkSelectProduct.setAmount;
+		vm.setVolume = lkSelectProduct.setVolume;
+		vm.getAmount = lkSelectProduct.getAmount;
 		
 		activate();
 
 		////////////////
 
 		function activate() { 
-
+			lkSelectProduct.init();
 		}
 		
 		function showDetail(event) {

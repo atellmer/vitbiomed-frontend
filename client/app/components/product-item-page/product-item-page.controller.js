@@ -6,24 +6,25 @@
 		.module('app')
 		.controller('ProductItemPageController', ProductItemPageController);
 
-	ProductItemPageController.$inject = ['ngDialog', 'lkFunctions'];
+	ProductItemPageController.$inject = ['ngDialog', 'lkFunctions', 'lkSelectProduct'];
 
-	function ProductItemPageController(ngDialog, lkFunctions) {
+	function ProductItemPageController(ngDialog, lkFunctions, lkSelectProduct) {
 		var vm = this;
 		var click = [];
 		
-		vm.product = {
-			volume: 60,
-			amount: 1
-		};
+		vm.product = lkSelectProduct.product;
+		vm.setAmount = lkSelectProduct.setAmount;
+		vm.setVolume = lkSelectProduct.setVolume;
+		vm.getAmount = lkSelectProduct.getAmount;
+		
 		vm.controlInset = controlInset;
 		vm.clickToOpen = clickToOpen;
-		vm.changeAmount = changeAmount;
-		vm.selectVolume = selectVolume;
 		
 		activate();
 		
 		function activate() {
+			lkSelectProduct.init();
+			
 			click = lkFunctions.makeArrayOf(0, document.querySelectorAll('[data-description-trigger]').length);
 		}
 		
@@ -46,41 +47,6 @@
 				template: templateId, 
 				className: 'ngdialog-theme-default' 
 			});
-		}
-		
-			function changeAmount(count) {
-			if (count < 0 && vm.product.amount > 1) {
-				vm.product.amount += count;
-			}
-			if (count > 0) {
-				vm.product.amount += count;
-			}
-			console.log('product: ', vm.product);
-		}
-		
-		function selectVolume(event) {
-			var target = angular.element(event.target);
-			vm.product.volume = parseInt(target.attr('data-volume-product'));
-			console.log('product: ', vm.product);
-			
-			addActiveClass();
-		}
-		
-		function addActiveClass() {
-			var selectsAll = document.querySelectorAll('.select-items__item');
-			var selects = document.querySelectorAll('.select-items__item[data-volume-product="' + vm.product.volume + '"]');
-				
-			for (var i = 0; i < selectsAll.length; i++) {
-				if (angular.element(selectsAll[i]).hasClass('select-items__item--active')) {
-					angular.element(selectsAll[i]).removeClass('select-items__item--active');
-				}
-			}
-			
-			for (var i = 0; i < selects.length; i++) {
-				if (!angular.element(selects[i]).hasClass('select-items__item--active')) {
-					angular.element(selects[i]).addClass('select-items__item--active');
-				}
-			}
 		}
 	}
 })();

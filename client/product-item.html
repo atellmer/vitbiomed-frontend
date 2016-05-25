@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=76d701e1e57047221187d6b720375f2c">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=d7c4a988d6dea1cce1042392514522bd">
 	<!--?rev=@@hash-->
 </head>
 
@@ -122,22 +122,22 @@
 							<div class="phone-visible">
 								<div class="flex-container">
 									<div class="flex-item">
-										<div class="select-block select-block--phone">
-											<div class="select-block__title">Выберите объем</div>
-											<div class="select-items">
-												<div data-hm-tap="productItemPage.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
+										<div data-select-product="0" class="select-product select-product--phone">
+											<div class="select-product__title">Выберите объем</div>
+											<div class="select-product__items">
+												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
 
-												<div data-hm-tap="productItemPage.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
+												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
 
-												<div data-hm-tap="productItemPage.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
+												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
 											</div>
-											<div class="select-block__title">Количество</div>
+											<div class="select-product__title">Количество</div>
 											<div class="amount-control">
-												<div data-hm-tap="productItemPage.changeAmount(-1)" class="amount-control__btn amount-control__btn--minus">
+												<div data-hm-tap="productItemPage.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
 													<i class="material-icons amount-control__icon">remove</i>
 												</div>
-												<div data-amount-product="{{productItemPage.product.amount}}" class="amount-control__counter">{{productItemPage.product.amount}}</div>
-												<div data-hm-tap="productItemPage.changeAmount(1)" class="amount-control__btn amount-control__btn--plus">
+												<div class="amount-control__counter">{{productItemPage.getAmount(0)}}</div>
+												<div data-hm-tap="productItemPage.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
 													<i class="material-icons amount-control__icon">add</i>
 												</div>
 											</div>
@@ -161,7 +161,7 @@
 									</div>
 								</div>
 								<div class="btn-container">
-									<div md-ink-ripple="#fff" class="buy-btn buy-btn--phone">Купить</div>
+									<div data-md-ink-ripple="#fff" class="buy-btn buy-btn--phone">Купить</div>
 								</div>
 							</div>
 							<div class="phone-padding">
@@ -223,27 +223,29 @@
 								<div class="control-card">
 									<div class="control-card__header">590 руб.</div>
 									<div class="control-card__body">
-										<div class="select-block">
-											<div class="select-block__title">Выберите объем</div>
-											<div class="select-items">
-												<div data-hm-tap="productItemPage.selectVolume($event)" data-volume-product="60" class="select-items__item select-items__item--active">60</div>
-												<div data-hm-tap="productItemPage.selectVolume($event)" data-volume-product="150" class="select-items__item">150</div>
-												<div data-hm-tap="productItemPage.selectVolume($event)" data-volume-product="300" class="select-items__item">300</div>
+										
+										<div data-select-product="0" class="select-product">
+											<div class="select-product__title">Выберите объем</div>
+											<div class="select-product__items">
+												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
+												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
+												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
 											</div>
-											<div class="select-block__title">Количество</div>
-											<div class="amount-control">
-												<div data-hm-tap="productItemPage.changeAmount(-1)" class="amount-control__btn amount-control__btn--minus">
+											<div class="select-product__title">Количество</div>
+											<div class="amount-control amount-control--phone">
+												<div data-hm-tap="productItemPage.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
 													<i class="material-icons amount-control__icon">remove</i>
 												</div>
-												<div data-amount-product="{{productItemPage.product.amount}}" class="amount-control__counter">{{productItemPage.product.amount}}</div>
-												<div data-hm-tap="productItemPage.changeAmount(1)" class="amount-control__btn amount-control__btn--plus">
+												<div class="amount-control__counter">{{productItemPage.getAmount(0)}}</div>
+												<div data-hm-tap="productItemPage.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
 													<i class="material-icons amount-control__icon">add</i>
 												</div>
 											</div>
 										</div>
+
 									</div>
 									<div class="control-card__footer">
-										<div md-ink-ripple="#fff" class="buy-btn">Купить</div>
+										<div data-md-ink-ripple="#fff" class="buy-btn">Купить</div>
 									</div>
 								</div>
 								<div class="certificate-block">
@@ -465,13 +467,14 @@
 
 	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="./bower_components/angular/angular.min.js"></script>
+	<script src="./bower_components/lodash/dist/lodash.min.js"></script>
 	<script src="./bower_components/hammerjs/hammer.min.js"></script>
 	<script src="./bower_components/AngularHammer/angular.hammer.min.js"></script>
 	<script src="./bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=e07fda2c08affc94810b92a679be0d97"></script>
+	<script src="./dist/bundle.js?rev=709bf8149733bc3de2358c8b1be79ad6"></script>
 
 </body>
 

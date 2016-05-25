@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=76d701e1e57047221187d6b720375f2c">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=d7c4a988d6dea1cce1042392514522bd">
 	<!--?rev=@@hash-->
 </head>
 
@@ -167,7 +167,7 @@
 						<div class="control-panel">
 							<div class="control-panel__item">
 								<div class="calc">
-									<div md-ink-ripple="#fff" class="calc__btn">
+									<div data-md-ink-ripple="#fff" class="calc__btn">
 									</div>
 									<div class="calc__sign">Рассчитайте курс</div>
 								</div>
@@ -175,7 +175,7 @@
 
 							<div class="control-panel__item">
 								<div class="order">
-									<div md-ink-ripple="#fff" class="order__btn">
+									<div data-md-ink-ripple="#fff" class="order__btn">
 										Записаться на прием
 									</div>
 								</div>
@@ -188,13 +188,13 @@
 
 						<div data-tab-panel="0" class="tab-panel">
 							<div class="tab-panel__controls">
-								<div data-tab-trigger="0" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" md-ink-ripple="#fff">
+								<div data-tab-trigger="0" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" data-md-ink-ripple="#fff">
 									Жидкие культуральные
 								</div>
-								<div data-tab-trigger="1" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">
+								<div data-tab-trigger="1" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
 									Жидкие кисломолочные
 								</div>
-								<div data-tab-trigger="2" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" md-ink-ripple="#fff">
+								<div data-tab-trigger="2" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
 									Таблетки и капсулы
 								</div>
 							</div>
@@ -210,29 +210,114 @@
 														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
 													</div>
 												</header>
-												<div data-card-content-type="main" md-ink-ripple="#fff" class="product-card__content js-product-card__content--active">
+												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" class="product-card__checker product-card__checker--open">
+														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
 														</div>
 
 														<div class="product-card__title">Биобаланс А</div>
 														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
 														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic">
+														<div class="select-block-container">
+
+															<div data-select-product="0" class="select-product">
+																<div class="select-product__title">Выберите объем</div>
+																<div class="select-product__items">
+																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
+																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
+																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
+																</div>
+																<div class="select-product__title">Количество</div>
+																<div class="amount-control">
+																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
+																		<i class="material-icons amount-control__icon">remove</i>
+																	</div>
+																	<div class="amount-control__counter">{{productCard.getAmount(0)}}</div>
+																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
+																		<i class="material-icons amount-control__icon">add</i>
+																	</div>
+																</div>
+															</div>
+
+														</div>
 													</div>
 												</div>
 												<div data-card-content-type="other" class="product-card__content">
 
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
+														Some content
 													</div>
 
 												</div>
 												<footer class="product-card__footer">
-													<div md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
+													<div data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
 												</footer>
 											</div>
 										</div>
+
+										<div class="product-container__item">
+											<div data-card-id="1" class="product-card">
+												<header class="product-card__header">
+													<div class="product-card__price">590 руб.</div>
+													<div class="product-card__discount">
+														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
+													</div>
+												</header>
+												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
+													<div class="product-card__wrapper">
+														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
+														</div>
+
+														<div class="product-card__title">Биобаланс А</div>
+														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
+														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic">
+														<div class="select-block-container">
+
+															<div data-select-product="1" class="select-product">
+																<div class="select-product__title">Выберите объем</div>
+																<div class="select-product__items">
+																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
+																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
+																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
+																</div>
+																<div class="select-product__title">Количество</div>
+																<div class="amount-control">
+																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
+																		<i class="material-icons amount-control__icon">remove</i>
+																	</div>
+																	<div class="amount-control__counter">{{productCard.getAmount(1)}}</div>
+																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
+																		<i class="material-icons amount-control__icon">add</i>
+																	</div>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+												<div data-card-content-type="other" class="product-card__content">
+
+													<div class="product-card__wrapper">
+														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
+														</div>
+														
+														Some content
+													</div>
+
+												</div>
+												<footer class="product-card__footer">
+													<div data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
+												</footer>
+											</div>
+										</div>
+
+
+
+
+
+
 
 									</div>
 								</div>
@@ -439,13 +524,14 @@
 
 	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="./bower_components/angular/angular.min.js"></script>
+	<script src="./bower_components/lodash/dist/lodash.min.js"></script>
 	<script src="./bower_components/hammerjs/hammer.min.js"></script>
 	<script src="./bower_components/AngularHammer/angular.hammer.min.js"></script>
 	<script src="./bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=e07fda2c08affc94810b92a679be0d97"></script>
+	<script src="./dist/bundle.js?rev=709bf8149733bc3de2358c8b1be79ad6"></script>
 
 </body>
 
