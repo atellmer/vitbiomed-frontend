@@ -25,13 +25,17 @@
 	min-height 100px
 	@extend .flex
 	justify-content space-between
+	align-items stretch
 	padding 0 15px
 	@media screen and (max-width: 992px)
 		flex-flow column wrap
 		justify-content center
+		align-items center
 	@media screen and (max-width: $phone)
 		min-height 62px
-
+		
+.likearts-content .header-container .flex-item 
+	@extend .flex
 
 .likearts-content .header-container .logo-link
 	display inline-block
@@ -39,8 +43,6 @@
 	@media screen and (max-width: 992px)
 		left 50%
 		transform translateX(-50%)
-	@media screen and (max-width: $phone)
-		top 5px
 		
 	
 .likearts-content .header-container .logo
@@ -54,6 +56,7 @@
 		height 24px
 
 .likearts-content .header-container .menu-desktop
+	margin 0 20px
 	@media screen and (max-width: 992px)
 		margin 5px
 	@media screen and (max-width: $tablet)
