@@ -17,7 +17,7 @@
 <body data-ng-app="app" class="likearts-content">
 	<div class="container-fluid">
 
-		<div class="header-container">
+		<div class="header-container" data-ng-controller="HeaderController as header">
 			<div class="container">
 				<header class="header">
 					<div class="flex-container">
@@ -89,12 +89,12 @@
 									</div>
 								</div>
 							</div>
-							<a href="#" class="cart-link">
+							<div class="cart-container">
 								<div class="cart">
 									<div class="cart__icon"></div>
-									<div class="cart__sum">10</div>
+									<div class="cart__sum">{{header.cart}}</div>
 								</div>
-							</a>
+							</div>
 						</div>
 					</div>
 				</header>
@@ -120,7 +120,7 @@
 							<div class="phone-visible">
 								<div class="flex-container">
 									<div class="flex-item">
-										<div data-select-product="0" class="select-product select-product--phone">
+										<div data-card-id="0" class="select-product select-product--phone">
 											<div class="select-product__title">Выберите объем</div>
 											<div class="select-product__items">
 												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
@@ -208,7 +208,7 @@
 										2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quia possimus vero consequuntur nostrum dolore quisquam. Culpa earum soluta magnam quia ut expedita, velit enim porro incidunt reiciendis maxime assumenda iste blanditiis deserunt quae
 										sapiente doloribus nulla quis, maiores labore molestias. Hic fuga voluptatibus, quam quis doloremque dolore! Aperiam, labore.
 									</div>
-									
+
 								</div>
 							</div>
 						</div>
@@ -219,11 +219,10 @@
 								<div class="info-block__discount">
 									<a href="#" class="info-block__discount-link">Вы экономите 10% на покупке препарата вместе с курсом</a>
 								</div>
-								<div class="control-card">
-									<div class="control-card__header">590 руб.</div>
+								<div data-card-id="0" class="control-card">
+									<div data-price="590" class="control-card__header">590 руб.</div>
 									<div class="control-card__body">
-										
-										<div data-select-product="0" class="select-product">
+										<div class="select-product">
 											<div class="select-product__title">Выберите объем</div>
 											<div class="select-product__items">
 												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
@@ -241,7 +240,6 @@
 												</div>
 											</div>
 										</div>
-
 									</div>
 									<div class="control-card__footer">
 										<div data-md-ink-ripple="#fff" class="buy-btn">Купить</div>
@@ -473,7 +471,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=3ad7183d2a8459aa6e36227b23efa42d"></script>
+	<script src="./dist/bundle.js?rev=d74bce723f58fe54d9672d4faebc744a"></script>
 
 </body>
 

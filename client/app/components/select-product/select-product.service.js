@@ -24,39 +24,39 @@
 		return service;
 
 		////////////////
-		function setAmount(id, count) {
+		function setAmount(id, count, title, price, image, snippet) {
 			if (lkFunctions.getCurIndexObjectInArray(service.store, 'id', id) === -1) {		
 				service.store.push({
 					id: id,
 					amount: _counter(count, defaultData.amount),
-					volume: defaultData.volume
+					volume: defaultData.volume,
+					title: title,
+					price: price,
+					image: image,
+					snippet: snippet
 				});
 			} else {
 				var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', id);
-				service.store[index] = {
-					id: id,
-					amount: _counter(count, service.store[index].amount),
-					volume: defaultData.volume
-				}
+				service.store[index].amount = _counter(count, service.store[index].amount);
 			}
 			
 			_logger(id);
 		}
 
-		function setVolume(id, volume) {
+		function setVolume(id, volume, title, price, image, snippet) {
 			var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', id);
 			if (index === -1) {		
 				service.store.push({
 					id: id,
 					amount: defaultData.amount,
-					volume: volume
+					volume: volume,
+					title: title,
+					price: price,
+					image: image,
+					snippet: snippet
 				});
 			} else {
-				service.store[index] = {
-					id: id,
-					amount: service.store[index].amount,
-					volume: volume
-				}
+				service.store[index].volume = volume;	
 			}
 			
 			_logger(id);

@@ -13,7 +13,6 @@
 		
 		vm.showDetail = showDetail;
 		
-		vm.product = lkSelectProduct.product;
 		vm.setAmount = setAmount;
 		vm.setVolume = setVolume;
 		vm.getAmount = getAmount;
@@ -27,8 +26,15 @@
 		function setAmount(event, count) {
 			var parent = angular.element(event.target).closest('[data-card-id]');
 			var id = parseInt(parent.attr('data-card-id'));
-			
-			lkSelectProduct.setAmount(id, count);
+			var title = angular.element(document.querySelector('[data-card-id="' + id + '"] .js-product-card__title')).text();
+			var price = parseFloat(
+					angular.element(document.querySelector('[data-card-id="' + id + '"] [data-price]'))
+					.attr('data-price')
+				);	
+			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
+			var snippet = 'Жидкая форма';
+
+			lkSelectProduct.setAmount(id, count, title, price, image, snippet);
 		}
 		
 		function setVolume(event, count) {
@@ -36,8 +42,15 @@
 			var parent = angular.element(event.target).closest('[data-card-id]');
 			var id = parseInt(parent.attr('data-card-id'));
 			var volume = parseInt(target.attr('data-volume-product'));
+			var title = angular.element(document.querySelector('[data-card-id="' + id + '"] .js-product-card__title')).text();
+			var price = parseFloat(
+					angular.element(document.querySelector('[data-card-id="' + id + '"] [data-price]'))
+					.attr('data-price')
+				);	
+			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
+			var snippet = 'Жидкая форма';
 			
-			lkSelectProduct.setVolume(id, volume);
+			lkSelectProduct.setVolume(id, volume, title, price, image, snippet);
 			addActiveClass(event, id);
 		}
 		
