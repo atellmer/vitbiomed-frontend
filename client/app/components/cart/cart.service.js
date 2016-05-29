@@ -18,9 +18,9 @@
 		return service;
 
 		////////////////
-		function addToCart(id) {
-			var indexProductsStore = lkFunctions.getCurIndexObjectInArray(lkSelectProduct.store, 'id', id);
-			var indexCartStore = lkFunctions.getCurIndexObjectInArray(service.store, 'id', id);
+		function addToCart(options) {
+			var indexProductsStore = lkFunctions.getCurIndexObjectInArray(lkSelectProduct.store, 'id', options.id);
+			var indexCartStore = lkFunctions.getCurIndexObjectInArray(service.store, 'id', options.id);
 			if (indexProductsStore !== -1) {
 				if (indexCartStore === -1) {
 					service.store.push(lkSelectProduct.store[indexProductsStore]);
@@ -28,6 +28,16 @@
 				if (indexCartStore !== -1) {
 					service.store[indexCartStore] = lkSelectProduct.store[indexProductsStore];
 				}
+			} else {
+				service.store.push({
+					id: options.id,
+					amount: options.amount,
+					volume: options.volume,
+					title: options.title,
+					price: options.price,
+					image: options.image,
+					snippet: options.snippet
+				});
 			}
 
 			console.log('cart: ', service.store);

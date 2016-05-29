@@ -24,42 +24,42 @@
 		return service;
 
 		////////////////
-		function setAmount(id, count, title, price, image, snippet) {
-			var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', id);
+		function setAmount(options) {
+			var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', options.id);
 			if (index === -1) {		
 				service.store.push({
-					id: id,
-					amount: _counter(count, defaultData.amount),
+					id: options.id,
+					amount: _counter(options.count, defaultData.amount),
 					volume: defaultData.volume,
-					title: title,
-					price: price,
-					image: image,
-					snippet: snippet
+					title: options.title,
+					price: options.price,
+					image: options.image,
+					snippet: options.snippet
 				});
 			} else {	
-				service.store[index].amount = _counter(count, service.store[index].amount);
+				service.store[index].amount = _counter(options.count, service.store[index].amount);
 			}
 			
-			_logger(id);
+			_logger(options.id);
 		}
 
-		function setVolume(id, volume, title, price, image, snippet) {
-			var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', id);
+		function setVolume(options) {
+			var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', options.id);
 			if (index === -1) {		
 				service.store.push({
-					id: id,
+					id: options.id,
 					amount: defaultData.amount,
-					volume: volume,
-					title: title,
-					price: price,
-					image: image,
-					snippet: snippet
+					volume: options.volume,
+					title: options.title,
+					price: options.price,
+					image: options.image,
+					snippet: options.snippet
 				});
 			} else {
-				service.store[index].volume = volume;	
+				service.store[index].volume = options.volume;	
 			}
 			
-			_logger(id);
+			_logger(options.id);
 		}
 
 		function getAmount(id) {

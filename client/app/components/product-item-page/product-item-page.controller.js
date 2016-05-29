@@ -46,8 +46,17 @@
 			);
 			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
 			var snippet = 'Жидкая форма';
+				
+			var options = {
+				id: id,
+				count: count,
+				title: title,
+				price: price,
+				image: image,
+				snippet: snippet
+			}
 
-			lkSelectProduct.setAmount(id, count, title, price, image, snippet);
+			lkSelectProduct.setAmount(options);
 		}
 
 		function setVolume(event, count) {
@@ -62,9 +71,18 @@
 			);
 			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
 			var snippet = 'Жидкая форма';
+			
+			var options = {
+				id: id,
+				volume: volume,
+				title: title,
+				price: price,
+				image: image,
+				snippet: snippet
+			}
 
-			lkSelectProduct.setVolume(id, volume, title, price, image, snippet);
-			addActiveClass(event, id, volume);
+			lkSelectProduct.setVolume(options);
+			addActiveClass(event, options.id, options.volume);
 		}
 
 		function getAmount(id) {
@@ -93,10 +111,35 @@
 		}
 		
 		function addToCart(event) {
+			var target = angular.element(event.target);
 			var parent = angular.element(event.target).closest('[data-card-id]');
 			var id = parseInt(parent.attr('data-card-id'));
+			var amount = 1;
+			var volume = parseInt(
+				angular.element(
+					document.querySelector('[data-card-id="' + id +'"] [data-volume-product]')
+				)
+				.attr('data-volume-product')
+			);
 			
-			lkCart.addToCart(id);
+			var title = angular.element(document.querySelector('[data-card-id="' + id + '"] .js-product-card__title')).text();
+			var price = parseFloat(
+				angular.element(document.querySelector('[data-card-id="' + id + '"] [data-price]'))
+					.attr('data-price')
+			);
+			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
+			var snippet = 'Жидкая форма';
+
+			var options = {
+				id: id,
+				amount: amount,
+				volume: volume,
+				title: title,
+				price: price,
+				image: image,
+				snippet: snippet
+			}
+			lkCart.addToCart(options);
 		}
 
 		function clickToOpen(templateId) {
