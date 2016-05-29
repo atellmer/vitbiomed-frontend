@@ -1,0 +1,49 @@
+@import 'nib'
+
+.likearts-content .cart-container .cart
+	position relative
+	margin 5px 0
+	@extend .flex
+	cursor pointer
+	@media screen and (max-width: 992px)
+		margin 0
+	@media screen and (max-width: $tablet)
+		position absolute
+		top 40px
+		right calc(5% - 20px)
+	@media screen and (max-width: 600px)
+		top -20px
+		right 20px
+	@media screen and (max-width: $phone)
+		height 62px
+		width 62px
+		top 0
+		right 0
+		background-color #7cb342
+
+			
+.likearts-content .cart-container .cart__icon
+	display block
+	width 15px
+	height 15px
+	background-image url(../resources/icons/cart--g.svg)
+	@extend .cover
+	position relative
+	margin 0 5px
+	@media screen and (max-width: $phone)
+		background-image url(../resources/icons/cart--w.svg)
+		width 30px
+		height 30px
+		margin 0
+	
+.likearts-content .cart-container .cart__sum
+	display block
+	color $primary-color
+	font-size 1.2rem
+	margin 2px 0 0 0
+	@media screen and (max-width: $phone)
+		display none
+	
+
+
+		

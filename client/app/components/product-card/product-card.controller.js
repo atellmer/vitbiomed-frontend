@@ -6,24 +6,62 @@
 		.module('app')
 		.controller('productCardController', productCardController);
 
-	productCardController.$inject = ['lkSelectProduct'];
+	productCardController.$inject = ['lkSelectProduct', 'lkCart'];
 	
-	function productCardController(lkSelectProduct) {
+	function productCardController(lkSelectProduct, lkCart) {
 		var vm = this;
 		
 		vm.showDetail = showDetail;
 		
 		vm.product = lkSelectProduct.product;
-		vm.setAmount = lkSelectProduct.setAmount;
-		vm.setVolume = lkSelectProduct.setVolume;
-		vm.getAmount = lkSelectProduct.getAmount;
+		vm.setAmount = setAmount;
+		vm.setVolume = setVolume;
+		vm.getAmount = getAmount;
+		vm.addToCart = addToCart;
 		
 		activate();
 
 		////////////////
+		function activate() {}
+		
+		function setAmount(event, count) {
+			var parent = angular.element(event.target).closest('[data-card-id]');
+			var id = parseInt(parent.attr('data-card-id'));
+			
+			lkSelectProduct.setAmount(id, count);
+		}
+		
+		function setVolume(event, count) {
+			var target = angular.element(event.target);
+			var parent = angular.element(event.target).closest('[data-card-id]');
+			var id = parseInt(parent.attr('data-card-id'));
+			var volume = parseInt(target.attr('data-volume-product'));
+			
+			lkSelectProduct.setVolume(id, volume);
+			addActiveClass(event, id);
+		}
+		
+		function getAmount(id) {
+			if (lkSelectProduct.getAmount(id) === -1) {
+				return 1;
+			} 
+			
+			return lkSelectProduct.getAmount(id);
+		}
+		
+		function addActiveClass(event, id) {
+			var selectsAll = document.querySelectorAll('[data-card-id="' + id + '"] .js-select-product__item');
+			var target = angular.element(event.target);
 
-		function activate() { 
-			lkSelectProduct.init();
+			for (var i = 0, len = selectsAll.length; i < len; i++) {
+				if (angular.element(selectsAll[i]).hasClass('js-select-product__item--active')) {
+					angular.element(selectsAll[i]).removeClass('js-select-product__item--active');
+				}
+			}
+			
+			if (!target.hasClass('js-select-product__item--active')) {
+				target.addClass('js-select-product__item--active');
+			}
 		}
 		
 		function showDetail(event) {
@@ -49,6 +87,13 @@
 					contentMain.addClass('js-product-card__content--active');
 				}
 			}
+		}
+		
+		function addToCart(event) {
+			var parent = angular.element(event.target).closest('[data-card-id]');
+			var id = parent.attr('data-card-id');
+			
+			lkCart.addToCart(id);
 		}
 		
 	}
