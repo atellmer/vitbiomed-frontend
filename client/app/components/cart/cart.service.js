@@ -29,15 +29,17 @@
 					service.store[indexCartStore] = lkSelectProduct.store[indexProductsStore];
 				}
 			} else {
-				service.store.push({
-					id: options.id,
-					amount: options.amount,
-					volume: options.volume,
-					title: options.title,
-					price: options.price,
-					image: options.image,
-					snippet: options.snippet
-				});
+				if (indexCartStore === -1) {
+					service.store.push({
+						id: options.id,
+						amount: options.amount,
+						volume: options.volume,
+						title: options.title,
+						price: options.price,
+						image: options.image,
+						snippet: options.snippet
+					});
+				}
 			}
 
 			console.log('cart: ', service.store);

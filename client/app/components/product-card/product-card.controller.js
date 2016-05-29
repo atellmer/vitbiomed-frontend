@@ -26,21 +26,16 @@
 		function setAmount(event, count) {
 			var parent = angular.element(event.target).closest('[data-card-id]');
 			var id = parseInt(parent.attr('data-card-id'));
-			var title = angular.element(document.querySelector('[data-card-id="' + id + '"] .js-product-card__title')).text();
-			var price = parseFloat(
-				angular.element(document.querySelector('[data-card-id="' + id + '"] [data-price]'))
-					.attr('data-price')
-			);
-			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
-			var snippet = 'Жидкая форма';
-			
+
+			var metadata = _getMetadata(id);
+
 			var options = {
 				id: id,
 				count: count,
-				title: title,
-				price: price,
-				image: image,
-				snippet: snippet
+				title: metadata.title,
+				price: metadata.price,
+				image: metadata.image,
+				snippet: metadata.snippet
 			}
 
 			lkSelectProduct.setAmount(options);
@@ -51,21 +46,16 @@
 			var parent = angular.element(event.target).closest('[data-card-id]');
 			var id = parseInt(parent.attr('data-card-id'));
 			var volume = parseInt(target.attr('data-volume-product'));
-			var title = angular.element(document.querySelector('[data-card-id="' + id + '"] .js-product-card__title')).text();
-			var price = parseFloat(
-				angular.element(document.querySelector('[data-card-id="' + id + '"] [data-price]'))
-					.attr('data-price')
-			);
-			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
-			var snippet = 'Жидкая форма';
-			
+
+			var metadata = _getMetadata(id);
+
 			var options = {
 				id: id,
 				volume: volume,
-				title: title,
-				price: price,
-				image: image,
-				snippet: snippet
+				title: metadata.title,
+				price: metadata.price,
+				image: metadata.image,
+				snippet: metadata.snippet
 			}
 
 			lkSelectProduct.setVolume(options);
@@ -127,29 +117,50 @@
 			var amount = 1;
 			var volume = parseInt(
 				angular.element(
-					document.querySelector('[data-card-id="' + id +'"] [data-volume-product]')
+					document.querySelector('[data-card-id="' + id + '"] [data-volume-product]')
 				)
-				.attr('data-volume-product')
+					.attr('data-volume-product')
 			);
-			
-			var title = angular.element(document.querySelector('[data-card-id="' + id + '"] .js-product-card__title')).text();
-			var price = parseFloat(
-				angular.element(document.querySelector('[data-card-id="' + id + '"] [data-price]'))
-					.attr('data-price')
-			);
-			var image = angular.element(document.querySelector('.js-product-card__pic')).attr('src');
-			var snippet = 'Жидкая форма';
+
+			var metadata = _getMetadata(id);
 
 			var options = {
 				id: id,
 				amount: amount,
 				volume: volume,
+				title: metadata.title,
+				price: metadata.price,
+				image: metadata.image,
+				snippet: metadata.snippet
+			}
+			lkCart.addToCart(options);
+		}
+		
+		function _getMetadata(id) {
+			var title = angular.element(
+				document.querySelector('[data-card-id="' + id + '"] [data-metadata-title]')
+			).attr('data-metadata-title');
+
+			var price = angular.element(
+				document.querySelector('[data-card-id="' + id + '"] [data-metadata-price]')
+			).attr('data-metadata-price');
+
+			var image = angular.element(
+				document.querySelector('[data-card-id="' + id + '"] [data-metadata-image]')
+			).attr('data-metadata-image');
+
+			var snippet = angular.element(
+				document.querySelector('[data-card-id="' + id + '"] [data-metadata-snippet]')
+			).attr('data-metadata-snippet');
+			
+			var metadata = {
 				title: title,
 				price: price,
 				image: image,
-				snippet: snippet
+				snippet: snippet	
 			}
-			lkCart.addToCart(options);
+			
+			return metadata;
 		}
 
 	}
