@@ -6,14 +6,26 @@
 		.module('app')
 		.controller('ProductItemPageController', ProductItemPageController);
 
-	ProductItemPageController.$inject = ['ngDialog', 'lkFunctions', 'lkSelectProduct', 'lkInsets'];
+	ProductItemPageController.$inject = [
+		'ngDialog', 
+		'lkFunctions', 
+		'lkSelectProduct', 
+		'lkInsets', 
+		'lkCart'
+	];
 
-	function ProductItemPageController(ngDialog, lkFunctions, lkSelectProduct, lkInsets) {
+	function ProductItemPageController(
+		ngDialog, 
+		lkFunctions, 
+		lkSelectProduct, 
+		lkInsets, 
+		lkCart) {
 		var vm = this;
 
 		vm.setAmount = setAmount;
 		vm.setVolume = setVolume;
 		vm.getAmount = getAmount;
+		vm.addToCart = addToCart;
 
 		vm.controlInset = lkInsets.control;
 		vm.clickToOpen = clickToOpen;
@@ -78,6 +90,13 @@
 					angular.element(targets[i]).addClass('js-select-product__item--active');
 				}
 			}
+		}
+		
+		function addToCart(event) {
+			var parent = angular.element(event.target).closest('[data-card-id]');
+			var id = parseInt(parent.attr('data-card-id'));
+			
+			lkCart.addToCart(id);
 		}
 
 		function clickToOpen(templateId) {

@@ -25,7 +25,8 @@
 
 		////////////////
 		function setAmount(id, count, title, price, image, snippet) {
-			if (lkFunctions.getCurIndexObjectInArray(service.store, 'id', id) === -1) {		
+			var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', id);
+			if (index === -1) {		
 				service.store.push({
 					id: id,
 					amount: _counter(count, defaultData.amount),
@@ -35,8 +36,7 @@
 					image: image,
 					snippet: snippet
 				});
-			} else {
-				var index = lkFunctions.getCurIndexObjectInArray(service.store, 'id', id);
+			} else {	
 				service.store[index].amount = _counter(count, service.store[index].amount);
 			}
 			

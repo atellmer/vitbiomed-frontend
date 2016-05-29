@@ -104,7 +104,7 @@
 		
 		function addToCart(event) {
 			var parent = angular.element(event.target).closest('[data-card-id]');
-			var id = parent.attr('data-card-id');
+			var id = parseInt(parent.attr('data-card-id'));
 			
 			lkCart.addToCart(id);
 		}

@@ -17,7 +17,7 @@
 <body data-ng-app="app" class="likearts-content">
 	<div class="container-fluid">
 
-		<div class="header-container" data-ng-controller="HeaderController as header">
+		<div class="header-container">
 			<div class="container">
 				<header class="header">
 					<div class="flex-container">
@@ -89,10 +89,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="cart-container">
+							<div class="cart-container" data-ng-controller="CartController as cart">
 								<div class="cart">
 									<div class="cart__icon"></div>
-									<div class="cart__sum">{{header.cart}}</div>
+									<div class="cart__sum">{{cart.amount()}}</div>
 								</div>
 							</div>
 						</div>
@@ -117,10 +117,10 @@
 									<img class="img-responsive product-card__picture" src="./resources/img/content/product-1.png" alt="some image">
 								</div>
 							</div>
-							<div class="phone-visible">
-								<div class="flex-container">
+							<div data-card-id="0" class="phone-visible">
+								<div  class="flex-container">
 									<div class="flex-item">
-										<div data-card-id="0" class="select-product select-product--phone">
+										<div class="select-product select-product--phone">
 											<div class="select-product__title">Выберите объем</div>
 											<div class="select-product__items">
 												<div data-hm-tap="productItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
@@ -159,7 +159,7 @@
 									</div>
 								</div>
 								<div class="btn-container">
-									<div data-md-ink-ripple="#fff" class="buy-btn buy-btn--phone">Купить</div>
+									<div data-hm-tap="productItemPage.addToCart($event)" data-md-ink-ripple="#fff" class="buy-btn buy-btn--phone">Купить</div>
 								</div>
 							</div>
 							<div class="phone-padding">
@@ -242,7 +242,7 @@
 										</div>
 									</div>
 									<div class="control-card__footer">
-										<div data-md-ink-ripple="#fff" class="buy-btn">Купить</div>
+										<div data-hm-tap="productItemPage.addToCart($event)" data-md-ink-ripple="#fff" class="buy-btn">Купить</div>
 									</div>
 								</div>
 								<div class="certificate-block">
@@ -471,7 +471,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=d74bce723f58fe54d9672d4faebc744a"></script>
+	<script src="./dist/bundle.js?rev=18aaa92b0e8ad1eb80b95441658bd549"></script>
 
 </body>
 
