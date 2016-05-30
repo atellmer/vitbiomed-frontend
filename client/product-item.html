@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=2d132d27ac23d19f34970d9f9c7b75bd">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=381079a563220260bd0dcab820a44a8a">
 	<!--?rev=@@hash-->
 </head>
 
@@ -89,7 +89,46 @@
 									</div>
 								</div>
 							</div>
-							<vit-cart></vit-cart>
+
+							<div class="cart-container" data-ng-controller="CartController as cart">
+								<div class="cart">
+									<div data-hm-tap="cart.open()" class="cart__icon"></div>
+									<div data-hm-tap="cart.open()" class="cart__sum">{{cart.amount()}}</div>
+									<div class="cart-action js-cart-action">
+										<div class="cart-action__container">
+											<div class="cart-action__title">
+												<span data-ng-if="cart.amount() === 0">Корзина пуста</span>
+												<span data-ng-if="cart.amount() !== 0">Добавлено в корзину</span>
+											</div>
+											<div class="cart-action__items">
+												<div ng-repeat="product in cart.products track by product.id" class="cart-action__item">
+													<div class="cart-action__circle cart-action__counter">{{product.amount}}</div>
+													<div data-hm-tap="cart.removeItem(product.id)" class="cart-action__circle cart-action__close-btn">
+														<i class="material-icons cart-action__icon">close</i>
+													</div>
+													<div class="cart-action__pic">
+														<img class="img-responsive" data-ng-src="{{::product.image}}" alt="">
+													</div>
+													<div class="cart-action__info">
+														<div class="cart-action__item-title">{{::product.title}}</div>
+														<div class="cart-action__item-snippet">{{::product.snippet}}</div>
+														<div class="cart-action__item-sum">Сумма {{product.price * product.amount}} руб.</div>
+													</div>
+												</div>
+											</div>
+											<div class="cart-action__sum">
+												<span>Общая стоимость</span>
+												<span>{{cart.getGeneralSum()}} руб</span>
+											</div>
+											<div class="cart-action__buttons">
+												<a href="#" class="cart-action__button cart-action__button--gutter">Заказать в 1 клик</a>
+												<a href="#" class="cart-action__button">Оформить заказ</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</header>
@@ -479,7 +518,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=bcfd20f787bf75dfec374967657c78a8"></script>
+	<script src="./dist/bundle.js?rev=4843d95d07331428b5b7068ccc4a2747"></script>
 
 </body>
 
