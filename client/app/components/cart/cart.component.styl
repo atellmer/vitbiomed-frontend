@@ -44,6 +44,119 @@
 	@media screen and (max-width: $phone)
 		display none
 	
+.likearts-content .cart-action 
+	display none
+	position relative
+	
+.likearts-content .js-cart-action--active
+	display inherit
 
-
+.likearts-content .cart-action .cart-action__container
+	position absolute
+	top 31px
+	right 0
+	width 300px
+	height auto
+	background-color #fff
+	cursor default
+	@extends .paper-shadow-z2
+	@media screen and (max-width: $tablet)
+		right -16px
+	@media screen and (max-width: $phone)
+		width 250px
 		
+.likearts-content .cart-action .cart-action__title
+	font-size 2.2rem
+	font-weight 300
+	text-align center
+	padding 20px
+	line-height 1
+	border-bottom 1px solid #e0e0e0
+	@media screen and (max-width: $phone)
+		font-size 1.8rem
+	
+.likearts-content .cart-action .cart-action__sum
+	font-size 1.5rem
+	color $primary-color
+	font-weight 700
+	line-height 1
+	padding 25px 20px
+	@extend .flex 
+	justify-content space-between
+	
+.likearts-content .cart-action .cart-action__button
+	display block
+	width 100%
+	height auto
+	line-height 1
+	padding 20px 0
+	background-color $primary-color
+	color #fff
+	font-weight 700
+	font-size 1.4rem
+	text-align center
+	text-transform uppercase
+	
+.likearts-content .cart-action .cart-action__button--gutter
+	margin 0 0 10px 0
+	
+.likearts-content .cart-action .cart-action__item
+	position relative
+	@extend .flex 
+	justify-content space-between
+	padding 20px
+	border-bottom 1px dotted #d0d0d0
+	
+.likearts-content .cart-action .cart-action__pic
+	max-width 120px
+	width 30%
+	
+.likearts-content .cart-action .cart-action__item-title
+	font-size 2.2rem
+	@media screen and (max-width: $phone)
+		font-size 1.8rem
+	
+.likearts-content .cart-action .cart-action__item-snippet
+	font-size 1.5rem
+	font-weight 300
+	@media screen and (max-width: $phone)
+		font-size 1.2rem
+	
+.likearts-content .cart-action .cart-action__item-sum
+	font-size 1.5rem
+	@media screen and (max-width: $phone)
+		font-size 1.2rem
+	
+.likearts-content .cart-action .cart-action__info
+	margin 0 0 0 20px
+	line-height 1.6
+	width 70%
+	
+.likearts-content .cart-action .cart-action__circle
+	background-color $primary-color
+	width 20px
+	height 20px
+	color #fff
+	border-radius 50%
+	@extend .flex
+	
+.likearts-content .cart-action .cart-action__close-btn
+	position absolute
+	top 10px
+	right 10px
+	width 20px
+	height 20px
+	cursor pointer
+	
+.likearts-content .cart-action .cart-action__icon
+	font-size 1.4rem
+	line-height 1
+	
+.likearts-content .cart-action .cart-action__counter
+	position absolute
+	top 20px
+	left 10px
+	width 30px
+	height 30px
+	font-size 1.6rem
+	line-height 0.2

@@ -10,8 +10,11 @@
 	
 	function CartController(lkCart) {
 		var vm = this;
-		
+
 		vm.amount = lkCart.getAmount;
+		vm.getGeneralSum = lkCart.getGeneralSum;
+		vm.products = lkCart.store;
+		vm.removeItem = lkCart.removeItem;
 		
 
 		activate();

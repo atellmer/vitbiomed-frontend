@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-ng-app="app">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,11 +10,11 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=16909887c6d01febcdd7210b3c121207">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=2d132d27ac23d19f34970d9f9c7b75bd">
 	<!--?rev=@@hash-->
 </head>
 
-<body data-ng-app="app" class="likearts-content">
+<body ng-cloack class="likearts-content">
 	<div class="container-fluid">
 
 		<div class="header-container">
@@ -89,12 +89,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="cart-container" data-ng-controller="CartController as cart">
-								<div class="cart">
-									<div class="cart__icon"></div>
-									<div class="cart__sum">{{cart.amount()}}</div>
-								</div>
-							</div>
+							<vit-cart></vit-cart>
 						</div>
 					</div>
 				</header>
@@ -484,7 +479,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=e7bf461f9d8ed91b76e7069a958ef165"></script>
+	<script src="./dist/bundle.js?rev=bcfd20f787bf75dfec374967657c78a8"></script>
 
 </body>
 

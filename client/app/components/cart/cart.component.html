@@ -1,0 +1,38 @@
+<div ng-cloack class="cart-container">
+	<div class="cart">
+		<div data-hm-tap="open()" class="cart__icon"></div>
+		<div data-hm-tap="open()" class="cart__sum">{{cart.amount()}}</div>
+		<div class="cart-action js-cart-action">
+			<div class="cart-action__container">
+				<div class="cart-action__title">
+					<span data-ng-if="cart.amount() === 0">Корзина пуста</span>
+					<span data-ng-if="cart.amount() !== 0">Добавлено в корзину</span>
+				</div>
+				<div class="cart-action__items">
+					<div ng-repeat="product in cart.products track by product.id" class="cart-action__item">
+						<div class="cart-action__circle cart-action__counter">{{product.amount}}</div>
+						<div data-hm-tap="cart.removeItem(product.id)" class="cart-action__circle cart-action__close-btn">
+							<i class="material-icons cart-action__icon">close</i>
+						</div>
+						<div class="cart-action__pic">
+							<img class="img-responsive" data-ng-src="{{::product.image}}" alt="">
+						</div>
+						<div class="cart-action__info">
+							<div class="cart-action__item-title">{{::product.title}}</div>
+							<div class="cart-action__item-snippet">{{::product.snippet}}</div>
+							<div class="cart-action__item-sum">Сумма {{product.price * product.amount}} руб.</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart-action__sum">
+					<span>Общая стоимость</span>
+					<span>{{cart.getGeneralSum()}} руб</span>
+				</div>
+				<div class="cart-action__buttons">
+					<a href="#" class="cart-action__button cart-action__button--gutter">Заказать в 1 клик</a>
+					<a href="#" class="cart-action__button">Оформить заказ</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

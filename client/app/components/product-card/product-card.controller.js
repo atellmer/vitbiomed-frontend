@@ -141,9 +141,11 @@
 				document.querySelector('[data-card-id="' + id + '"] [data-metadata-title]')
 			).attr('data-metadata-title');
 
-			var price = angular.element(
-				document.querySelector('[data-card-id="' + id + '"] [data-metadata-price]')
-			).attr('data-metadata-price');
+			var price = parseFloat(
+				angular.element(
+					document.querySelector('[data-card-id="' + id + '"] [data-metadata-price]')
+				).attr('data-metadata-price')
+			);
 
 			var image = angular.element(
 				document.querySelector('[data-card-id="' + id + '"] [data-metadata-image]')
