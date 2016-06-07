@@ -10,7 +10,6 @@
 
 	function CartController($scope, $timeout, lkCart) {
 		var vm = this;
-
 		var cart = null;
 
 		vm.visibility = lkCart.visibility;
