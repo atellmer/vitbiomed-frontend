@@ -6,14 +6,16 @@
 		.module('app')
 		.factory('lkCart', lkCart);
 
-	lkCart.$inject = ['lkFunctions', 'lkSelectProduct'];
+	lkCart.$inject = ['$rootScope', 'lkFunctions', 'lkSelectProduct'];
 
-	function lkCart(lkFunctions, lkSelectProduct) {
+	function lkCart($rootScope, lkFunctions, lkSelectProduct) {
 		var service = {
+			visibility: false,
 			getAmount: getAmount,
 			addToCart: addToCart,
 			getGeneralSum: getGeneralSum,
 			removeItem: removeItem,
+			changeVisibility: changeVisibility,
 			store: []
 		};
 
@@ -70,6 +72,14 @@
 
 			lkSelectProduct.store.splice(indexProductsStore, 1);
 			service.store.splice(indexCartStore, 1);
+		}
+
+		function changeVisibility(value) {
+			service.visibility = value;
+
+			$rootScope.$broadcast('cart:visibility', {
+				visibility: service.visibility
+			});
 		}
 	}
 })();

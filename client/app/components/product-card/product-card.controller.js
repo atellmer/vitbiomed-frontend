@@ -12,7 +12,6 @@
 		var vm = this;
 
 		vm.showDetail = showDetail;
-
 		vm.setAmount = setAmount;
 		vm.setVolume = setVolume;
 		vm.getAmount = getAmount;
@@ -134,6 +133,8 @@
 				snippet: metadata.snippet
 			}
 			lkCart.addToCart(options);
+
+			lkCart.changeVisibility(true);
 		}
 		
 		function _getMetadata(id) {
