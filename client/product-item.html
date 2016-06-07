@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=e354ce243b265a2f9636ed5dc0b383be">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=856830158fc8e561ed929465f81777f8">
 	<!--?rev=@@hash-->
 </head>
 
@@ -94,7 +94,8 @@
 								<div class="cart">
 									<div data-hm-tap="cart.open()" class="cart__icon"></div>
 									<div data-hm-tap="cart.open()" class="cart__sum">{{cart.amount()}}</div>
-									<div class="cart-action js-cart-action">
+
+									<div ng-if="cart.visibility" class="cart-action js-cart-action">
 										<div class="cart-action__container">
 											<div class="cart-action__title">
 												<span data-ng-if="cart.amount() === 0">Корзина пуста</span>

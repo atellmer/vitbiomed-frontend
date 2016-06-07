@@ -124,6 +124,8 @@
 				snippet: metadata.snippet
 			}
 			lkCart.addToCart(options);
+
+			lkCart.changeVisibility(true);
 		}
 
 		function clickToOpen(templateId) {
