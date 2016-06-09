@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=856830158fc8e561ed929465f81777f8">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=e46c50ada07b3217e337ef602c86978a">
 	<!--?rev=@@hash-->
 </head>
 
@@ -214,19 +214,36 @@
 					</div>
 				</div-->
 				<div class="row no-padding">
-					<div class="col-md-12 col-md-12-override">
+					<div class="col-md-12 col-md-12-override" data-ng-controller="TabsController as tabs">
 
 						<div data-tab-panel="0" class="tab-panel">
-							<div class="tab-panel__controls">
-								<div data-tab-trigger="0" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" data-md-ink-ripple="#fff">
+							<div class="tab-panel__controls tab-panel__controls--desktop">
+								<div data-tab-trigger="0" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" data-md-ink-ripple="#fff">
 									Жидкие культуральные
 								</div>
-								<div data-tab-trigger="1" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
+								<div data-tab-trigger="1" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
 									Жидкие кисломолочные
 								</div>
-								<div data-tab-trigger="2" data-hm-tap="productsPage.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
+								<div data-tab-trigger="2" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
 									Таблетки и капсулы
 								</div>
+							</div>
+							<div class="tab-panel__controls tab-panel__controls--phone">
+								
+								<div class="vit-select js-vit-select" data-ng-controller="SelectController as select">
+									<div data-hm-tap="select.open($event)" class="vit-select__btn">
+										<span>{{select.selectName}}</span>
+										<span ng-if="!select.selectName">Жидкие культуральные</span>
+										<i class="material-icons vit-select__icon">arrow_drop_down</i>
+									</div>
+									<div class="vit-select__items js-vit-select__items">
+										<div data-tab-trigger="0" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Жидкие культуральные</div>
+										<div data-tab-trigger="1" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Жидкие кисломолочные</div>
+										<div data-tab-trigger="2" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Таблетки и капсулы</div>
+									</div>
+								</div>
+								
+
 							</div>
 							<div class="tab-panel__content" data-ng-controller="productCardController as productCard">
 								<div data-tab-target="0" class="tab-panel__item js-tab-panel__item--active">
@@ -875,7 +892,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=d3cad381b80c599decce2007ffc0c93e"></script>
+	<script src="./dist/bundle.js?rev=d28bb8fe294036a435170424400a8a9b"></script>
 
 </body>
 

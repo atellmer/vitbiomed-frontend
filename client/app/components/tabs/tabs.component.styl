@@ -6,7 +6,7 @@
 	@extend .flex
 	flex-flow column wrap
 	@media screen and (max-width: $phone)
-		margin 10px 0 0 0
+		margin 0
 		
 .likearts-content .products-page-container .tab-panel__controls
 	position relative
@@ -14,9 +14,19 @@
 	@extend .flex
 	@extend .paper-shadow-z1
 	@media screen and (max-width: $phone)
-		flex-flow column nowrap
 		box-shadow none!important
 		padding 0 0 30px 0
+
+	&--desktop
+		@media screen and (max-width: $phone)
+			display none
+
+	&--phone
+		display none
+		@media screen and (max-width: $phone)
+			display inherit
+			padding 0
+			width 100%
 	
 .likearts-content .products-page-container .tab-panel__btn
 	position relative
@@ -79,7 +89,7 @@
 	padding 60px 0 0 0
 	background-color #fff
 	@media screen and (max-width: $phone)
-		padding 40px 0
+		padding 10px 0
 	
 .likearts-content .products-page-container .tab-panel__item
 	display none
