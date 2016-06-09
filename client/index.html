@@ -10,11 +10,11 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=e46c50ada07b3217e337ef602c86978a">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=68eb03bf8ff3e541843370b65576e1b9">
 	<!--?rev=@@hash-->
 </head>
 
-<body ng-cloack class="likearts-content">
+<body data-ng-cloack class="likearts-content">
 
 	<div class="container-fluid">
 		<div class="header-container">
@@ -93,14 +93,14 @@
 								<div class="cart">
 									<div data-hm-tap="cart.open()" class="cart__icon"></div>
 									<div data-hm-tap="cart.open()" class="cart__sum">{{cart.amount()}}</div>
-									<div ng-if="cart.visibility" class="cart-action js-cart-action">
+									<div data-ng-if="cart.visibility" class="cart-action js-cart-action">
 										<div class="cart-action__container">
 											<div class="cart-action__title">
 												<span data-ng-if="cart.amount() === 0">Корзина пуста</span>
 												<span data-ng-if="cart.amount() !== 0">Добавлено в корзину</span>
 											</div>
 											<div class="cart-action__items">
-												<div ng-repeat="product in cart.products track by product.id" class="cart-action__item">
+												<div data-ng-repeat="product in cart.products track by product.id" class="cart-action__item">
 													<div class="cart-action__circle cart-action__counter">{{product.amount}}</div>
 													<div data-hm-tap="cart.removeItem(product.id)" class="cart-action__circle cart-action__close-btn">
 														<i class="material-icons cart-action__icon">close</i>
@@ -233,7 +233,7 @@
 								<div class="vit-select js-vit-select" data-ng-controller="SelectController as select">
 									<div data-hm-tap="select.open($event)" class="vit-select__btn">
 										<span>{{select.selectName}}</span>
-										<span ng-if="!select.selectName">Жидкие культуральные</span>
+										<span data-ng-if="!select.selectName">Жидкие культуральные</span>
 										<i class="material-icons vit-select__icon">arrow_drop_down</i>
 									</div>
 									<div class="vit-select__items js-vit-select__items">
@@ -294,7 +294,7 @@
 												</div>
 												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
 														<div class="product-card__letter">A</div>
 														<div class="composition">
@@ -365,7 +365,7 @@
 												</div>
 												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
 														<div class="product-card__letter">Б</div>
 														<div class="composition">
@@ -436,7 +436,7 @@
 												</div>
 												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
 														<div class="product-card__letter">В</div>
 														<div class="composition">
@@ -507,7 +507,7 @@
 												</div>
 												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
 														<div class="product-card__letter">С</div>
 														<div class="composition">
@@ -584,7 +584,7 @@
 												</div>
 												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
 														<div class="product-card__letter">К</div>
 														<div class="composition">
@@ -655,7 +655,7 @@
 												</div>
 												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
 													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-md-ink-ripple="#fff" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
+														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
 														<div class="product-card__letter">Л</div>
 														<div class="composition">
@@ -892,7 +892,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=d28bb8fe294036a435170424400a8a9b"></script>
+	<script src="./dist/bundle.js?rev=b61aaa54f4cb112b1b5b8178c8f1ce3d"></script>
 
 </body>
 

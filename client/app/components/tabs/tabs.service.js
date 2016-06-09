@@ -21,7 +21,7 @@
 
 		////////////////
 		function switchTab(event) { 
-			var parentId = angular.element(event.target.closest('[data-tab-panel]')).attr('data-tab-panel');	
+			var parentId = angular.element(event.target).closest('[data-tab-panel]').attr('data-tab-panel');	
 			var element = angular.element(event.target);
 			var triggerId = element.attr('data-tab-trigger');
 			var target = angular.element(document.querySelector('[data-tab-panel="' + parentId + '"] [data-tab-target="' + triggerId + '"]'));

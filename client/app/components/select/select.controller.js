@@ -27,12 +27,12 @@
 
 		function open(event) {
 			var parent = angular.element(event.target).closest('.js-vit-select');
-			var items = parent.find('.js-vit-select__items').toggleClass('js-vit-select__items--active');
+			parent.find('.js-vit-select__items').toggleClass('js-vit-select__items--active');
 		}
 
 		function change(event) {
 			var parent = angular.element(event.target).closest('.js-vit-select');
-			var items = parent.find('.js-vit-select__items').toggleClass('js-vit-select__items--active');
+			parent.find('.js-vit-select__items').toggleClass('js-vit-select__items--active');
 		}
 
 		function addActiveClass(id) {
