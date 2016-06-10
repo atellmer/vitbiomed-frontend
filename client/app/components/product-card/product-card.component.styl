@@ -4,7 +4,7 @@
 	position relative
 	width auto
 	height auto
-	min-height 650px
+	min-height 720px
 	border-radius 2px
 	background-color #fff
 	@extend .flex
@@ -241,3 +241,14 @@
 			margin 0 20px 0 0
 		@media screen and (max-width: $phone)
 			margin 0 50px 0 0
+
+.likearts-content .product-container .toggle-container
+	margin 30px 0
+	width 50%
+	transform translate(10px, 0)
+	@extend .flex
+	&__capture
+		margin 0 10px
+		&--green
+			color $primary-color
+

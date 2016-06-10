@@ -6,9 +6,9 @@
 		.module('app')
 		.controller('ProductCardController', ProductCardController);
 
-	ProductCardController.$inject = ['lkSelectProduct', 'lkCart'];
+	ProductCardController.$inject = ['$scope', 'lkSelectProduct', 'lkCart', 'CoursesPageDataService'];
 
-	function ProductCardController(lkSelectProduct, lkCart) {
+	function ProductCardController($scope, lkSelectProduct, lkCart, CoursesPageDataService) {
 		var vm = this;
 
 		vm.showDetail = showDetail;
@@ -16,11 +16,17 @@
 		vm.setVolume = setVolume;
 		vm.getAmount = getAmount;
 		vm.addToCart = addToCart;
+		vm.toggle = [];
+		vm.cards = [];
 
 		activate();
 
 		////////////////
-		function activate() { }
+		function activate() {
+			subscribeOnChangeToggle();
+			vm.cards = CoursesPageDataService.data;
+			console.log(CoursesPageDataService.data);
+		 }
 
 		function setAmount(event, count) {
 			var parent = angular.element(event.target).closest('[data-card-id]');
@@ -136,6 +142,16 @@
 
 			lkCart.changeVisibility(true);
 		}
+
+		function subscribeOnChangeToggle() {
+			$scope.$on('toggle:toggle', function(event, data) {
+				vm.toggle[data.id] = data.toggle;
+
+				console.log('id:', data.id);
+				console.log('toggle:', data.toggle);
+			});
+		}
+
 		
 		function _getMetadata(id) {
 			var title = angular.element(

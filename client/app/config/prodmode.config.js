@@ -9,6 +9,6 @@
 	prodMode.$inject = ['$compileProvider'];
 
 	function prodMode($compileProvider) {
-		$compileProvider.debugInfoEnabled(false);
+		//$compileProvider.debugInfoEnabled(false);
 	}
 })();
