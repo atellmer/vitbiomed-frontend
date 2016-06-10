@@ -37,7 +37,7 @@
 		min-width 80px
 	
 .likearts-content .product-container .product-card__discount
-	width 100%
+	flex 1
 	@extend .flex
 	padding 10px
 	text-align center
@@ -104,20 +104,32 @@
 	
 .likearts-content  .product-container .product-card__wrapper
 	width 100%
+	@extend .flex
+	flex-flow column wrap
+	justify-content space-between
 	
 .likearts-content .product-container .product-card__title
 	font-size 2.8rem
 	text-align center
-	margin 17px 0 0 0
+	padding 10px 30px
+	@media screen and (max-width: $tablet)
+		font-size 2.2rem
+	@media screen and (max-width: $phone)
+		font-size 2.4rem
 	
 .likearts-content .product-container .product-card__subtitle
 	font-size 1.3rem
 	text-align center
 	color $secondary-color-text
-	margin 10px 0 0 0
+	padding 10px 30px
+
+.likearts-content .product-container .product-card__description
+	padding 10px 30px
+	text-align center
+	font-size 1.5rem
 	
 .likearts-content .product-container .product-card__pic
-	margin 15px auto
+	margin 10px auto
 	max-height 220px
 	
 .likearts-content .product-container .select-block-container
@@ -139,6 +151,8 @@
 		padding 0 60px
 	@media screen and (max-width: 1200px)
 		padding 0 40px
+	@media screen and (max-width: $tablet)
+		padding 0 20px
 	@media screen and (max-width: $phone)
 		padding 0 30px
 	
@@ -150,8 +164,6 @@
 .likearts-content .product-container .composition__detail
 	font-size 1.3rem
 	margin 20px 0
-	overflow hidden
-	max-height 7rem
 	
 	
 .likearts-content .product-container .composition__sign--small
@@ -210,3 +222,22 @@
 		margin 0 0 0 5px
 	@media screen and (max-width: $tablet)
 		font-size 1.2rem
+
+
+.likearts-content .product-container .composition__table
+	width 100%
+
+.likearts-content .product-container .composition__table-row
+	@extend .flex
+	justify-content space-between
+
+.likearts-content .product-container .composition__table-cell
+	&:first-child
+		text-align left
+		margin 0 100px 0 0
+		@media screen and (max-width: $notebook)
+			margin 0 50px 0 0
+		@media screen and (max-width: $tablet)
+			margin 0 20px 0 0
+		@media screen and (max-width: $phone)
+			margin 0 50px 0 0

@@ -4,11 +4,11 @@
 
 	angular
 		.module('app')
-		.controller('productCardController', productCardController);
+		.controller('ProductCardController', ProductCardController);
 
-	productCardController.$inject = ['lkSelectProduct', 'lkCart'];
+	ProductCardController.$inject = ['lkSelectProduct', 'lkCart'];
 
-	function productCardController(lkSelectProduct, lkCart) {
+	function ProductCardController(lkSelectProduct, lkCart) {
 		var vm = this;
 
 		vm.showDetail = showDetail;
