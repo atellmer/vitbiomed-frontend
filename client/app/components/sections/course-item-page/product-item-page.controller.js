@@ -138,19 +138,19 @@
 		////////////////////////////	
 		function _getMetadata(id) {
 			var title = angular.element(
-				document.querySelector('[data-card-id="' + id + '"] [data-metadata-title]')
+				document.querySelector('[data-metadata-id="' + id + '"] [data-metadata-title]')
 			).attr('data-metadata-title');
 
 			var price = angular.element(
-				document.querySelector('[data-card-id="' + id + '"] [data-metadata-price]')
+				document.querySelector('[data-metadata-id="' + id + '"] [data-metadata-price]')
 			).attr('data-metadata-price');
 
 			var image = angular.element(
-				document.querySelector('[data-card-id="' + id + '"] [data-metadata-image]')
+				document.querySelector('[data-metadata-id="' + id + '"] [data-metadata-image]')
 			).attr('data-metadata-image');
 
 			var snippet = angular.element(
-				document.querySelector('[data-card-id="' + id + '"] [data-metadata-snippet]')
+				document.querySelector('[data-metadata-id="' + id + '"] [data-metadata-snippet]')
 			).attr('data-metadata-snippet');
 			
 			var metadata = {

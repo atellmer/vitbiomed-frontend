@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=5e0754c4a9cb2980212ad7c362ffd9d8">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=c8e7733685480984c55422ad53c927f3">
 	<!--?rev=@@hash-->
 </head>
 
@@ -151,22 +151,7 @@
 							<div data-card-id="0" class="phone-visible">
 								<div class="flex-container">
 									<div class="flex-item">
-										<div class="metadata" style="display: none;">
-											<div data-metadata-title="Биобаланс А"></div>
-											<div data-metadata-image="./resources/img/content/product-1.png"></div>
-											<div data-metadata-snippet="Жидкая форма"></div>
-											<div data-metadata-price="590"></div>
-										</div>
-										<div class="control-card__header">590 руб.</div>
 										<div class="select-product select-product--phone">
-											<div class="select-product__title">Выберите объем</div>
-											<div class="select-product__items">
-												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-
-												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-
-												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-											</div>
 											<div class="select-product__title">Количество</div>
 											<div class="amount-control">
 												<div data-hm-tap="courseItemPage.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
@@ -185,13 +170,15 @@
 									<div class="flex-item">
 										<div class="sum-block">
 											<div class="sum-block__price">
-												<span>590</span> руб.
+												<div>
+													<strike class="sum-block__strike">3075 руб.</strike>
+												</div>
+												<div>
+													<span>2765</span> руб.
+												</div>
 												<div class="sum-block__price-description">
 													цена за 1 шт.
 												</div>
-											</div>
-											<div class="sum-block__discount">
-												Скидка 10% при покупке курсом
 											</div>
 										</div>
 									</div>
@@ -234,23 +221,23 @@
 										<div class="product-description__items">
 											<div class="product-description__item">
 												<img src="./resources/img/course-page/item-1.png" class="product-description__pic" alt="alt">
-												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+												<a href="#" class="link product-description__link">Биобаланс А (табл) 1 шт</a>
 											</div>
 											<div class="product-description__item">
 												<img src="./resources/img/course-page/item-2.png" class="product-description__pic" alt="alt">
-												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+												<a href="#" class="link product-description__link">Биобаланс А (табл) 1 шт</a>
 											</div>
 											<div class="product-description__item">
 												<img src="./resources/img/course-page/item-3.png" class="product-description__pic" alt="alt">
-												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+												<a href="#" class="link product-description__link">Биобаланс А (табл) 1 шт</a>
 											</div>
 											<div class="product-description__item">
 												<img src="./resources/img/course-page/item-1.png" class="product-description__pic" alt="alt">
-												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+												<a href="#" class="link product-description__link">Биобаланс А (табл) 1 шт</a>
 											</div>
 											<div class="product-description__item">
 												<img src="./resources/img/course-page/item-2.png" class="product-description__pic" alt="alt">
-												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+												<a href="#" class="link product-description__link">Биобаланс А (табл) 1 шт</a>
 											</div>
 										</div>
 									</div>
@@ -273,33 +260,33 @@
 											– Атопический дерматит практически в 100% случаев сочетается с дисбиозом <br>
 										</p>
 									</div>
-
+									<div class="product-description__warning">
+										Перед прохождением курса мы рекомендуем <a href="#" class="link link--underline">проконсультироваться с врачом.</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+
 					<div class="col-xs-offset-1 col-xs-5 col-sm-offset-2 col-sm-4 col-md-offset-2 col-md-3 col-xxs-override col-md-offset-2-override col-md-3-override">
 						<div class="info-block">
 							<div class="info-block__container">
 								<div class="info-block__discount">
-									<a href="#" class="info-block__discount-link">Вы экономите 10% на покупке препарата вместе с курсом</a>
+									<a href="#" class="link info-block__discount-link">
+										Вы экономите 10% на покупке пробиотиков курсом:
+										<strike class="info-block__strike">3075 руб.</strike>
+									</a>
 								</div>
 								<div data-card-id="0" class="control-card">
-									<div class="metadata" style="display: none;">
-										<div data-metadata-title="Биобаланс А"></div>
-										<div data-metadata-image="./resources/img/content/product-1.png"></div>
-										<div data-metadata-snippet="Жидкая форма"></div>
-										<div data-metadata-price="590"></div>
+									<div class="metadata" data-metadata-id="0" style="display: none;">
+										<div data-metadata-title="Защита от аллергии"></div>
+										<div data-metadata-image="./resources/img/course-page/main-item.png"></div>
+										<div data-metadata-snippet="Курс"></div>
+										<div data-metadata-price="2765"></div>
 									</div>
-									<div class="control-card__header">590 руб.</div>
+									<div class="control-card__header">2765 руб.</div>
 									<div class="control-card__body">
 										<div class="select-product">
-											<div class="select-product__title">Выберите объем</div>
-											<div class="select-product__items">
-												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-											</div>
 											<div class="select-product__title">Количество</div>
 											<div class="amount-control amount-control--phone">
 												<div data-hm-tap="courseItemPage.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
@@ -316,30 +303,9 @@
 										<div data-hm-tap="courseItemPage.addToCart($event)" data-md-ink-ripple="#fff" class="buy-btn">Купить</div>
 									</div>
 								</div>
-								<div class="certificate-block">
-									<div class="certificate-block__title">Сертификаты</div>
-									<div class="certificate-block__description">Препарат запатентован с участием ведущих микробиологов РФ, имеет свидетельство о регистрации.</div>
-									<div class="certificate-items">
-										<div data-hm-tap="courseItemPage.clickToOpen('certificate-1')" class="certificate-items__item">
-											<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
-											<script type="text/ng-template" id="certificate-1">
-												<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
-											</script>
-										</div>
-										<div data-hm-tap="courseItemPage.clickToOpen('certificate-2')" class="certificate-items__item">
-											<img class="img-responsive" src="./resources/img/content/cert-2.jpg" alt="certificate">
-											<script type="text/ng-template" id="certificate-2">
-												<img class="img-responsive" src="./resources/img/content/cert-2.jpg" alt="certificate">
-											</script>
-										</div>
-										<div data-hm-tap="courseItemPage.clickToOpen('certificate-3')" class="certificate-items__item">
-											<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
-											<script type="text/ng-template" id="certificate-3">
-												<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
-											</script>
-										</div>
-									</div>
-								</div>
+
+
+								
 							</div>
 						</div>
 					</div>
@@ -542,7 +508,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=ed02302b66515275af1a0d20d4ea3834"></script>
+	<script src="./dist/bundle.js?rev=dd914c267d87c5201a8004a73e614b02"></script>
 
 </body>
 

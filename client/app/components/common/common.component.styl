@@ -115,4 +115,18 @@ a
 	@media screen and (max-width: $phone)
 		padding 0
 
+.likearts-content .link
+	color $primary-color-text
+	@extend .transition
+	&:hover
+		color $primary-color
+
+	&--underline
+		border-bottom 1px solid $primary-color-text
+		&:hover
+			border-bottom 1px solid $primary-color
+
+.likearts-content .text-dashed
+	border-bottom 1px dashed $primary-color-text
+
 

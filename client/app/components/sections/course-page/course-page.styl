@@ -94,6 +94,7 @@
 				flex-flow row wrap
 				justify-content flex-start
 
+		/*element*/
 		&__item
 			@extend .flex
 			flex-flow column wrap
@@ -103,230 +104,210 @@
 			@media screen and (max-width: 1200px)
 				width 25%
 
+		/*element*/
 		&__pic 
 			@media screen and (max-width: 1200px)
 				max-width 80%
 
+		/*element*/
 		&__link
 			margin 20px 0
-			color $primary-color-text
 			font-size 1.3rem
-			@extend .transition
-			&:hover
-				color $primary-color
 			@media screen and (max-width: $tablet)
 				font-size 1.2rem
 
-		
+		/*element*/
+		&__warning
+			font-size 2rem
+			margin 40px 0 0 0
+			font-weight 300
+			@media screen and (max-width: $phone)
+				display none
+			
 
 	/*block*/
-	.text-dashed
-		border-bottom 1px dashed $primary-color-text
+	.phone-padding
+		@media screen and (max-width: $phone)
+			padding 0 15px
+	
+	/*block*/
+	.info-block
+		position relative
+		@media screen and (max-width: $phone)
+			display none
 
-		
+		/*element*/
+		&__container
+			margin 75px 0 0 0
+			width 100%
 
-		
+		/*element*/
+		&__phone
+			text-align right
+			color #898989
+			font-weight 500
+			padding 10px 0
 
+		/*element*/
+		&__discount
+			font-size 1.8rem
+			font-weight 500
+			color $primary-color-text
+			margin-top 35px
 
-		
+		/*element*/
+		&__discount-link
+			display block
+			margin 40px 0
+			font-size 1.8rem
 
+		/*element*/
+		&__discount-icon
+			position relative
+			top 1px
+			right 3px
+			font-size 1.3rem
 
+		&__strike
+			color #f54f43
 
+	/*block*/
+	.control-card
+		position relative
+		width 100%
+		height auto
+		@extend .paper-shadow-z1
 
+		/*element*/
+		&__header
+			@extend .flex
+			background-color #383838
+			color #FFF
+			width 100%
+			height auto
+			min-height 140px
+			font-size 3.2rem
+			@media screen and (max-width: $phone)
+				display none
 
+		/*element*/
+		&__body
+			padding 40px
+			@media screen and (max-width: $tablet)
+				padding 20px
+	
+	/*block*/
+	.buy-btn
+		position relative
+		width 100%
+		height auto
+		padding 15px
+		background-color $primary-color
+		text-align center
+		color #FFF
+		text-transform uppercase
+		font-size 1.4rem
+		cursor pointer
+		user-select none
 
-
-
-
-.likearts-content .course-item-page-container .phone-padding
-	@media screen and (max-width: $phone)
+		/*modificators*/
+		&--phone
+			position relative
+			user-select none
+			font-size 1.6rem
+			margin 30px 0
+			@media screen and (max-width: $phone)
+				margin 5px 0
+	/*block*/
+	.btn-container
 		padding 0 15px
 	
-	
-.likearts-content .course-item-page-container .info-block
-	position relative
-	@media screen and (max-width: $phone)
-		display none
-		
-.likearts-content .course-item-page-container .info-block__container
-	margin 75px 0 0 0
-	width 100%
-	
-.likearts-content .course-item-page-container .info-block__phone
-	text-align right
-	color #898989
-	font-weight 500
-	padding 10px 0
-	
-.likearts-content .course-item-page-container .info-block__discount
-	font-size 1.8rem
-	font-weight 500
-	color $primary-color-text
-	margin-top 35px
-	
-.likearts-content .course-item-page-container .info-block__discount-link
-	display block
-	margin 40px 0
-	color $primary-color-text
-	font-size 1.8rem
-	@extend .transition
-	&:hover
-		color $primary-color
-	&::after
-		content '›'
-		margin 0 0 0 5px
-	
-.likearts-content .course-item-page-container .info-block__discount-icon
-	position relative
-	top 1px
-	right 3px
-	font-size 1.3rem
-	
-.likearts-content .course-item-page-container .col-xxs-override
-	@media screen and (max-width: $phone)
+	/*block*/
+	.price-label
 		width 100%
-		margin 0
-		padding 0
-		
-.likearts-content .course-item-page-container .control-card
-	position relative
-	width 100%
-	height auto
-	@extend .paper-shadow-z1
-	
-.likearts-content .course-item-page-container .control-card__header
-	@extend .flex
-	background-color #383838
-	color #FFF
-	width 100%
-	height auto
-	min-height 140px
-	font-size 3.2rem
-	@media screen and (max-width: $phone)
-		display none
-	
-.likearts-content .course-item-page-container .control-card__body
-	padding 40px
-	@media screen and (max-width: $tablet)
-		padding 20px
-	
-.likearts-content .course-item-page-container .buy-btn
-	position relative
-	width 100%
-	height auto
-	padding 15px
-	background-color $primary-color
-	text-align center
-	color #FFF
-	text-transform uppercase
-	font-size 1.4rem
-	cursor pointer
-	user-select none
-	
-.likearts-content .course-item-page-container .buy-btn--phone
-	position relative
-	user-select none
-	font-size 1.6rem
-	margin 30px 0
-	@media screen and (max-width: $phone)
-		margin 5px 0
-	
-.likearts-content .course-item-page-container .btn-container
-	padding 0 15px
-	
-.likearts-content .course-item-page-container .certificate-block
-	width 100%
-	height auto
-	border-top 1px solid #bdbdbd
-	margin 60px 0 0 0
-	padding 50px 0 0 0
-	
-.likearts-content .course-item-page-container .certificate-block__title
-	font-size 2.4rem
-	
-.likearts-content .course-item-page-container .certificate-block__description
-	font-size 1.5rem
-	margin 30px 0
-	
-.likearts-content .course-item-page-container .certificate-items
-	height auto
-	
-.likearts-content .course-item-page-container .certificate-items__item
-	display inline-block
-	width 100px
-	height auto
-	background-color #eeeeee
-	margin 10px 10px 0 0
-	cursor pointer
-	@media screen and (max-width: 992px)
-		width 80px
-		
-.likearts-content .course-item-page-container .price-label
-	width 100%
-	height auto
-	min-height 30px
-	background-color #383838
-	margin 20px 0
-	@extend .flex
-	justify-content space-around
-	color #FFF
-	padding 10px 15px
-	
-.likearts-content .course-item-page-container .col-md-offset-2-override
-	@media screen and (min-width: 992px)
-		margin-left 12%
-		
-.likearts-content .course-item-page-container .col-md-3-override
-	@media screen and (min-width: 992px)
-		width 27%
-		
-.likearts-content .course-item-page-container .col-md-7-override
-	@media screen and (min-width: 992px)
-		width 61%
-		
-.likearts-content .course-item-page-container .flex-container
-	padding 0 15px
-	height auto
-	@extend .flex
-	justify-content center
-	margin 0 0 25px 0
-	
-.likearts-content .course-item-page-container .flex-item
-	height 100%
-	
-.likearts-content .course-item-page-container .vertical-divider
-	width 1px
-	height 140px
-	margin 0 15px
-	background-color $primary-color
-	
-.likearts-content .course-item-page-container .sum-block
-	padding 0 15px
-	@media screen and (max-width: 360px)
-		padding 0
-	
-.likearts-content .course-item-page-container .sum-block__price
-	font-size 2.1rem
-	font-weight 700
-	text-align center
-	position relative
-	top -15px
-	@media screen and (max-width: 360px)
-		font-size 1.5rem
-	
-.likearts-content .course-item-page-container .sum-block__price-description
-	font-size 1.1rem
-	font-weight 500
-	
-.likearts-content .course-item-page-container .sum-block__discount
-	text-align center
-	font-weight 300
-	color $primary-color
-	font-size 1.4rem
-	margin 30px 0 0 0
-	max-width 100px
-	@media screen and (max-width: 360px)
-		font-size 1rem
-	
+		height auto
+		min-height 30px
+		background-color #383838
+		margin 20px 0
+		@extend .flex
+		justify-content space-around
+		color #FFF
+		padding 10px 15px
 
+	/*block*/
+	.flex-container
+		padding 0 15px
+		height auto
+		@extend .flex
+		flex-flow row-reverse wrap
+		justify-content center
+		margin 0 0 25px 0
+	
+	/*block*/
+	.flex-item
+		height 100%
+	
+	/*block*/
+	.vertical-divider
+		width 1px
+		height 140px
+		margin 0 15px
+		background-color $primary-color
+	
+	/*block*/
+	.sum-block
+		padding 0 15px
+		@media screen and (max-width: 360px)
+			padding 0
+	
+		/*element*/
+		&__price
+			font-size 2.1rem
+			font-weight 700
+			text-align center
+			position relative
+			top -15px
+			text-align right
+			@media screen and (max-width: 360px)
+				font-size 1.5rem
+
+		/*element*/
+		&__price-description
+			font-size 1.1rem
+			font-weight 500
+		
+		/*element*/
+		&__discount
+			text-align center
+			font-weight 300
+			color $primary-color
+			font-size 1.4rem
+			margin 30px 0 0 0
+			max-width 100px
+			@media screen and (max-width: 360px)
+				font-size 1rem
+
+		&__strike
+			color #f54f43
+			font-size 1.2rem
+
+
+	/*override*/
+	.col-xxs-override
+		@media screen and (max-width: $phone)
+			width 100%
+			margin 0
+			padding 0
+
+	.col-md-offset-2-override
+		@media screen and (min-width: 992px)
+			margin-left 12%
+		
+	.col-md-3-override
+		@media screen and (min-width: 992px)
+			width 27%
+		
+	.col-md-7-override
+		@media screen and (min-width: 992px)
+			width 61%
 	
