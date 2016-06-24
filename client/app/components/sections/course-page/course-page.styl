@@ -291,6 +291,49 @@
 			color #f54f43
 			font-size 1.2rem
 
+	.note
+		margin 30px 0
+		@extend .flex
+		align-items flex-start
+		@media screen and (max-width: $phone)
+			display none
+
+		&__icon
+			display block
+			width 16px
+			height 16px
+			@extend .cover 
+			background-image: url(../resources/icons/note.svg)
+			margin 0 10px 0 0
+
+		&__text
+			display block
+			width 90%
+
+	.faq
+		margin 60px 0 30px 0
+
+		&__title
+			font-size 2.4rem
+			margin 0 0 40px 0
+			@media screen and (max-width: $phone)
+				font-size 2.2rem
+
+		&__item 
+			margin 20px 0
+			font-size 1.5rem
+			@media screen and (max-width: $phone)
+				font-size 1.3rem
+			
+		&__item-title
+			color $primary-color
+			border-color $primary-color
+
+		&__item-content
+			display none
+			margin 20px 0
+
+
 
 	/*override*/
 	.col-xxs-override
