@@ -4,9 +4,9 @@
 
 	angular
 		.module('app')
-		.controller('CourseItemPageController', CourseItemPageController);
+		.controller('ProductItemPageController', ProductItemPageController);
 
-	CourseItemPageController.$inject = [
+	ProductItemPageController.$inject = [
 		'ngDialog', 
 		'lkFunctions', 
 		'lkSelectProduct', 
@@ -14,7 +14,7 @@
 		'lkCart'
 	];
 
-	function CourseItemPageController(
+	function ProductItemPageController(
 		ngDialog, 
 		lkFunctions, 
 		lkSelectProduct, 

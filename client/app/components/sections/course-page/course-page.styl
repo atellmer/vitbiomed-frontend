@@ -1,0 +1,332 @@
+@import 'nib'
+
+.likearts-content .course-item-page-container
+	padding 50px 0
+	@media screen and (max-width: $phone)
+		padding 0
+
+	/*block*/
+	.product-card
+		width 100%
+		max-width 800px
+		@media screen and (max-width: $phone)
+			max-width none
+
+		/*element*/
+		&__title
+			font-size 4rem
+			line-height 1.2
+			padding 10px 0
+			margin 0
+			@media screen and (max-width: $tablet)
+				font-size 3.2rem
+			@media screen and (max-width: $phone)
+				font-size 2.1rem
+				padding 5px 0
+				text-align center
+
+				/*modificators*/
+				&--accent
+					color #f44336
+
+		/*element*/
+		&__subtitle
+			font-size 2rem
+			padding 10px 0
+			margin 0
+			@media screen and (max-width: $tablet)
+				font-size 1.8rem
+			@media screen and (max-width: $phone)
+				font-size 1.4rem
+				padding 0
+				text-align center
+
+		/*element*/
+		&__picture
+			@media screen and (max-width: $phone)
+				width 50%
+				margin 0 auto
+			
+
+		/*element*/
+		&__picture-container
+			margin 40px 0
+			@media screen and (max-width: $phone)
+				margin 10px 0
+
+	/*block*/
+	.product-description
+		@media screen and (max-width: $phone)
+			margin 40px 0
+
+		/*element*/
+		&__title
+			font-size 2.4rem
+			font-weight 300
+			margin 20px 0
+			@media screen and (max-width: $tablet)
+				font-size 2.2rem
+			@media screen and (max-width: $phone)
+				margin 10px 0
+
+		/*element*/
+		&__content
+			display none
+			font-size 1.5rem
+			font-weight 300
+			margin 0 0 20px 0
+			@media screen and (max-width: $phone)
+				font-size 1.3rem
+			@media screen and (max-width: $phone)
+				margin  0 0 40px 0
+
+			/*modificators*/
+			&--active
+				display inherit
+
+		/*element*/
+		&__items
+			@extend .flex
+			flex-flow row nowrap
+			justify-content space-between
+			align-items stretch
+			@media screen and (max-width: 1200px)
+				flex-flow row wrap
+				justify-content flex-start
+
+		&__item
+			@extend .flex
+			flex-flow column wrap
+			justify-content space-between
+			margin 10px
+			text-align center
+			@media screen and (max-width: 1200px)
+				width 25%
+
+		&__pic 
+			@media screen and (max-width: 1200px)
+				max-width 80%
+
+		&__link
+			margin 20px 0
+			color $primary-color-text
+			font-size 1.3rem
+			@extend .transition
+			&:hover
+				color $primary-color
+			@media screen and (max-width: $tablet)
+				font-size 1.2rem
+
+		
+
+	/*block*/
+	.text-dashed
+		border-bottom 1px dashed $primary-color-text
+
+		
+
+		
+
+
+		
+
+
+
+
+
+
+
+
+
+.likearts-content .course-item-page-container .phone-padding
+	@media screen and (max-width: $phone)
+		padding 0 15px
+	
+	
+.likearts-content .course-item-page-container .info-block
+	position relative
+	@media screen and (max-width: $phone)
+		display none
+		
+.likearts-content .course-item-page-container .info-block__container
+	margin 75px 0 0 0
+	width 100%
+	
+.likearts-content .course-item-page-container .info-block__phone
+	text-align right
+	color #898989
+	font-weight 500
+	padding 10px 0
+	
+.likearts-content .course-item-page-container .info-block__discount
+	font-size 1.8rem
+	font-weight 500
+	color $primary-color-text
+	margin-top 35px
+	
+.likearts-content .course-item-page-container .info-block__discount-link
+	display block
+	margin 40px 0
+	color $primary-color-text
+	font-size 1.8rem
+	@extend .transition
+	&:hover
+		color $primary-color
+	&::after
+		content '›'
+		margin 0 0 0 5px
+	
+.likearts-content .course-item-page-container .info-block__discount-icon
+	position relative
+	top 1px
+	right 3px
+	font-size 1.3rem
+	
+.likearts-content .course-item-page-container .col-xxs-override
+	@media screen and (max-width: $phone)
+		width 100%
+		margin 0
+		padding 0
+		
+.likearts-content .course-item-page-container .control-card
+	position relative
+	width 100%
+	height auto
+	@extend .paper-shadow-z1
+	
+.likearts-content .course-item-page-container .control-card__header
+	@extend .flex
+	background-color #383838
+	color #FFF
+	width 100%
+	height auto
+	min-height 140px
+	font-size 3.2rem
+	@media screen and (max-width: $phone)
+		display none
+	
+.likearts-content .course-item-page-container .control-card__body
+	padding 40px
+	@media screen and (max-width: $tablet)
+		padding 20px
+	
+.likearts-content .course-item-page-container .buy-btn
+	position relative
+	width 100%
+	height auto
+	padding 15px
+	background-color $primary-color
+	text-align center
+	color #FFF
+	text-transform uppercase
+	font-size 1.4rem
+	cursor pointer
+	user-select none
+	
+.likearts-content .course-item-page-container .buy-btn--phone
+	position relative
+	user-select none
+	font-size 1.6rem
+	margin 30px 0
+	@media screen and (max-width: $phone)
+		margin 5px 0
+	
+.likearts-content .course-item-page-container .btn-container
+	padding 0 15px
+	
+.likearts-content .course-item-page-container .certificate-block
+	width 100%
+	height auto
+	border-top 1px solid #bdbdbd
+	margin 60px 0 0 0
+	padding 50px 0 0 0
+	
+.likearts-content .course-item-page-container .certificate-block__title
+	font-size 2.4rem
+	
+.likearts-content .course-item-page-container .certificate-block__description
+	font-size 1.5rem
+	margin 30px 0
+	
+.likearts-content .course-item-page-container .certificate-items
+	height auto
+	
+.likearts-content .course-item-page-container .certificate-items__item
+	display inline-block
+	width 100px
+	height auto
+	background-color #eeeeee
+	margin 10px 10px 0 0
+	cursor pointer
+	@media screen and (max-width: 992px)
+		width 80px
+		
+.likearts-content .course-item-page-container .price-label
+	width 100%
+	height auto
+	min-height 30px
+	background-color #383838
+	margin 20px 0
+	@extend .flex
+	justify-content space-around
+	color #FFF
+	padding 10px 15px
+	
+.likearts-content .course-item-page-container .col-md-offset-2-override
+	@media screen and (min-width: 992px)
+		margin-left 12%
+		
+.likearts-content .course-item-page-container .col-md-3-override
+	@media screen and (min-width: 992px)
+		width 27%
+		
+.likearts-content .course-item-page-container .col-md-7-override
+	@media screen and (min-width: 992px)
+		width 61%
+		
+.likearts-content .course-item-page-container .flex-container
+	padding 0 15px
+	height auto
+	@extend .flex
+	justify-content center
+	margin 0 0 25px 0
+	
+.likearts-content .course-item-page-container .flex-item
+	height 100%
+	
+.likearts-content .course-item-page-container .vertical-divider
+	width 1px
+	height 140px
+	margin 0 15px
+	background-color $primary-color
+	
+.likearts-content .course-item-page-container .sum-block
+	padding 0 15px
+	@media screen and (max-width: 360px)
+		padding 0
+	
+.likearts-content .course-item-page-container .sum-block__price
+	font-size 2.1rem
+	font-weight 700
+	text-align center
+	position relative
+	top -15px
+	@media screen and (max-width: 360px)
+		font-size 1.5rem
+	
+.likearts-content .course-item-page-container .sum-block__price-description
+	font-size 1.1rem
+	font-weight 500
+	
+.likearts-content .course-item-page-container .sum-block__discount
+	text-align center
+	font-weight 300
+	color $primary-color
+	font-size 1.4rem
+	margin 30px 0 0 0
+	max-width 100px
+	@media screen and (max-width: 360px)
+		font-size 1rem
+	
+
+	

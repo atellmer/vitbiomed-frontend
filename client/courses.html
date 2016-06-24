@@ -219,57 +219,61 @@
 						<div data-tab-panel="0" class="tab-panel">
 							<div class="tab-panel__controls tab-panel__controls--desktop">
 								<div data-tab-trigger="0" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" data-md-ink-ripple="#fff">
-									Жидкие культуральные
+									Профилактические курсы
 								</div>
 								<div data-tab-trigger="1" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
-									Жидкие кисломолочные
-								</div>
-								<div data-tab-trigger="2" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
-									Таблетки и капсулы
+									Лечебные курсы
 								</div>
 							</div>
 							<div class="tab-panel__controls tab-panel__controls--phone">
-								
+
 								<div class="vit-select js-vit-select" data-ng-controller="SelectController as select">
 									<div data-hm-tap="select.open($event)" class="vit-select__btn">
 										<span>{{select.selectName}}</span>
-										<span data-ng-if="!select.selectName">Жидкие культуральные</span>
+										<span data-ng-if="!select.selectName">Профилактические курсы</span>
 										<i class="material-icons vit-select__icon">arrow_drop_down</i>
 									</div>
 									<div class="vit-select__items js-vit-select__items">
-										<div data-tab-trigger="0" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Жидкие культуральные</div>
-										<div data-tab-trigger="1" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Жидкие кисломолочные</div>
-										<div data-tab-trigger="2" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Таблетки и капсулы</div>
+										<div data-tab-trigger="0" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Профилактические курсы</div>
+										<div data-tab-trigger="1" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Лучебные курсы</div>
 									</div>
 								</div>
-								
 
 							</div>
+
+							<div class="tab-panel__title">Лечебные курсы рекомендованы тем, кто прошел консультацию врача (т.е. только по назначению врача).</div>
+
 							<div class="tab-panel__content" data-ng-controller="ProductCardController as productCard">
 								<div data-tab-target="0" class="tab-panel__item js-tab-panel__item--active">
 									<div class="product-container">
 
-										<div class="product-container__item">
-											<div data-card-id="0" class="product-card">
+										<div data-ng-if="card.type === 'Профилактические курсы'" data-ng-repeat="card in productCard.cards track by card.id" class="product-container__item">
+											<div data-card-id="{{::card.id}}" class="product-card">
 												<div class="metadata" style="display: none;">
-													<div data-metadata-title="Биобаланс А"></div>
-													<div data-metadata-image="./resources/img/products-page/cards/1.png"></div>
-													<div data-metadata-snippet="Жидкая форма"></div>
-													<div data-metadata-price="590"></div>
+													<div data-metadata-title="{{::card.title}}"></div>
+													<div data-metadata-image="{{::card.image}}"></div>
+													<div data-metadata-snippet="{{::card.snippet}}"></div>
+													<div data-metadata-price="{{::card.price}}"></div>
 												</div>
 												<header class="product-card__header">
-													<div class="product-card__price">590 руб.</div>
-													<div class="product-card__discount">
-														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
-													</div>
+													<div class="product-card__price">{{::card.price}} руб.</div>
+													<div class="product-card__discount"></div>
 												</header>
 												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
 													<div class="product-card__wrapper">
 														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
 														</div>
-														<div class="product-card__title js-product-card__title">Биобаланс А</div>
-														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
-														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic js-product-card__pic">
+														<div class="product-card__title js-product-card__title">{{::card.title}}</div>
+														<div class="product-card__subtitle">{{::card.subtitle}}</div>
+
+														<div class="product-card__description">{{::card.description}}</div>
+
+														<div class="toggle-container">
+															<span data-ng-class="{'toggle-container__capture--green': !productCard.toggle[card.id]}" class="toggle-container__capture ">Детям</span>
+															<ios-toggle id="{{card.id}}"></ios-toggle>
+															<span data-ng-class="{'toggle-container__capture--green': productCard.toggle[card.id]}" class="toggle-container__capture">Взрослым</span>
+														</div>
+
 														<div class="select-block-container">
 															<div class="select-product">
 																<div class="select-product__title">Выберите объем</div>
@@ -283,7 +287,7 @@
 																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
 																		<i class="material-icons amount-control__icon">remove</i>
 																	</div>
-																	<div class="amount-control__counter">{{productCard.getAmount(0)}}</div>
+																	<div class="amount-control__counter">{{productCard.getAmount(card.id)}}</div>
 																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
 																		<i class="material-icons amount-control__icon">add</i>
 																	</div>
@@ -296,21 +300,25 @@
 													<div class="product-card__wrapper">
 														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
-														<div class="product-card__letter">A</div>
+														<div class="product-card__title js-product-card__title">Курс «Укрепление иммунитета»</div>
 														<div class="composition">
-															<div class="composition__sign">Состав</div>
-															<div class="composition__detail">Лиофилизированная биомасса Bifidobacterium bifidum штамм №1, 1х10⁸ КОЕ/г, стабилизатор стеарат кальция (Е470), эмульгатор тальк (Е553).</div>
-															<div class="composition__sign composition__sign--small">Не является лекарственным средством.</div>
+															<div class="composition__detail">
+																<div class="composition__table">
+																	<div data-ng-repeat="composition in card.composition" class="composition__table-row">
+																		<span class="composition__table-cell">{{::composition.item}}</span>
+																		<span class="composition__table-cell">{{::composition.amount}}</span>
+																	</div>
+																</div>
+															</div>
 															<div class="composition__sign composition__sign--margin">Не содержит</div>
 															<div class="composition__labels">
-																<div class="composition__label composition__label--lactose"></div>
 																<div class="composition__label composition__label--gluten"></div>
 																<div class="composition__label composition__label--sugar"></div>
 																<div class="composition__label composition__label--gmo"></div>
 															</div>
 														</div>
 														<div class="route-btn__container">
-															<a href="#" class="route-btn__link">Подробнее</a>
+															<a href="{{::card.link}}" class="route-btn__link">Подробнее</a>
 														</div>
 													</div>
 												</div>
@@ -319,247 +327,40 @@
 												</footer>
 											</div>
 										</div>
-
-										<div class="product-container__item">
-											<div data-card-id="1" class="product-card">
-												<div class="metadata" style="display: none">
-													<div data-metadata-title="Биобаланс Б"></div>
-													<div data-metadata-image="./resources/img/products-page/cards/1.png"></div>
-													<div data-metadata-snippet="Жидкая форма"></div>
-													<div data-metadata-price="590"></div>
-												</div>
-												<header class="product-card__header">
-													<div class="product-card__price">590 руб.</div>
-													<div class="product-card__discount">
-														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
-													</div>
-												</header>
-												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
-														</div>
-														<div class="product-card__title js-product-card__title">Биобаланс Б</div>
-														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
-														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic js-product-card__pic">
-														<div class="select-block-container">
-															<div class="select-product">
-																<div class="select-product__title">Выберите объем</div>
-																<div class="select-product__items">
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-																</div>
-																<div class="select-product__title">Количество</div>
-																<div class="amount-control">
-																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
-																		<i class="material-icons amount-control__icon">remove</i>
-																	</div>
-																	<div class="amount-control__counter">{{productCard.getAmount(1)}}</div>
-																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
-																		<i class="material-icons amount-control__icon">add</i>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
-														</div>
-														<div class="product-card__letter">Б</div>
-														<div class="composition">
-															<div class="composition__sign">Состав</div>
-															<div class="composition__detail">Лиофилизированная биомасса Bifidobacterium bifidum штамм №1, 1х10⁸ КОЕ/г, стабилизатор стеарат кальция (Е470), эмульгатор тальк (Е553).</div>
-															<div class="composition__sign composition__sign--small">Не является лекарственным средством.</div>
-															<div class="composition__sign composition__sign--margin">Не содержит</div>
-															<div class="composition__labels">
-																<div class="composition__label composition__label--lactose"></div>
-																<div class="composition__label composition__label--gluten"></div>
-																<div class="composition__label composition__label--sugar"></div>
-																<div class="composition__label composition__label--gmo"></div>
-															</div>
-														</div>
-														<div class="route-btn__container">
-															<a href="#" class="route-btn__link">Подробнее</a>
-														</div>
-													</div>
-												</div>
-												<footer class="product-card__footer">
-													<div data-hm-tap="productCard.addToCart($event)" data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
-												</footer>
-											</div>
-										</div>
-
-										<div class="product-container__item">
-											<div data-card-id="2" class="product-card">
-												<div class="metadata" style="display: none">
-													<div data-metadata-title="Биобаланс В"></div>
-													<div data-metadata-image="./resources/img/products-page/cards/1.png"></div>
-													<div data-metadata-snippet="Жидкая форма"></div>
-													<div data-metadata-price="690"></div>
-												</div>
-												<header class="product-card__header">
-													<div class="product-card__price">690 руб.</div>
-													<div class="product-card__discount">
-														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
-													</div>
-												</header>
-												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
-														</div>
-														<div class="product-card__title js-product-card__title">Биобаланс В</div>
-														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
-														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic js-product-card__pic">
-														<div class="select-block-container">
-															<div class="select-product">
-																<div class="select-product__title">Выберите объем</div>
-																<div class="select-product__items">
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-																</div>
-																<div class="select-product__title">Количество</div>
-																<div class="amount-control">
-																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
-																		<i class="material-icons amount-control__icon">remove</i>
-																	</div>
-																	<div class="amount-control__counter">{{productCard.getAmount(2)}}</div>
-																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
-																		<i class="material-icons amount-control__icon">add</i>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
-														</div>
-														<div class="product-card__letter">В</div>
-														<div class="composition">
-															<div class="composition__sign">Состав</div>
-															<div class="composition__detail">Лиофилизированная биомасса Bifidobacterium bifidum штамм №1, 1х10⁸ КОЕ/г, стабилизатор стеарат кальция (Е470), эмульгатор тальк (Е553).</div>
-															<div class="composition__sign composition__sign--small">Не является лекарственным средством.</div>
-															<div class="composition__sign composition__sign--margin">Не содержит</div>
-															<div class="composition__labels">
-																<div class="composition__label composition__label--lactose"></div>
-																<div class="composition__label composition__label--gluten"></div>
-																<div class="composition__label composition__label--sugar"></div>
-																<div class="composition__label composition__label--gmo"></div>
-															</div>
-														</div>
-														<div class="route-btn__container">
-															<a href="#" class="route-btn__link">Подробнее</a>
-														</div>
-													</div>
-												</div>
-												<footer class="product-card__footer">
-													<div data-hm-tap="productCard.addToCart($event)" data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
-												</footer>
-											</div>
-										</div>
-
-										<div class="product-container__item">
-											<div data-card-id="3" class="product-card">
-												<div class="metadata" style="display: none">
-													<div data-metadata-title="Биобаланс С"></div>
-													<div data-metadata-image="./resources/img/products-page/cards/1.png"></div>
-													<div data-metadata-snippet="Жидкая форма"></div>
-													<div data-metadata-price="690"></div>
-												</div>
-												<header class="product-card__header">
-													<div class="product-card__price">690 руб.</div>
-													<div class="product-card__discount">
-														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
-													</div>
-												</header>
-												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
-														</div>
-														<div class="product-card__title js-product-card__title">Биобаланс С</div>
-														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
-														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic js-product-card__pic">
-														<div class="select-block-container">
-															<div class="select-product">
-																<div class="select-product__title">Выберите объем</div>
-																<div class="select-product__items">
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-																</div>
-																<div class="select-product__title">Количество</div>
-																<div class="amount-control">
-																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
-																		<i class="material-icons amount-control__icon">remove</i>
-																	</div>
-																	<div class="amount-control__counter">{{productCard.getAmount(3)}}</div>
-																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
-																		<i class="material-icons amount-control__icon">add</i>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
-														</div>
-														<div class="product-card__letter">С</div>
-														<div class="composition">
-															<div class="composition__sign">Состав</div>
-															<div class="composition__detail">Лиофилизированная биомасса Bifidobacterium bifidum штамм №1, 1х10⁸ КОЕ/г, стабилизатор стеарат кальция (Е470), эмульгатор тальк (Е553).</div>
-															<div class="composition__sign composition__sign--small">Не является лекарственным средством.</div>
-															<div class="composition__sign composition__sign--margin">Не содержит</div>
-															<div class="composition__labels">
-																<div class="composition__label composition__label--lactose"></div>
-																<div class="composition__label composition__label--gluten"></div>
-																<div class="composition__label composition__label--sugar"></div>
-																<div class="composition__label composition__label--gmo"></div>
-															</div>
-														</div>
-														<div class="route-btn__container">
-															<a href="#" class="route-btn__link">Подробнее</a>
-														</div>
-													</div>
-												</div>
-												<footer class="product-card__footer">
-													<div data-hm-tap="productCard.addToCart($event)" data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
-												</footer>
-											</div>
-										</div>
-
 
 									</div>
 								</div>
+
 								<div data-tab-target="1" class="tab-panel__item">
 									<div class="product-container">
-
-										<div class="product-container__item">
-											<div data-card-id="4" class="product-card">
-												<div class="metadata" style="display: none">
-													<div data-metadata-title="Биобаланс К"></div>
-													<div data-metadata-image="./resources/img/products-page/cards/1.png"></div>
-													<div data-metadata-snippet="Жидкая форма"></div>
-													<div data-metadata-price="690"></div>
+										
+										<div data-ng-if="card.type === 'Лечебные курсы'" data-ng-repeat="card in productCard.cards track by card.id" class="product-container__item">
+											<div data-card-id="{{::card.id}}" class="product-card">
+												<div class="metadata" style="display: none;">
+													<div data-metadata-title="{{::card.title}}"></div>
+													<div data-metadata-image="{{::card.image}}"></div>
+													<div data-metadata-snippet="{{::card.snippet}}"></div>
+													<div data-metadata-price="{{::card.price}}"></div>
 												</div>
 												<header class="product-card__header">
-													<div class="product-card__price">690 руб.</div>
-													<div class="product-card__discount">
-														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
-													</div>
+													<div class="product-card__price">{{::card.price}} руб.</div>
+													<div class="product-card__discount"></div>
 												</header>
 												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
 													<div class="product-card__wrapper">
 														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
 														</div>
-														<div class="product-card__title js-product-card__title">Биобаланс К</div>
-														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
-														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic js-product-card__pic">
+														<div class="product-card__title js-product-card__title">{{::card.title}}</div>
+														<div class="product-card__subtitle">{{::card.subtitle}}</div>
+
+														<div class="product-card__description">{{::card.description}}</div>
+
+														<div class="toggle-container">
+															<span data-ng-class="{'toggle-container__capture--green': !productCard.toggle[card.id]}" class="toggle-container__capture ">Детям</span>
+															<ios-toggle id="{{card.id}}"></ios-toggle>
+															<span data-ng-class="{'toggle-container__capture--green': productCard.toggle[card.id]}" class="toggle-container__capture">Взрослым</span>
+														</div>
+
 														<div class="select-block-container">
 															<div class="select-product">
 																<div class="select-product__title">Выберите объем</div>
@@ -573,7 +374,7 @@
 																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
 																		<i class="material-icons amount-control__icon">remove</i>
 																	</div>
-																	<div class="amount-control__counter">{{productCard.getAmount(4)}}</div>
+																	<div class="amount-control__counter">{{::productCard.getAmount(card.id)}}</div>
 																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
 																		<i class="material-icons amount-control__icon">add</i>
 																	</div>
@@ -586,92 +387,25 @@
 													<div class="product-card__wrapper">
 														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
 														</div>
-														<div class="product-card__letter">К</div>
+														<div class="product-card__title js-product-card__title">Курс «Укрепление иммунитета»</div>
 														<div class="composition">
-															<div class="composition__sign">Состав</div>
-															<div class="composition__detail">Лиофилизированная биомасса Bifidobacterium bifidum штамм №1, 1х10⁸ КОЕ/г, стабилизатор стеарат кальция (Е470), эмульгатор тальк (Е553).</div>
-															<div class="composition__sign composition__sign--small">Не является лекарственным средством.</div>
+															<div class="composition__detail">
+																<div class="composition__table">
+																	<div data-ng-repeat="composition in card.composition" class="composition__table-row">
+																		<span class="composition__table-cell">{{::composition.item}}</span>
+																		<span class="composition__table-cell">{{::composition.amount}}</span>
+																	</div>
+																</div>
+															</div>
 															<div class="composition__sign composition__sign--margin">Не содержит</div>
 															<div class="composition__labels">
-																<div class="composition__label composition__label--lactose"></div>
 																<div class="composition__label composition__label--gluten"></div>
 																<div class="composition__label composition__label--sugar"></div>
 																<div class="composition__label composition__label--gmo"></div>
 															</div>
 														</div>
 														<div class="route-btn__container">
-															<a href="#" class="route-btn__link">Подробнее</a>
-														</div>
-													</div>
-												</div>
-												<footer class="product-card__footer">
-													<div data-hm-tap="productCard.addToCart($event)" data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
-												</footer>
-											</div>
-										</div>
-
-										<div class="product-container__item">
-											<div data-card-id="5" class="product-card">
-												<div class="metadata" style="display: none">
-													<div data-metadata-title="Биобаланс Л"></div>
-													<div data-metadata-image="./resources/img/products-page/cards/1.png"></div>
-													<div data-metadata-snippet="Жидкая форма"></div>
-													<div data-metadata-price="690"></div>
-												</div>
-												<header class="product-card__header">
-													<div class="product-card__price">690 руб.</div>
-													<div class="product-card__discount">
-														<a href="#" class="product-card__discount-link">– 10% при покупке курсом</a>
-													</div>
-												</header>
-												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
-														</div>
-														<div class="product-card__title js-product-card__title">Биобаланс Л</div>
-														<div class="product-card__subtitle">Lactobacillus acidophilus. Таблетки.</div>
-														<img src="./resources/img/products-page/cards/1.png" alt="some title" class="img-responsive product-card__pic js-product-card__pic">
-														<div class="select-block-container">
-															<div class="select-product">
-																<div class="select-product__title">Выберите объем</div>
-																<div class="select-product__items">
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-																</div>
-																<div class="select-product__title">Количество</div>
-																<div class="amount-control">
-																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
-																		<i class="material-icons amount-control__icon">remove</i>
-																	</div>
-																	<div class="amount-control__counter">{{productCard.getAmount(5)}}</div>
-																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
-																		<i class="material-icons amount-control__icon">add</i>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
-														</div>
-														<div class="product-card__letter">Л</div>
-														<div class="composition">
-															<div class="composition__sign">Состав</div>
-															<div class="composition__detail">Лиофилизированная биомасса Bifidobacterium bifidum штамм №1, 1х10⁸ КОЕ/г, стабилизатор стеарат кальция (Е470), эмульгатор тальк (Е553).</div>
-															<div class="composition__sign composition__sign--small">Не является лекарственным средством.</div>
-															<div class="composition__sign composition__sign--margin">Не содержит</div>
-															<div class="composition__labels">
-																<div class="composition__label composition__label--lactose"></div>
-																<div class="composition__label composition__label--gluten"></div>
-																<div class="composition__label composition__label--sugar"></div>
-																<div class="composition__label composition__label--gmo"></div>
-															</div>
-														</div>
-														<div class="route-btn__container">
-															<a href="#" class="route-btn__link">Подробнее</a>
+															<a href="{{::card.link}}" class="route-btn__link">Подробнее</a>
 														</div>
 													</div>
 												</div>
@@ -683,16 +417,13 @@
 
 									</div>
 								</div>
-								<div data-tab-target="2" class="tab-panel__item">
-									<div class="product-container">
-										<h2>Tab content #3</h2>
-									</div>
-								</div>
+
 							</div>
 						</div>
 
 					</div>
 				</div>
+
 			</div>
 
 		</div>

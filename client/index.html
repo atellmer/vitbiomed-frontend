@@ -10,13 +10,13 @@
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
-	<link rel="stylesheet" href="./dist/bundle.css?rev=3568d2806f65d7477048f768c508c9b9">
+	<link rel="stylesheet" href="./dist/bundle.css?rev=5e0754c4a9cb2980212ad7c362ffd9d8">
 	<!--?rev=@@hash-->
 </head>
 
 <body data-ng-cloak class="likearts-content">
-
 	<div class="container-fluid">
+
 		<div class="header-container">
 			<div class="container">
 				<header class="header">
@@ -89,10 +89,12 @@
 									</div>
 								</div>
 							</div>
+
 							<div class="cart-container" data-ng-controller="CartController as cart">
 								<div class="cart">
 									<div data-hm-tap="cart.open()" class="cart__icon"></div>
 									<div data-hm-tap="cart.open()" class="cart__sum">{{cart.amount()}}</div>
+
 									<div data-ng-if="cart.visibility" class="cart-action js-cart-action">
 										<div class="cart-action__container">
 											<div class="cart-action__title">
@@ -127,305 +129,222 @@
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</header>
 			</div>
 		</div>
 
-		<div class="products-page-container">
-			<div class="slider-container slider-container--white" data-ng-controller="SliderMainController as sliderMain">
-				<div class="container">
-					<div class="slider">
-						<div class="row no-padding">
-							<div class="col-md-12">
-								<div class="vit-slider">
-									<div id="vit-slider-content--main" data-slider-delay="8000" class="vit-slider__content vit-slider__content--small">
-
-										<div class="vit-slider__item">
-											<div class="banner" style="background-image:url(./resources/img/products-page/slider/products-banner.png)">
-												<div class="banner__content">
-													<div class="banner__title">Биобаланс А</div>
-													<div class="banner__subtitle">/Lactobacillus acidophilus/</div>
-													<div class="banner__description">Способствует ускорению липидного обмена и восполнению энергии.</div>
-													<a href="#" class="banner__link">Подробнее</a>
-												</div>
-											</div>
-										</div>
-
-										<div class="vit-slider__item">
-											<div class="banner" style="background-image:url(./resources/img/products-page/slider/products-banner.png)">
-												<div class="banner__content">
-													<div class="banner__title">Биобаланс Б</div>
-													<div class="banner__subtitle">/Lactobacillus acidophilus/</div>
-													<div class="banner__description">Способствует ускорению липидного обмена и восполнению энергии.</div>
-													<a href="#" class="banner__link">Подробнее</a>
-												</div>
-											</div>
-										</div>
-
-										<div class="vit-slider__item">
-											<div class="banner" style="background-image:url(./resources/img/products-page/slider/products-banner.png)">
-												<div class="banner__content">
-													<div class="banner__title">Биобаланс В</div>
-													<div class="banner__subtitle">/Lactobacillus acidophilus/</div>
-													<div class="banner__description">Способствует ускорению липидного обмена и восполнению энергии.</div>
-													<a href="#" class="banner__link">Подробнее</a>
-												</div>
-											</div>
-										</div>
-
-									</div>
-									<div class="vit-slider__controls">
-										<div data-hm-tap="sliderMain.changeContent(-1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--prev">
-											<i class="material-icons vit-slider__icon">arrow_back</i>
-										</div>
-										<div data-hm-tap="sliderMain.changeContent(1, '#vit-slider-content--main')" class="vit-slider__btn vit-slider__btn--next">
-											<i class="material-icons vit-slider__icon">arrow_forward</i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+		<div class="course-item-page-container" data-ng-controller="CourseItemPageController as courseItemPage">
 			<div class="container">
-				<!--div class="row no-padding">
-					<div class="col-md-12">
-						<div class="control-panel">
-							<div class="control-panel__item">
-								<div class="calc">
-									<div data-md-ink-ripple="#fff" class="calc__btn">
-									</div>
-									<div class="calc__sign">Рассчитайте курс</div>
+				<div class="row no-padding">
+					<div class="col-xs-6 col-sm-6 col-md-7 col-xxs-override col-md-7-override">
+						<div class="product-card">
+							<div class="phone-padding">
+								<h1 class="product-card__title">Защита от аллергии</h1>
+								<h2 class="product-card__subtitle">Комплексная программа профилактики аллергии</h2>
+								<div class="product-card__picture-container">
+									<img class="img-responsive product-card__picture" src="./resources/img/course-page/main-item.png" alt="some image">
 								</div>
 							</div>
+							<div data-card-id="0" class="phone-visible">
+								<div class="flex-container">
+									<div class="flex-item">
+										<div class="metadata" style="display: none;">
+											<div data-metadata-title="Биобаланс А"></div>
+											<div data-metadata-image="./resources/img/content/product-1.png"></div>
+											<div data-metadata-snippet="Жидкая форма"></div>
+											<div data-metadata-price="590"></div>
+										</div>
+										<div class="control-card__header">590 руб.</div>
+										<div class="select-product select-product--phone">
+											<div class="select-product__title">Выберите объем</div>
+											<div class="select-product__items">
+												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
 
-							<div class="control-panel__item">
-								<div class="order">
-									<div data-md-ink-ripple="#fff" class="order__btn">
-										Записаться на прием
+												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
+
+												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
+											</div>
+											<div class="select-product__title">Количество</div>
+											<div class="amount-control">
+												<div data-hm-tap="courseItemPage.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
+													<i class="material-icons amount-control__icon">remove</i>
+												</div>
+												<div class="amount-control__counter">{{courseItemPage.getAmount(0)}}</div>
+												<div data-hm-tap="courseItemPage.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
+													<i class="material-icons amount-control__icon">add</i>
+												</div>
+											</div>
+										</div>
 									</div>
+									<div class="flex-item">
+										<div class="vertical-divider"></div>
+									</div>
+									<div class="flex-item">
+										<div class="sum-block">
+											<div class="sum-block__price">
+												<span>590</span> руб.
+												<div class="sum-block__price-description">
+													цена за 1 шт.
+												</div>
+											</div>
+											<div class="sum-block__discount">
+												Скидка 10% при покупке курсом
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn-container">
+									<div data-hm-tap="courseItemPage.addToCart($event)" data-md-ink-ripple="#fff" class="buy-btn buy-btn--phone">Купить</div>
+								</div>
+							</div>
+							<div class="phone-padding">
+								<div class="product-description">
+									<div class="product-description__title">
+										<span data-hm-tap="courseItemPage.controlInset($event)" data-inset-show="true" data-inset-trigger="0" class="text-dashed cursor-pointer">Описание</span>
+									</div>
+									<div data-inset-target="0" class="product-description__content product-description__content--active">
+										<p>В кишечнике сосредоточено около 80% клеток, ответственных за иммунитет, поэтому нарушение иммунной реакции свидетельствует о нарушении микрофлоры.</p>
+										<p>Комплексная программа  «Защита от аллергии»:</p>
+										<p>
+											– восстанавливает баланс микрофлоры кишечника <br>
+											– борются с патогенами, вызывающими аллергию <br>
+											– выводят токсины и аллергены <br>
+											– формируют адекватный иммунный ответ <br>
+											– укрепляют и оздоравливают организм <br>
+										</p>
+										<p>Лечение направлено на устранение проблемы, а не снятие симптомов заболевания.</p>
+										<p>Курс рассчитан на 1 месяц.</p>
+									</div>
+									<div class="product-description__title">
+										<span data-hm-tap="courseItemPage.controlInset($event)" data-inset-trigger="1" class="text-dashed cursor-pointer">Для кого</span>
+									</div>
+									<div data-inset-target="1" class="product-description__content">
+										<p>
+											Предназначен для людей, страдающих от аллергических заболеваний: поллиноза, бронхиальной астмы,
+											дерматитов, экземы, крапивницы, а также пищевой, лекарственной и других видов аллергии.
+										</p>
+									</div>
+									<div class="product-description__title">
+										<span data-hm-tap="courseItemPage.controlInset($event)" data-inset-trigger="2" class="text-dashed cursor-pointer">Из чего состоит</span>
+									</div>
+									<div data-inset-target="2" class="product-description__content">
+										<div class="product-description__items">
+											<div class="product-description__item">
+												<img src="./resources/img/course-page/item-1.png" class="product-description__pic" alt="alt">
+												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+											</div>
+											<div class="product-description__item">
+												<img src="./resources/img/course-page/item-2.png" class="product-description__pic" alt="alt">
+												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+											</div>
+											<div class="product-description__item">
+												<img src="./resources/img/course-page/item-3.png" class="product-description__pic" alt="alt">
+												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+											</div>
+											<div class="product-description__item">
+												<img src="./resources/img/course-page/item-1.png" class="product-description__pic" alt="alt">
+												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+											</div>
+											<div class="product-description__item">
+												<img src="./resources/img/course-page/item-2.png" class="product-description__pic" alt="alt">
+												<a href="#" class="product-description__link">Биобаланс А (табл) 1 шт</a>
+											</div>
+										</div>
+									</div>
+									<div class="product-description__title">
+										<span data-hm-tap="courseItemPage.controlInset($event)" data-inset-trigger="3" class="text-dashed cursor-pointer">Особенности</span>
+									</div>
+									<div data-inset-target="3" class="product-description__content">
+										<p>
+											Лечение производится натуральными препаратами - пробиотиками, которые восстанавливают адекватную
+											(нормальную) иммунную реакцию организма на безопасные вещества, попадающие в организм.
+										</p>
+									</div>
+									<div class="product-description__title">
+										<span data-hm-tap="courseItemPage.controlInset($event)" data-inset-trigger="4" class="text-dashed cursor-pointer">Почему пробиотики?</span>
+									</div>
+									<div data-inset-target="4" class="product-description__content">
+										<p>
+											– В России дисбактериоз выявляют у 90% взрослого населения и бболее чем у 95% детей <br>
+											– В 98% случаев аллергия сопряжна с дисбактериозом <br>
+											– Атопический дерматит практически в 100% случаев сочетается с дисбиозом <br>
+										</p>
+									</div>
+
 								</div>
 							</div>
 						</div>
 					</div>
-				</div-->
-				<div class="row no-padding">
-					<div class="col-md-12 col-md-12-override" data-ng-controller="TabsController as tabs">
-
-						<div data-tab-panel="0" class="tab-panel">
-							<div class="tab-panel__controls tab-panel__controls--desktop">
-								<div data-tab-trigger="0" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn js-tab-panel__btn--active" data-md-ink-ripple="#fff">
-									Профилактические курсы
+					<div class="col-xs-offset-1 col-xs-5 col-sm-offset-2 col-sm-4 col-md-offset-2 col-md-3 col-xxs-override col-md-offset-2-override col-md-3-override">
+						<div class="info-block">
+							<div class="info-block__container">
+								<div class="info-block__discount">
+									<a href="#" class="info-block__discount-link">Вы экономите 10% на покупке препарата вместе с курсом</a>
 								</div>
-								<div data-tab-trigger="1" data-hm-tap="tabs.switchTab($event)" class="tab-panel__btn" data-md-ink-ripple="#fff">
-									Лучебные курсы
-								</div>
-							</div>
-							<div class="tab-panel__controls tab-panel__controls--phone">
-
-								<div class="vit-select js-vit-select" data-ng-controller="SelectController as select">
-									<div data-hm-tap="select.open($event)" class="vit-select__btn">
-										<span>{{select.selectName}}</span>
-										<span data-ng-if="!select.selectName">Профилактические курсы</span>
-										<i class="material-icons vit-select__icon">arrow_drop_down</i>
+								<div data-card-id="0" class="control-card">
+									<div class="metadata" style="display: none;">
+										<div data-metadata-title="Биобаланс А"></div>
+										<div data-metadata-image="./resources/img/content/product-1.png"></div>
+										<div data-metadata-snippet="Жидкая форма"></div>
+										<div data-metadata-price="590"></div>
 									</div>
-									<div class="vit-select__items js-vit-select__items">
-										<div data-tab-trigger="0" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Профилактические курсы</div>
-										<div data-tab-trigger="1" data-hm-tap="select.change($event); tabs.switchTab($event);" class="vit-select__item">Лучебные курсы</div>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="tab-panel__title">Лечебные курсы рекомендованы тем, кто прошел консультацию врача (т.е. только по назначению врача).</div>
-
-							<div class="tab-panel__content" data-ng-controller="ProductCardController as productCard">
-								<div data-tab-target="0" class="tab-panel__item js-tab-panel__item--active">
-									<div class="product-container">
-
-										<div data-ng-if="card.type === 'Профилактические курсы'" data-ng-repeat="card in productCard.cards track by card.id" class="product-container__item">
-											<div data-card-id="{{::card.id}}" class="product-card">
-												<div class="metadata" style="display: none;">
-													<div data-metadata-title="{{::card.title}}"></div>
-													<div data-metadata-image="{{::card.image}}"></div>
-													<div data-metadata-snippet="{{::card.snippet}}"></div>
-													<div data-metadata-price="{{::card.price}}"></div>
+									<div class="control-card__header">590 руб.</div>
+									<div class="control-card__body">
+										<div class="select-product">
+											<div class="select-product__title">Выберите объем</div>
+											<div class="select-product__items">
+												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
+												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
+												<div data-hm-tap="courseItemPage.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
+											</div>
+											<div class="select-product__title">Количество</div>
+											<div class="amount-control amount-control--phone">
+												<div data-hm-tap="courseItemPage.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
+													<i class="material-icons amount-control__icon">remove</i>
 												</div>
-												<header class="product-card__header">
-													<div class="product-card__price">{{::card.price}} руб.</div>
-													<div class="product-card__discount"></div>
-												</header>
-												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
-														</div>
-														<div class="product-card__title js-product-card__title">{{::card.title}}</div>
-														<div class="product-card__subtitle">{{::card.subtitle}}</div>
-
-														<div class="product-card__description">{{::card.description}}</div>
-
-														<div class="toggle-container">
-															<span data-ng-class="{'toggle-container__capture--green': !productCard.toggle[card.id]}" class="toggle-container__capture ">Детям</span>
-															<ios-toggle id="{{card.id}}"></ios-toggle>
-															<span data-ng-class="{'toggle-container__capture--green': productCard.toggle[card.id]}" class="toggle-container__capture">Взрослым</span>
-														</div>
-
-														<div class="select-block-container">
-															<div class="select-product">
-																<div class="select-product__title">Выберите объем</div>
-																<div class="select-product__items">
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-																</div>
-																<div class="select-product__title">Количество</div>
-																<div class="amount-control">
-																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
-																		<i class="material-icons amount-control__icon">remove</i>
-																	</div>
-																	<div class="amount-control__counter">{{productCard.getAmount(card.id)}}</div>
-																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
-																		<i class="material-icons amount-control__icon">add</i>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
+												<div class="amount-control__counter">{{courseItemPage.getAmount(0)}}</div>
+												<div data-hm-tap="courseItemPage.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
+													<i class="material-icons amount-control__icon">add</i>
 												</div>
-												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
-														</div>
-														<div class="product-card__title js-product-card__title">Курс «Укрепление иммунитета»</div>
-														<div class="composition">
-															<div class="composition__detail">
-																<div class="composition__table">
-																	<div data-ng-repeat="composition in card.composition" class="composition__table-row">
-																		<span class="composition__table-cell">{{::composition.item}}</span>
-																		<span class="composition__table-cell">{{::composition.amount}}</span>
-																	</div>
-																</div>
-															</div>
-															<div class="composition__sign composition__sign--margin">Не содержит</div>
-															<div class="composition__labels">
-																<div class="composition__label composition__label--gluten"></div>
-																<div class="composition__label composition__label--sugar"></div>
-																<div class="composition__label composition__label--gmo"></div>
-															</div>
-														</div>
-														<div class="route-btn__container">
-															<a href="{{::card.link}}" class="route-btn__link">Подробнее</a>
-														</div>
-													</div>
-												</div>
-												<footer class="product-card__footer">
-													<div data-hm-tap="productCard.addToCart($event)" data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
-												</footer>
 											</div>
 										</div>
-
+									</div>
+									<div class="control-card__footer">
+										<div data-hm-tap="courseItemPage.addToCart($event)" data-md-ink-ripple="#fff" class="buy-btn">Купить</div>
 									</div>
 								</div>
-
-								<div data-tab-target="1" class="tab-panel__item">
-									<div class="product-container">
-										
-										<div data-ng-if="card.type === 'Лечебные курсы'" data-ng-repeat="card in productCard.cards track by card.id" class="product-container__item">
-											<div data-card-id="{{::card.id}}" class="product-card">
-												<div class="metadata" style="display: none;">
-													<div data-metadata-title="{{::card.title}}"></div>
-													<div data-metadata-image="{{::card.image}}"></div>
-													<div data-metadata-snippet="{{::card.snippet}}"></div>
-													<div data-metadata-price="{{::card.price}}"></div>
-												</div>
-												<header class="product-card__header">
-													<div class="product-card__price">{{::card.price}} руб.</div>
-													<div class="product-card__discount"></div>
-												</header>
-												<div data-card-content-type="main" class="product-card__content js-product-card__content--active">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-open" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--open">
-														</div>
-														<div class="product-card__title js-product-card__title">{{::card.title}}</div>
-														<div class="product-card__subtitle">{{::card.subtitle}}</div>
-
-														<div class="product-card__description">{{::card.description}}</div>
-
-														<div class="toggle-container">
-															<span data-ng-class="{'toggle-container__capture--green': !productCard.toggle[card.id]}" class="toggle-container__capture ">Детям</span>
-															<ios-toggle id="{{card.id}}"></ios-toggle>
-															<span data-ng-class="{'toggle-container__capture--green': productCard.toggle[card.id]}" class="toggle-container__capture">Взрослым</span>
-														</div>
-
-														<div class="select-block-container">
-															<div class="select-product">
-																<div class="select-product__title">Выберите объем</div>
-																<div class="select-product__items">
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="60" class="js-select-product__item js-select-product__item--active">60</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="150" class="js-select-product__item">150</div>
-																	<div data-hm-tap="productCard.setVolume($event)" data-volume-product="300" class="js-select-product__item">300</div>
-																</div>
-																<div class="select-product__title">Количество</div>
-																<div class="amount-control">
-																	<div data-hm-tap="productCard.setAmount($event, -1)" class="amount-control__btn amount-control__btn--minus">
-																		<i class="material-icons amount-control__icon">remove</i>
-																	</div>
-																	<div class="amount-control__counter">{{::productCard.getAmount(card.id)}}</div>
-																	<div data-hm-tap="productCard.setAmount($event, 1)" class="amount-control__btn amount-control__btn--plus">
-																		<i class="material-icons amount-control__icon">add</i>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div data-card-content-type="other" class="product-card__content product-card__content--gray">
-													<div class="product-card__wrapper">
-														<div data-card-button-type="info-close" data-hm-tap="productCard.showDetail($event)" data-md-ink-ripple="#fff" class="product-card__checker product-card__checker--close">
-														</div>
-														<div class="product-card__title js-product-card__title">Курс «Укрепление иммунитета»</div>
-														<div class="composition">
-															<div class="composition__detail">
-																<div class="composition__table">
-																	<div data-ng-repeat="composition in card.composition" class="composition__table-row">
-																		<span class="composition__table-cell">{{::composition.item}}</span>
-																		<span class="composition__table-cell">{{::composition.amount}}</span>
-																	</div>
-																</div>
-															</div>
-															<div class="composition__sign composition__sign--margin">Не содержит</div>
-															<div class="composition__labels">
-																<div class="composition__label composition__label--gluten"></div>
-																<div class="composition__label composition__label--sugar"></div>
-																<div class="composition__label composition__label--gmo"></div>
-															</div>
-														</div>
-														<div class="route-btn__container">
-															<a href="{{::card.link}}" class="route-btn__link">Подробнее</a>
-														</div>
-													</div>
-												</div>
-												<footer class="product-card__footer">
-													<div data-hm-tap="productCard.addToCart($event)" data-md-ink-ripple="#fff" class="product-card__action-btn">Купить</div>
-												</footer>
-											</div>
+								<div class="certificate-block">
+									<div class="certificate-block__title">Сертификаты</div>
+									<div class="certificate-block__description">Препарат запатентован с участием ведущих микробиологов РФ, имеет свидетельство о регистрации.</div>
+									<div class="certificate-items">
+										<div data-hm-tap="courseItemPage.clickToOpen('certificate-1')" class="certificate-items__item">
+											<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
+											<script type="text/ng-template" id="certificate-1">
+												<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
+											</script>
 										</div>
-
+										<div data-hm-tap="courseItemPage.clickToOpen('certificate-2')" class="certificate-items__item">
+											<img class="img-responsive" src="./resources/img/content/cert-2.jpg" alt="certificate">
+											<script type="text/ng-template" id="certificate-2">
+												<img class="img-responsive" src="./resources/img/content/cert-2.jpg" alt="certificate">
+											</script>
+										</div>
+										<div data-hm-tap="courseItemPage.clickToOpen('certificate-3')" class="certificate-items__item">
+											<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
+											<script type="text/ng-template" id="certificate-3">
+												<img class="img-responsive" src="./resources/img/content/cert-1.jpg" alt="certificate">
+											</script>
+										</div>
 									</div>
 								</div>
-
 							</div>
 						</div>
-
 					</div>
 				</div>
-
 			</div>
-
 		</div>
 
 		<div class="slider-container" data-ng-controller="SliderFooterController as sliderFooter">
@@ -623,7 +542,7 @@
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<script src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="./dist/bundle.js?rev=e3b2725fdc408c0e483f628a84c735a8"></script>
+	<script src="./dist/bundle.js?rev=ed02302b66515275af1a0d20d4ea3834"></script>
 
 </body>
 

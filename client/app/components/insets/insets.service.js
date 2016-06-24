@@ -15,6 +15,7 @@
 		};
 		
 		var click = [];
+		var flag = true;
 		
 		return service;
 
@@ -27,6 +28,11 @@
 			var trigger = angular.element(event.target);
 			var id = parseInt(trigger.attr('data-inset-trigger'));
 			var target = angular.element(document.querySelector('[data-inset-target="' + id + '"]'));
+			
+			if (flag && trigger.attr('data-inset-show')) {
+				click[id]++;
+				flag = false;		
+			}
 			
 			click[id]++;
 			
