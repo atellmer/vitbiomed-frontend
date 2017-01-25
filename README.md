@@ -1,1 +1,0 @@
-# vitbiomed-frontend
